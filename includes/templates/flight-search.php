@@ -1,6 +1,7 @@
 <form name="search-form" method="post">
     <label for="origin">Origin:</label><br>
     <input type="text" id="origin" name="origin"><br>
+    <div id="loader" style="display:none;">Loading...</div>
     <div id="origin-suggestions"></div>
     <label for="destination">Destination:</label><br>
     <input type="text" id="destination" name="destination"><br>
@@ -14,48 +15,90 @@
 
     <label for="child">Child:</label><br>
     <input type="number" id="child" name="child"><br>
+
     <input type="submit" value="Search">
+
+    <br /><br /><br /><br /><br /><br />
 </form>
 
+<br /><br /><br /><br /><br /><br />
+<?php
+
+$id_attributes = get_travelpro_options('travelproplus_id_attributes');
+if ($id_attributes) {
+    $flattenedData = array();
+
+    foreach ($id_attributes as $subArray) {
+        foreach ($subArray as $value) {
+            if ($value != '_') {
+                $flattenedData[] = '#' . trim($value);
+            }
+        }
+    }
+
+    $resultString = implode(', ', $flattenedData);
+}
+$ids_separated = $resultString;
+
+?>
+
 <script>
-    const apiWithEndpoint = 'https://sky-scanner3.p.rapidapi.com/flights/auto-complete?query=';
-    const form = document.forms['search-form'];
-    const apiKey = '9ee8ccde51msh9e2a5bcb8d19c18p11fd3ajsn8968ad813011';
+    const apiWithEndpoint = 'https://sky-scanner3.p.rapidapi.com/flights/auto-complete?';
+    const apiKey = 'c9bcc0fae2msh319fae4f97b55fep19ad9djsn9e1c0abf8b60';
     const apiHost = 'sky-scanner3.p.rapidapi.com';
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); // prevent the form from being submitted normally
+    $(document).ready(function() {
 
-        const formData = new FormData(form);
-        const formValues = Object.fromEntries(formData.entries());
+        // Function to make an API request with the current access token
+        function makeFlightAutocompleteAPIRequest(request, response) {
+            var keyword = request.term;
+            var maxResults = 10;
 
-        searchOrigin(formValues)
-            .then(data => {
-                console.log(data);
-            });
-    });
+            if (keyword.length >= 3) {
+                var apiUrl =
+                    apiWithEndpoint +
+                    "query=" +
+                    keyword;
 
-    // Create a function to search for flights
-    const searchOrigin = async (formValues) => {
-        const originInput = document.getElementById('origin');
-        // Set up the autocomplete function for the origin field
+                $.ajax({
+                    url: apiUrl,
+                    method: "GET",
+                    headers: {
+                        'X-RapidAPI-Key': apiKey,
+                        'X-RapidAPI-Host': apiHost
+                    },
+                    success: function(data) {
+                        if (data.errors) {
+                            // Handle API errors
+                            console.log("Error", data);
+                            return;
+                        }
 
-        const url = `https://sky-scanner3.p.rapidapi.com/flights/auto-complete?query=${formValues.origin}`;
-        const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': apiKey,
-                'X-RapidAPI-Host': apiHost
+                        console.log(data.data);
+                        // Handle the API response and display results in the autocomplete
+                        var autocompleteData = data.data.map(function(item) {
+                            return {
+                                label: item.presentation.suggestionTitle, // Display city and country
+                                value: item.presentation.suggestionTitle, // Value to be placed in the input field
+                            };
+                        });
+
+                        // Display autocomplete suggestions
+                        response(autocompleteData);
+                    },
+                    error: function(e) {
+                        console.error("Error: ", e.responseJSON.errors);
+                    },
+                });
             }
-        };
-
-        try {
-            const response = await fetch(url, options);
-            const result = await response.json();
-            const suggestions = result.data.map(place => place.presentation.suggestionTitle);
-            document.getElementById('origin-suggestions').innerHTML = suggestions.join('<br/>');
-        } catch (error) {
-            console.error(error);
         }
-    };
+
+        var id_attr = '<?php echo $ids_separated ?>';
+        // Autocomplete functionality
+        $(id_attr).autocomplete({
+            source: makeFlightAutocompleteAPIRequest,
+            minLength: 3,
+        });
+
+    });
 </script>
