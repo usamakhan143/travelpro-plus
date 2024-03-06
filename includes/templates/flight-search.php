@@ -1,7 +1,6 @@
 <form name="search-form" method="post">
     <label for="origin">Origin:</label><br>
     <input type="text" id="origin" name="origin"><br>
-    <div id="loader" style="display:none;">Loading...</div>
     <div id="origin-suggestions"></div>
     <label for="destination">Destination:</label><br>
     <input type="text" id="destination" name="destination"><br>
@@ -20,7 +19,7 @@
 
     <br /><br /><br /><br /><br /><br />
 </form>
-
+<button id="load-more-button">Load More</button>
 <br /><br /><br /><br /><br /><br />
 <?php
 
@@ -42,14 +41,16 @@ $ids_separated = $resultString;
 
 ?>
 
+
 <script>
-    const apiWithEndpoint = 'https://sky-scanner3.p.rapidapi.com/flights/auto-complete?';
-    const apiKey = 'c9bcc0fae2msh319fae4f97b55fep19ad9djsn9e1c0abf8b60';
-    const apiHost = 'sky-scanner3.p.rapidapi.com';
-
     $(document).ready(function() {
+        const apiWithEndpoint = 'https://sky-scanner3.p.rapidapi.com/flights/auto-complete?';
+        const apiKey = 'aa97ac4b72mshe4ad620e30f1ba2p19ff5ajsn93214a8b8fb3';
+        const apiHost = 'sky-scanner3.p.rapidapi.com';
+        var debounceTimer; // Variable to hold the debounce timer
+        var currentSessionId;
 
-        // Function to make an API request with the current access token
+        // Function to make an API request for autocomplete suggestions
         function makeFlightAutocompleteAPIRequest(request, response) {
             var keyword = request.term;
             var maxResults = 10;
@@ -68,18 +69,13 @@ $ids_separated = $resultString;
                         'X-RapidAPI-Host': apiHost
                     },
                     success: function(data) {
-                        if (data.errors) {
-                            // Handle API errors
-                            console.log("Error", data);
-                            return;
-                        }
 
-                        console.log(data.data);
                         // Handle the API response and display results in the autocomplete
                         var autocompleteData = data.data.map(function(item) {
                             return {
                                 label: item.presentation.suggestionTitle, // Display city and country
                                 value: item.presentation.suggestionTitle, // Value to be placed in the input field
+                                id: item.presentation.id // Include entityId in autocomplete data
                             };
                         });
 
@@ -93,12 +89,114 @@ $ids_separated = $resultString;
             }
         }
 
-        var id_attr = '<?php echo $ids_separated ?>';
         // Autocomplete functionality
-        $(id_attr).autocomplete({
-            source: makeFlightAutocompleteAPIRequest,
+        $('#origin, #destination').autocomplete({
+            source: function(request, response) {
+                // Clear previous debounce timer
+                clearTimeout(debounceTimer);
+
+                // Set new debounce timer
+                debounceTimer = setTimeout(function() {
+                    makeFlightAutocompleteAPIRequest(request, response);
+                }, 300); // Adjust the debounce delay as needed
+            },
             minLength: 3,
+            select: function(event, ui) {
+                // Set the selected value to the input field
+                $(this).val(ui.item.label);
+                // Set the corresponding entityId to the data-entity-id attribute
+                $(this).data('id', ui.item.id);
+                return false;
+            }
         });
 
+        // Function to make a flight search API request
+        function searchFlights(originEntityId, destinationEntityId, departureDate, returnDate) {
+            var apiUrl = "https://sky-scanner3.p.rapidapi.com/flights/search-roundtrip";
+            $.ajax({
+                url: apiUrl,
+                method: "GET",
+                headers: {
+                    'X-RapidAPI-Key': apiKey,
+                    'X-RapidAPI-Host': apiHost
+                },
+                data: {
+                    fromEntityId: originEntityId,
+                    toEntityId: destinationEntityId,
+                    departDate: departureDate,
+                    returnDate: returnDate
+                },
+                success: function(data) {
+                    // Store the current session ID
+                    currentSessionId = data.data.flightsSessionId;
+                    if (data.data.context.totalResults === 0 && data.data.context.status === "incomplete") {
+                        // Call function to load complete results
+                        loadCompleteResults(data.data.context.sessionId);
+
+                    } else {
+                        // Process the flight search results as needed
+                        console.log("Incomplete Flight search results:", data);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error:", error);
+                    // Handle the error gracefully
+                }
+            });
+        }
+
+        // Function to load complete results using session ID
+        function loadCompleteResults(sessionId) {
+            var apiUrl = 'https://sky-scanner3.p.rapidapi.com/flights/search-incomplete';
+            $.ajax({
+                url: apiUrl,
+                method: "GET",
+                headers: {
+                    'X-RapidAPI-Key': apiKey,
+                    'X-RapidAPI-Host': apiHost
+                },
+                data: {
+                    sessionId: sessionId
+                },
+                success: function(data) {
+                    // Handle the complete results
+                    console.log("Complete flight search results:", data);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error:", error);
+                    // Handle the error gracefully
+                }
+            });
+        }
+
+        // Function to process flight search results
+        function processData(data) {
+            // Handle the API response and display results in the autocomplete
+        }
+
+        // Event handler for the search form submission
+        $('form[name="search-form"]').submit(function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get form values
+            var originEntityId = $('#origin').data('id');
+            var destinationEntityId = $('#destination').data('id');
+            var departureDate = $('#departure_date').val();
+            var returnDate = $('#return_date').val();
+
+            // Perform flight search
+            searchFlights(originEntityId, destinationEntityId, departureDate, returnDate);
+        });
+
+        // Event handler for the "Load More" button click
+        $('#load-more-button').click(function() {
+            // Check if currentSessionId is defined
+            if (currentSessionId) {
+                // Call the function to load more flights with the current session ID
+                loadCompleteResults(currentSessionId);
+            } else {
+                console.error("Error: Current session ID is undefined");
+            }
+        });
     });
 </script>
