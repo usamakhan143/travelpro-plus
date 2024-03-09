@@ -6,7 +6,7 @@
   try {
     $("#input-start").daterangepicker(
       {
-        ranges: true,
+        ranges: false,
         autoApply: true,
         applyButtonClasses: false,
         autoUpdateInput: false,
@@ -19,7 +19,7 @@
 
     $("#input-start-2").daterangepicker(
       {
-        ranges: true,
+        ranges: false,
         autoApply: true,
         applyButtonClasses: false,
         autoUpdateInput: false,

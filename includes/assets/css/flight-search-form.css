@@ -1,7 +1,7 @@
 /* ==========================================================================
    #GRID
    ========================================================================== */
-.row {
+.travelpro-search-fm-flight-row {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -25,14 +25,14 @@
   margin: 0 -15px;
 }
 
-.col-2 {
+.travelpro-search-flight-col-2 {
   width: -webkit-calc((100% - 20px) / 2);
   width: -moz-calc((100% - 20px) / 2);
   width: calc((100% - 20px) / 2);
 }
 
 @media (max-width: 767px) {
-  .col-2 {
+  .travelpro-search-flight-col-2 {
     width: 100%;
   }
 }
@@ -314,10 +314,10 @@ a:active {
 /* ==========================================================================
      #BUTTON
      ========================================================================== */
-.btn-submit {
+.travelpro-flight-search-btn-submit {
   display: block;
   width: 100%;
-  line-height: 52px;
+  /* line-height: 52px; */
   font-family: inherit;
   background: #00ad5f;
   -webkit-border-radius: 10px;
@@ -331,16 +331,17 @@ a:active {
   -o-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   transition: all 0.4s ease;
-  margin-top: 25px;
+  margin-top: 35px;
+  padding: 15.5px 14px;
 }
 
 @media (max-width: 767px) {
-  .btn-submit {
-    margin-top: 15px;
+  .travelpro-flight-search-btn-submit {
+    margin-top: 36px;
   }
 }
 
-.btn-submit:hover {
+.travelpro-flight-search-btn-submit:hover {
   background: #00994b;
 }
 
@@ -643,7 +644,7 @@ button {
   background: #00ad5f;
 }
 
-.input-group {
+.travelpro-search-flight-input-group {
   position: relative;
   margin-bottom: 26px;
 }
@@ -657,9 +658,9 @@ button {
   font-size: 24px;
   color: #808080;
   position: absolute;
-  line-height: 42px;
+  line-height: 43px;
   right: 20px;
-  top: 0;
+  top: 1px;
   width: 20px;
   background: #fff;
   text-align: center;
@@ -674,7 +675,7 @@ button {
   transition: all 0.4s ease;
 }
 
-.label {
+.travelpro-search-flight-label {
   font-size: 14px;
   color: #fff;
   padding-left: 8px;
@@ -686,10 +687,10 @@ button {
 
 .input--style-1 {
   font-size: 15px;
-  padding: 9.5px 20px;
+  padding: 9.5px 20px !important;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
-  border-radius: 25px;
+  border-radius: 25px !important;
   color: #666;
   background: #fff;
   font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
@@ -698,9 +699,9 @@ button {
 
 .select--style-1 {
   font-size: 12px;
-  padding: 11.5px 20px;
+  padding: 12.5px 20px !important;
   width: 100%;
-  border-radius: 25px;
+  border-radius: 25px !important;
   color: #666;
   background: #fff;
   font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
@@ -897,7 +898,7 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
-  padding: 30px 45px;
+  padding: 30px 30px;
   padding-right: 25px;
 }
 
@@ -921,12 +922,15 @@ input[type="number"]::-webkit-outer-spin-button {
      #CARD
      ========================================================================== */
 
-.card-5 {
+.flight-form-card-5 {
   position: relative;
   background: transparent;
+  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
 }
 
-.card-5::before {
+.flight-form-card-5::before {
   position: absolute;
   content: "";
   display: block;
@@ -951,15 +955,12 @@ input[type="number"]::-webkit-outer-spin-button {
   opacity: 0.9;
 }
 
-.card-5 .card-body {
+.flight-form-card-5 .flight-form-card-body {
   padding: 22px 50px;
   padding-bottom: 32px;
-  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
 }
 
-/** Field Loader */
+/** Field spinner */
 
 /* input {
     width: 100%;
@@ -972,10 +973,10 @@ input[type="number"]::-webkit-outer-spin-button {
   right: 10px;
   top: calc(50% - -5px);
 }
-.loader {
+.spinner {
   position: relative;
-  height: 20px;
-  width: 20px;
+  height: 24px;
+  width: 24px;
   display: inline-block;
   animation: around 5.4s infinite;
 }
@@ -989,8 +990,8 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
-.loader::after,
-.loader::before {
+.spinner::after,
+.spinner::before {
   content: "";
   background: transparent;
   position: absolute;
@@ -1007,7 +1008,7 @@ input[type="number"]::-webkit-outer-spin-button {
   animation: around 0.7s ease-in-out infinite;
 }
 
-.loader::after {
+.spinner::after {
   animation: around 0.7s ease-in-out 0.1s infinite;
   background: transparent;
 }
@@ -1030,8 +1031,19 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 @media (max-width: 767px) {
-  .card-5 .card-body {
+  .flight-form-card-5 .flight-form-card-body {
     padding: 40px 30px;
     padding-bottom: 55px;
   }
+}
+
+/* custom Css */
+.entry-content ul,
+.entry-content ol {
+  padding: 0px;
+  margin: 0px;
+}
+
+.inputQty {
+  border: 0px !important;
 }

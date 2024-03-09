@@ -85,6 +85,9 @@ function processData(data) {
   var searchResultsDiv = document.getElementById("search-results");
   searchResultsDiv.innerHTML = ""; // Clear previous search results
 
+  // Results Heading
+  // var mainHeading = $("<h2>").text("Flight Search Results");
+
   var itineraries = data.data.itineraries;
 
   if (itineraries.length === 0) {
@@ -125,6 +128,7 @@ function processData(data) {
     flightRow.appendChild(returnCard);
     flightRow.appendChild(priceAndButton);
 
+    // searchResultsDiv.append(mainHeading);
     searchResultsDiv.appendChild(flightRow);
   });
 }

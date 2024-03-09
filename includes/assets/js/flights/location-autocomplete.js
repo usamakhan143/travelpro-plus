@@ -1,7 +1,3 @@
-// Hide the loader initially
-$(".flight-loader-wrapper").hide();
-$("#flight-load-more-button").hide();
-
 const apiWithEndpoint =
   "https://sky-scanner3.p.rapidapi.com/flights/auto-complete?";
 const apiKey = "aa97ac4b72mshe4ad620e30f1ba2p19ff5ajsn93214a8b8fb3";
@@ -10,8 +6,16 @@ var debounceTimer; // Variable to hold the debounce timer
 var currentSessionId;
 
 // Function to make an API request for autocomplete suggestions
-function makeFlightAutocompleteAPIRequest(request, response) {
+function makeFlightAutocompleteAPIRequest(request, response, fieldId) {
   var keyword = request.term;
+
+  fieldId === "travelpro-plus-flight-origin"
+    ? $(".origin-loader").show()
+    : null;
+
+  fieldId === "travelpro-plus-flight-destination"
+    ? $(".destination-loader").show()
+    : null;
 
   if (keyword.length >= 3) {
     var apiUrl = apiWithEndpoint + "query=" + keyword;
@@ -35,6 +39,8 @@ function makeFlightAutocompleteAPIRequest(request, response) {
 
         // Display autocomplete suggestions
         response(autocompleteData);
+        $(".origin-loader").hide();
+        $(".destination-loader").hide();
       },
       error: function (e) {
         console.error("Error: ", e.responseJSON.errors);
@@ -44,14 +50,16 @@ function makeFlightAutocompleteAPIRequest(request, response) {
 }
 
 // Autocomplete functionality
-$("#origin, #destination").autocomplete({
+$(
+  "#travelpro-plus-flight-origin, #travelpro-plus-flight-destination"
+).autocomplete({
   source: function (request, response) {
     // Clear previous debounce timer
+    var inputId = $(this.element[0]).attr("id");
     clearTimeout(debounceTimer);
-
     // Set new debounce timer
     debounceTimer = setTimeout(function () {
-      makeFlightAutocompleteAPIRequest(request, response);
+      makeFlightAutocompleteAPIRequest(request, response, inputId);
     }, 300); // Adjust the debounce delay as needed
   },
   minLength: 3,
