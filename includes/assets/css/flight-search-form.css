@@ -1047,3 +1047,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .inputQty {
   border: 0px !important;
 }
+
+.error-field {
+  background: #ff6c6ce3 !important;
+}

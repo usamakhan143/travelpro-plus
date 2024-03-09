@@ -30,9 +30,14 @@ function makeFlightAutocompleteAPIRequest(request, response, fieldId) {
       success: function (data) {
         // Handle the API response and display results in the autocomplete
         var autocompleteData = data.data.map(function (item) {
+          var dataItem = item.presentation.suggestionTitle;
+          if (dataItem.includes(" (Any)")) {
+            dataItem = dataItem.replace(" (Any)", "");
+          }
+
           return {
-            label: item.presentation.suggestionTitle, // Display city and country
-            value: item.presentation.suggestionTitle, // Value to be placed in the input field
+            label: dataItem, // Display city and country
+            value: dataItem, // Value to be placed in the input field
             id: item.presentation.id, // Include entityId in autocomplete data
           };
         });
@@ -44,6 +49,11 @@ function makeFlightAutocompleteAPIRequest(request, response, fieldId) {
       },
       error: function (e) {
         console.error("Error: ", e.responseJSON.errors);
+        $(`#${fieldId}`).addClass("error-field");
+        alert("Please re-type the City or Airport");
+        $(`#${fieldId}`).removeClass("error-field");
+        $(".origin-loader").hide();
+        $(".destination-loader").hide();
       },
     });
   }

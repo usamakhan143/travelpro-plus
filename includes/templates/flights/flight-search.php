@@ -149,15 +149,6 @@
 </div>
 <!-- </div> -->
 <!-- </div> -->
-<br /><br />
-<div class="container">
-    <h2 class="travelpro-plus-flight-results-heading">Flight Search Results</h2>
-    <div id="search-results"></div>
-    <div class="flight-load-more-container">
-        <button id="flight-load-more-button">Load More</button>
-    </div>
-</div>
-<br /><br /><br /><br />
 <?php
 
 $id_attributes = get_travelpro_options('travelproplus_id_attributes');
@@ -202,15 +193,6 @@ $ids_separated = $resultString;
             event.preventDefault(); // Prevent the default form submission
 
             $('.travelpro-plus-flight-results-heading').show();
-            // Get form values
-            // var originEntityId = $('#origin').data('id');
-            // var destinationEntityId = $('#destination').data('id');
-            // var departureDate = $('#departure_date').val();
-            // var returnDate = $('#return_date').val();
-            // var adult = $('#adult').val();
-            // var child = $('#child').val();
-            // var infants = $('#infants').val();
-            // var cabinClass = $('#cabin').val();
 
 
             var originEntityId = $('input[name="origin"]').data('id');
@@ -235,16 +217,22 @@ $ids_separated = $resultString;
             }
 
             // Log the values (you can perform any further actions here)
-            console.log("From:", originEntityId);
-            console.log("To:", destinationEntityId);
-            console.log("Adult Passengers:", adult);
-            console.log("Child Passengers:", child);
-            console.log("Infant Passengers:", infants);
-            console.log("Depart:", departureDate);
-            console.log("Return:", returnDate);
-            console.log("Cabin Class:", cabinClass);
+            // console.log("From:", originEntityId);
+            // console.log("To:", destinationEntityId);
+            // console.log("Adult Passengers:", adult);
+            // console.log("Child Passengers:", child);
+            // console.log("Infant Passengers:", infants);
+            // console.log("Depart:", departureDate);
+            // console.log("Return:", returnDate);
+            // console.log("Cabin Class:", cabinClass);
+
             // Perform flight search
-            searchFlights(originEntityId, destinationEntityId, departureDate, returnDate, adult, child, infants, cabinClass);
+            if ($("#search-results").length) {
+                searchFlights(originEntityId, destinationEntityId, departureDate, returnDate, adult, child, infants, cabinClass);
+            } else {
+                alert("Please add a [flights_search_results] on this page to show the search results otherwise you can't be able to view the flights data");
+                return null;
+            }
         });
 
         // Event handler for the "Load More" button click

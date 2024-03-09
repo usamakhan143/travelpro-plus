@@ -1,13 +1,19 @@
 <?php
 
-add_shortcode('flights_search', 'show_flight_search_form');
+add_shortcode('flights_search_form', 'show_flight_search_form');
+add_shortcode('flights_search_results', 'showFlightSearchResults');
 add_action('wp_head', 'runJqueryTravelproPlus');
 add_action('wp_enqueue_scripts', 'enqueue_travelproplus_styles', 100);
 
 
 function show_flight_search_form()
 {
-    include TRAVELPRO_PLUS_PLUGIN_PATH . '/includes/templates/flight-search.php';
+    include TRAVELPRO_PLUS_PLUGIN_PATH . '/includes/templates/flights/flight-search.php';
+}
+
+function showFlightSearchResults()
+{
+    include TRAVELPRO_PLUS_PLUGIN_PATH . '/includes/templates/flights/flight-search-results.php';
 }
 
 function runJqueryTravelproPlus()
@@ -28,7 +34,7 @@ function enqueue_travelproplus_styles()
 
     // Check if the current page or post contains your plugin's shortcode
     if (is_page() || is_single()) {
-        if (stripos(get_the_content(), '[flights_search]') !== false) {
+        if (stripos(get_the_content(), '[flights_search_form]') !== false) {
 
             // Register your plugin's styles
             $fontAwesome = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/font-awesome-4.7/css/font-awesome.min.css';
