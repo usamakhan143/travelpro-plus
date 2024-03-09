@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,400");
+
+html,
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.flight-card {
+  width: calc(50% - 20px);
+  /* Adjusted width for two cards in a row */
+  height: 450px;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  /* Added margin for spacing between cards */
+}
+
+.main-flight-row {
+  margin-bottom: 23px;
+  padding: 30px;
+  border-radius: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  align-items: flex-start;
+}
+
+.flight-card-header {
+  height: 180px;
+  width: 100%;
+  background: linear-gradient(to bottom, #007bff 0%, #0063ff 100%);
+  padding: 30px 50px;
+  border-bottom: 7px solid #6dbe47;
+  position: relative;
+}
+
+.flight-logo {
+  height: 50px;
+  width: 100%;
+
+  img {
+    width: 32px;
+  }
+}
+
+.flight-data {
+  height: auto;
+  border-top: 2px solid #3e5177;
+  padding-top: 1em;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  text-align: left;
+
+  span {
+    display: block;
+  }
+
+  .title {
+    color: #000;
+    font-size: 16px;
+  }
+
+  .detail {
+    font-size: 18px;
+    padding-top: 3px;
+    color: white;
+  }
+}
+
+.flight-card-content {
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+.flight-row {
+  width: 100%;
+  padding: 30px 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.plane {
+  text-align: center;
+  position: relative;
+
+  img {
+    width: 90px;
+  }
+
+  &:before {
+    content: "";
+    width: 135px;
+    height: 3px;
+    background: #efefef;
+    position: absolute;
+    top: 45px;
+    left: -75px;
+  }
+
+  &:after {
+    content: "";
+    width: 135px;
+    height: 3px;
+    background-color: #efefef;
+    position: absolute;
+    top: 45px;
+    right: -75px;
+  }
+}
+
+.flight-from {
+  text-align: left;
+  float: left;
+}
+
+.flight-to {
+  text-align: right;
+  float: right;
+}
+
+.flight-from,
+.flight-to {
+  span {
+    display: block;
+  }
+
+  .from-code,
+  .to-code {
+    font-size: 45px;
+    color: #002c5f;
+    font-weight: 200;
+  }
+
+  .from-city,
+  .to-city {
+    font-size: 14px;
+    color: #002c5f;
+    font-weight: 400;
+    padding-top: 22px;
+  }
+}
+
+.flight-details-row {
+  width: 100%;
+  display: grid;
+  padding: 10px 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  span {
+    display: block;
+  }
+
+  .title {
+    color: #6a8597;
+    font-size: 14px;
+    letter-spacing: 3px;
+  }
+
+  .detail {
+    margin-top: 0.2em;
+    color: #002c5f;
+    font-size: 14px;
+  }
+
+  .flight-operator {
+    text-align: left;
+    float: left;
+  }
+
+  .flight-class {
+    float: right;
+    text-align: right;
+  }
+
+  .flight-number {
+    padding-left: 50px;
+  }
+}
+
+.book-now-container {
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #007bff;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.book-now-btn {
+  padding: 12px 26px;
+  background-color: lightblue;
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#search-results {
+  align-items: center;
+  justify-content: center;
+}
+
+.flight-price {
+  font-size: 24px;
+  flex: 1;
+  color: #fff;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.flight-load-more-container {
+  display: flex;
+}
+
+#flight-load-more-button {
+  flex: 1;
+  padding: 12px 26px;
+  background-color: lightblue;
+  color: #000;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Loader CSS */
+.flight-loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid #3498db;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .flight-price {
+    flex: 100%;
+  }
+}
