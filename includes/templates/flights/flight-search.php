@@ -151,21 +151,21 @@
 <!-- </div> -->
 <?php
 
-$id_attributes = get_travelpro_options('travelproplus_id_attributes');
-if ($id_attributes) {
-    $flattenedData = array();
+// $id_attributes = get_travelpro_options('travelproplus_id_attributes');
+// if ($id_attributes) {
+//     $flattenedData = array();
 
-    foreach ($id_attributes as $subArray) {
-        foreach ($subArray as $value) {
-            if ($value != '_') {
-                $flattenedData[] = '#' . trim($value);
-            }
-        }
-    }
+//     foreach ($id_attributes as $subArray) {
+//         foreach ($subArray as $value) {
+//             if ($value != '_') {
+//                 $flattenedData[] = '#' . trim($value);
+//             }
+//         }
+//     }
 
-    $resultString = implode(', ', $flattenedData);
-}
-$ids_separated = $resultString;
+//     $resultString = implode(', ', $flattenedData);
+// }
+// $ids_separated = $resultString;
 
 ?>
 

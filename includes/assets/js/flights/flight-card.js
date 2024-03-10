@@ -48,10 +48,12 @@ function createFlightCard(leg) {
           <span class="from-city">${leg.origin.city},${leg.origin.country}</span>
         </div>
         <div class="plane">
-          <img
-            src="https://cdn.onlinewebfonts.com/svg/img_537856.svg"
-            alt="Plane"
-          />
+          <div class="plane-img">
+            <img
+              src="https://cdn.onlinewebfonts.com/svg/img_537856.svg"
+              alt="Plane"
+            />
+          </div>
         </div>
         <div class="flight-to">
           <span class="to-code">${leg.destination.displayCode}</span>

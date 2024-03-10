@@ -41,9 +41,9 @@ function makeFlightAutocompleteAPIRequest(request, response, fieldId) {
             id: item.presentation.id, // Include entityId in autocomplete data
           };
         });
-
         // Display autocomplete suggestions
         response(autocompleteData);
+
         $(".origin-loader").hide();
         $(".destination-loader").hide();
       },
