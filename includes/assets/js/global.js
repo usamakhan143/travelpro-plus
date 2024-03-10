@@ -25,8 +25,8 @@
         autoUpdateInput: false,
       },
       function (start, end) {
-        $("#input-start-2").val(start.format("MM/DD/YYYY"));
-        $("#input-end-2").val(end.format("MM/DD/YYYY"));
+        $("#input-start-2").val(start.format("YYYY-MM-DD"));
+        $("#input-end-2").val(end.format("YYYY-MM-DD"));
       }
     );
   } catch (er) {
@@ -49,7 +49,7 @@
         parentEl: dropdownParent,
         opens: "left",
         locale: {
-          format: "DD/MM/YYYY",
+          format: "YYYY-MM-DD",
         },
       });
     });

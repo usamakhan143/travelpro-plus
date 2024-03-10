@@ -45,7 +45,7 @@ function createFlightCard(leg) {
 <div class="flight-row">
         <div class="flight-from">
           <span class="from-code">${leg.origin.displayCode}</span>
-          <span class="from-city">${leg.origin.city},${leg.origin.country}</span>
+          <span class="from-city">${leg.origin.city}, ${leg.origin.country}</span>
         </div>
         <div class="plane">
           <div class="plane-img">
@@ -70,7 +70,7 @@ function createFlightCard(leg) {
           <span class="detail">${leg.segments[0].flightNumber}</span>
         </div>
         <div class="flight-class">
-          <span class="title">Duration</span>
+          <span class="title">DURATION</span>
           <span class="detail">${leg.durationInMinutes}</span>
         </div>
       </div>

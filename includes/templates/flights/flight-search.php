@@ -112,7 +112,7 @@
                         <div class="travelpro-search-flight-col-2">
                             <div class="travelpro-search-flight-input-group m-b-0">
                                 <label class="travelpro-search-flight-label">Depart</label>
-                                <input class="input--style-1" type="text" name="depart" placeholder="YYYY-MM-DD" id="input-start" readonly />
+                                <input class="input--style-1" type="date" name="depart" />
                             </div>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                         <div class="travelpro-search-flight-col-2">
                             <div class="travelpro-search-flight-input-group m-b-0">
                                 <label class="travelpro-search-flight-label">Return</label>
-                                <input class="input--style-1" type="text" name="return" placeholder="YYYY-MM-DD" id="input-end" readonly />
+                                <input class="input--style-1" type="date" name="return" />
                             </div>
                         </div>
                         <div class="travelpro-search-flight-col-2">
@@ -168,82 +168,3 @@
 // $ids_separated = $resultString;
 
 ?>
-
-<script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/flights/location-autocomplete.js'; ?>"> </script>
-<script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/flights/search-flights.js'; ?>"> </script>
-<script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/flights/flight-card.js'; ?>"> </script>
-<script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/select2/select2.min.js'; ?>"></script>
-<script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/jquery-validate/jquery.validate.min.js'; ?>"></script>
-<script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/bootstrap-wizard/bootstrap.min.js'; ?>"></script>
-<script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/bootstrap-wizard/jquery.bootstrap.wizard.min.js'; ?>"></script>
-<script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/datepicker/moment.min.js'; ?>"></script>
-<script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/datepicker/daterangepicker.js'; ?>"></script>
-<script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/global.js'; ?>"></script>
-
-<script>
-    $(document).ready(function() {
-        // Hide the loader initially
-        $(".flight-loader-wrapper").hide();
-        $("#flight-load-more-button").hide();
-        $('.origin-loader').hide();
-        $('.destination-loader').hide();
-        $('.travelpro-plus-flight-results-heading').hide();
-        // Event handler for the search form submission
-        $('form[name="search-form"]').submit(function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            $('.travelpro-plus-flight-results-heading').show();
-
-
-            var originEntityId = $('input[name="origin"]').data('id');
-            var destinationEntityId = $('input[name="destination"]').data('id');
-            var adult = parseInt($(".quantity1 input").val());
-            var child = parseInt($(".quantity2 input").val());
-            var infants = parseInt($(".quantity3 input").val());
-            var departureDate = $('input[name="depart"]').val();
-            var returnDate = $('input[name="return"]').val();
-            var cabinClass = $('select[name="cabin"]').val();
-
-
-            if (originEntityId === undefined && destinationEntityId === undefined) {
-                alert('Please enter a valid origin, destination and wait for the results to appear. Then, select your origin, destination from the list.');
-                return;
-            } else if (originEntityId === undefined && destinationEntityId != undefined) {
-                alert('Please enter a valid origin and wait for the results to appear. Then, select your origin from the list.');
-                return;
-            } else if (originEntityId != undefined && destinationEntityId === undefined) {
-                alert('Please enter a valid destination and wait for the results to appear. Then, select your destination from the list.');
-                return;
-            }
-
-            // Log the values (you can perform any further actions here)
-            // console.log("From:", originEntityId);
-            // console.log("To:", destinationEntityId);
-            // console.log("Adult Passengers:", adult);
-            // console.log("Child Passengers:", child);
-            // console.log("Infant Passengers:", infants);
-            // console.log("Depart:", departureDate);
-            // console.log("Return:", returnDate);
-            // console.log("Cabin Class:", cabinClass);
-
-            // Perform flight search
-            if ($("#search-results").length) {
-                searchFlights(originEntityId, destinationEntityId, departureDate, returnDate, adult, child, infants, cabinClass);
-            } else {
-                alert("Please add a [flights_search_results] on this page to show the search results otherwise you can't be able to view the flights data");
-                return null;
-            }
-        });
-
-        // Event handler for the "Load More" button click
-        $('#flight-load-more-button').click(function() {
-            // Check if currentSessionId is defined
-            if (currentSessionId) {
-                // Call the function to load more flights with the current session ID
-                loadCompleteResults(currentSessionId);
-            } else {
-                console.error("Error: Current session ID is undefined");
-            }
-        });
-    });
-</script>

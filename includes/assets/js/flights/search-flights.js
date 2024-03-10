@@ -132,3 +132,14 @@ function processData(data) {
     searchResultsDiv.appendChild(flightRow);
   });
 }
+
+// Event handler for the "Load More" button click
+$("#flight-load-more-button").click(function () {
+  // Check if currentSessionId is defined
+  if (currentSessionId) {
+    // Call the function to load more flights with the current session ID
+    loadCompleteResults(currentSessionId);
+  } else {
+    console.error("Error: Current session ID is undefined");
+  }
+});
