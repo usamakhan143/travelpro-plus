@@ -68,6 +68,7 @@ function travelproPlusbeforeBodyClosingScripts()
     ?>
 
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/flights/location-autocomplete.js'; ?>"> </script>
+        <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/utilities.js'; ?>"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/flights/search-flights.js'; ?>"> </script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/flights/flight-card.js'; ?>"> </script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/select2/select2.min.js'; ?>"></script>
@@ -80,6 +81,7 @@ function travelproPlusbeforeBodyClosingScripts()
 
         <script>
             $(document).ready(function() {
+
                 // Hide the loader initially
                 $(".flight-loader-wrapper").hide();
                 $("#flight-load-more-button").hide();

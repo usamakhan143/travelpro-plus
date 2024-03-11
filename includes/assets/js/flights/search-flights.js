@@ -83,10 +83,7 @@ function loadCompleteResults(sessionId) {
 // Function to process flight search results
 function processData(data) {
   var searchResultsDiv = document.getElementById("search-results");
-  searchResultsDiv.innerHTML = ""; // Clear previous search results
-
-  // Results Heading
-  // var mainHeading = $("<h2>").text("Flight Search Results");
+  searchResultsDiv.innerHTML = "";
 
   var itineraries = data.data.itineraries;
 

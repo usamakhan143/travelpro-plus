@@ -45,7 +45,9 @@ function createFlightCard(leg) {
 <div class="flight-row">
         <div class="flight-from">
           <span class="from-code">${leg.origin.displayCode}</span>
-          <span class="from-city">${leg.origin.city}, ${leg.origin.country}</span>
+          <span class="from-city">${leg.origin.city}, ${
+    leg.origin.country
+  }</span>
         </div>
         <div class="plane">
           <div class="plane-img">
@@ -57,7 +59,9 @@ function createFlightCard(leg) {
         </div>
         <div class="flight-to">
           <span class="to-code">${leg.destination.displayCode}</span>
-          <span class="to-city">${leg.destination.city}, ${leg.destination.country}</span>
+          <span class="to-city">${leg.destination.city}, ${
+    leg.destination.country
+  }</span>
         </div>
       </div>
       <div class="flight-details-row">
@@ -71,7 +75,9 @@ function createFlightCard(leg) {
         </div>
         <div class="flight-class">
           <span class="title">DURATION</span>
-          <span class="detail">${leg.durationInMinutes}</span>
+          <span class="detail">${convertMinutesToHoursAndMinutes(
+            leg.durationInMinutes
+          )}</span>
         </div>
       </div>
 `;

@@ -6,13 +6,11 @@ html,
 
 .flight-card {
   width: calc(50% - 40px);
-  /* Adjusted width for two cards in a row */
   height: 450px;
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   margin: 20px;
-  /* Added margin for spacing between cards */
 }
 
 .main-flight-row {

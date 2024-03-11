@@ -2,40 +2,6 @@
 <div class="flight-loader-wrapper">
     <div class="loader"></div>
 </div>
-
-<!-- <form name="search-form" method="post">
-    <label for="origin">Origin:</label><br>
-    <input type="text" id="origin" name="origin"><br>
-    <div id="origin-suggestions"></div>
-    <label for="destination">Destination:</label><br>
-    <input type="text" id="destination" name="destination"><br>
-    <label for="departure_date">Departure Date:</label><br>
-    <input type="date" id="departure_date" name="departure_date"><br>
-    <label for="return_date">Return Date:</label><br>
-    <input type="date" id="return_date" name="return_date"><br>
-
-    <label for="adult">Adult:</label><br>
-    <input type="number" id="adult" name="adult"><br>
-
-    <label for="child">Child:</label><br>
-    <input type="number" id="child" name="child"><br>
-
-    <label for="infants">Infants:</label><br>
-    <input type="number" id="infants" name="infants"><br>
-
-    <label for="cabin">Cabin:</label><br />
-    <select id="cabin" name="cabin">
-        <option value="economy">Economy</option>
-        <option value="premium_economy">Premium Economy</option>
-        <option value="business">Business</option>
-        <option value="first">First</option>
-    </select>
-
-    <input type="submit" value="Search">
-
-    <br /><br /><br /><br /><br /><br />
-</form> -->
-
 <!-- <div class="page-wrapper bg-img-2 p-t-290 p-b-120"> -->
 <!-- <div class="wrapper wrapper--w1226"> -->
 <div class="flight-form-card flight-form-card-5">
