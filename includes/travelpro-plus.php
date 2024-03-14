@@ -24,6 +24,9 @@ function runJqueryTravelproPlus()
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet" />
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
     <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'node_modules/jquery/dist/jquery.min.js'; ?>"> </script>
     <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'node_modules/jquery-ui/dist/jquery-ui.min.js'; ?>"></script>
     <?php
@@ -42,13 +45,17 @@ function enqueue_travelproplus_styles()
             $datePickerRangeCss = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/datepicker/daterangepicker.css';
             $flightResults = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/flight-results.css';
             $select2 = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/select2/select2.min.css';
+            $flightResultsStyleTwo = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/flight-results-style-2.css';
+            $bootstrap5 = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css";
 
             wp_register_style('travelpro-plus-materialDesignIconic', $materialDesignIconic, array(), '1.0.0');
             wp_register_style('travelpro-plus-fontawesome', $fontAwesome, array(), '1.0.0');
             wp_register_style('travelpro-plus-select2', $select2, array(), '1.0.0');
             wp_register_style('travelpro-plus-daterangepicker', $datePickerRangeCss, array(), '1.0.0');
             wp_register_style('travelpro-plus-style', $searchFormCss, array(), '1.0.0');
+            wp_register_style('travelpro-plus-bootstrapFive', $bootstrap5, array(), '1.0.0');
             wp_register_style('travelpro-plus-flightresults', $flightResults, array(), '1.0.0');
+            wp_register_style('travelpro-plus-flightresultsStyleTwo', $flightResultsStyleTwo, array(), '1.0.0');
 
             // Enqueue your plugin's styles
             wp_enqueue_style('travelpro-plus-materialDesignIconic');
@@ -56,7 +63,9 @@ function enqueue_travelproplus_styles()
             wp_enqueue_style('travelpro-plus-select2');
             wp_enqueue_style('travelpro-plus-daterangepicker');
             wp_enqueue_style('travelpro-plus-style');
+            wp_enqueue_style('travelpro-plus-bootstrapFive');
             wp_enqueue_style('travelpro-plus-flightresults');
+            wp_enqueue_style('travelpro-plus-flightresultsStyleTwo');
         }
     }
 }
@@ -66,7 +75,7 @@ function travelproPlusbeforeBodyClosingScripts()
 {
     if (is_page() && (has_shortcode(get_the_content(), 'flights_search_form') && has_shortcode(get_the_content(), 'flights_search_results'))) {
     ?>
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/flights/location-autocomplete.js'; ?>"> </script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/utilities.js'; ?>"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/flights/search-flights.js'; ?>"> </script>

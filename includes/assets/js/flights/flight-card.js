@@ -95,3 +95,83 @@ function createFlightCard(leg) {
 
   return flightCard;
 }
+
+function flightCardStyleTwo(leg) {
+  // Flight data row or main-strip
+  var flightDataRow = document.createElement("div");
+  flightDataRow.classList.add("row", "travelpro-plus-spacing");
+
+  // Flight Logo, It's a child of main-strip
+  var flightLogoColTwo = document.createElement("div");
+  flightLogoColTwo.classList.add("col-2");
+
+  // Airline logo
+  var airlineLogo = document.createElement("img");
+  airlineLogo.src = leg.carriers.marketing[0].logoUrl;
+  airlineLogo.alt = leg.carriers.marketing[0].name;
+
+  // span for showing Operator name if airline image is undefined
+  var airlineName = document.createElement("span");
+  airlineName.classList.add("travelpro-plus-leginfo-duration");
+
+  if (leg.carriers.marketing[0].logoUrl !== undefined) {
+    flightLogoColTwo.appendChild(airlineLogo);
+  } else {
+    airlineName.textContent = leg.carriers.marketing[0].name;
+    flightLogoColTwo.appendChild(airlineName);
+  }
+
+  // Flight data, It's a child of main-strip
+  var flightDataMainColTen = document.createElement("div");
+  flightDataMainColTen.classList.add("col-10");
+
+  flightDataMainColTen.innerHTML = `
+  
+  <div class="travelpro-plus-leginfo">
+    <div class="travelpro-plus-leginfo-from-time">
+      <span class="travelpro-leginfo-timings">
+      ${new Date(leg.departure).toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      })}
+      </span>
+      <span class="travelpro-leginfo-location">${leg.origin.displayCode}</span>
+    </div>
+    <div class="travelpro-plus-leginfo-stops">
+      <span class="travelpro-plus-leginfo-duration">${convertMinutesToHoursAndMinutes(
+        leg.durationInMinutes
+      )}</span>
+      <div class="travelpro-plus-LegInfo_stopLine">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xml:space="preserve"
+          viewBox="0 0 12 12"
+          class="travelpro-plus-LegInfo_planeEnd"
+        >
+          <path
+            fill="#898294"
+            d="M3.922 12h.499a.52.52 0 0 0 .444-.247L7.949 6.8l3.233-.019A.8.8 0 0 0 12 6a.8.8 0 0 0-.818-.781L7.949 5.2 4.866.246A.525.525 0 0 0 4.421 0h-.499a.523.523 0 0 0-.489.71L5.149 5.2H2.296l-.664-1.33a.523.523 0 0 0-.436-.288L0 3.509 1.097 6 0 8.491l1.196-.073a.523.523 0 0 0 .436-.288l.664-1.33h2.853l-1.716 4.49a.523.523 0 0 0 .489.71"
+          ></path>
+        </svg>
+      </div>
+      <span class="travelpro-plus-leginfo-duration">Direct</span>
+    </div>
+    <div class="travelpro-plus-leginfo-to-time">
+      <span class="travelpro-leginfo-timings left-align">
+      ${new Date(leg.arrival).toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      })}
+      </span>
+      <span class="travelpro-leginfo-location left-align">${
+        leg.destination.displayCode
+      }</span>
+    </div>
+  </div>
+  `;
+
+  flightDataRow.appendChild(flightLogoColTwo);
+  flightDataRow.appendChild(flightDataMainColTen);
+
+  return flightDataRow;
+}
