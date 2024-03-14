@@ -1107,6 +1107,7 @@ input[type="number"]::-webkit-outer-spin-button {
   background-image: -moz-linear-gradient(bottom, #c0984c 0%, #e1c976 100%);
   background-image: -o-linear-gradient(bottom, #c0984c 0%, #e1c976 100%);
   background-image: linear-gradient(to top, #c0984c 0%, #e1c976 100%);
+  padding: 22px 50px;
 }
 
 .travelpro-search-flight-input-group-2 {

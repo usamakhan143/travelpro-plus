@@ -98,14 +98,20 @@ function travelproPlusbeforeBodyClosingScripts()
                 $('.destination-loader').hide();
                 $('.travelpro-plus-flight-results-heading').hide();
 
+                let isOneWay = false;
+
                 // Hide and Show return date on the basis of trip type.
                 $('input[type=radio][name=tripType]').change(function() {
                     if (this.value === 'oneWay') {
                         $('.return-date').hide();
                         $('.depart-date').removeClass('col-md-3').addClass('col-md-6');
+                        $("input[name='return']").removeAttr('required');
+                        isOneWay = true;
                     } else if (this.value === 'roundTrip') {
                         $('.return-date').show();
                         $('.depart-date').removeClass('col-md-6').addClass('col-md-3');
+                        $("input[name='return']").prop('required', true);
+                        isOneWay = false;
                     }
                 });
 
@@ -139,7 +145,12 @@ function travelproPlusbeforeBodyClosingScripts()
 
                     // Perform flight search
                     if ($("#search-results").length) {
-                        searchFlights(originEntityId, destinationEntityId, departureDate, returnDate, adult, child, infants, cabinClass);
+                        if (isOneWay) {
+                            searchOneWayFlights(originEntityId, destinationEntityId, departureDate, adult, child, infants, cabinClass, isOneWay);
+                        } else {
+
+                            searchFlights(originEntityId, destinationEntityId, departureDate, returnDate, adult, child, infants, cabinClass, isOneWay);
+                        }
                     } else {
                         alert("Please add a [flights_search_results] on this page to show the search results otherwise you can't be able to view the flights data");
                         return null;

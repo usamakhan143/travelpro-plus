@@ -7,7 +7,8 @@ function searchFlights(
   adult,
   child,
   infants,
-  cabinClass
+  cabinClass,
+  isOneWay
 ) {
   var apiUrl = "https://sky-scanner3.p.rapidapi.com/flights/search-roundtrip";
   $(".flight-loader-wrapper").show();
@@ -31,18 +32,82 @@ function searchFlights(
     success: function (data) {
       // Store the current session ID
       currentSessionId = data.data.context.sessionId;
+      console.log("sessionId", currentSessionId);
+      console.log("data", data);
       if (
         data.data.context.status === "incomplete" &&
         data.data.context.totalResults === 0
       ) {
         // Call function to load complete results
+        loadCompleteResults(currentSessionId, isOneWay);
+      } else if (
+        data.data.context.status === "incomplete" &&
+        data.data.context.totalResults > 0
+      ) {
+        // Process the flight search results as needed
         $("#flight-load-more-button").show();
+        console.log("Incomplete Flight search results:", data);
+        processDataStyleTwo(data, isOneWay);
+      }
+      $(".flight-loader-wrapper").hide();
+    },
+    error: function (xhr, status, error) {
+      console.error("Error:", error);
+      $(".flight-loader-wrapper").hide();
+      alert(
+        "Please try again! There is something went wrong while searching flights."
+      );
+      // Handle the error gracefully
+    },
+  });
+}
+
+// One Way Flights
+function searchOneWayFlights(
+  originEntityId,
+  destinationEntityId,
+  departureDate,
+  adult,
+  child,
+  infants,
+  cabinClass,
+  isOneWay
+) {
+  var apiUrl = "https://sky-scanner3.p.rapidapi.com/flights/search-one-way";
+  $(".flight-loader-wrapper").show();
+  $.ajax({
+    url: apiUrl,
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": apiKey,
+      "X-RapidAPI-Host": apiHost,
+    },
+    data: {
+      fromEntityId: originEntityId,
+      toEntityId: destinationEntityId,
+      departDate: departureDate,
+      adults: adult,
+      children: child,
+      infants: infants,
+      cabinClass: cabinClass,
+    },
+    success: function (data) {
+      // Store the current session ID
+      currentSessionId = data.data.context.sessionId;
+      console.log("sessionId", currentSessionId);
+      console.log("One way", data);
+      if (
+        data.data.context.status === "incomplete" &&
+        data.data.context.totalResults === 0
+      ) {
+        // Call function to load complete results
         loadCompleteResults(currentSessionId);
       } else if (
         data.data.context.status === "incomplete" &&
         data.data.context.totalResults > 0
       ) {
         // Process the flight search results as needed
+        $("#flight-load-more-button").show();
         console.log("Incomplete Flight search results:", data);
         processDataStyleTwo(data);
       }
@@ -60,7 +125,7 @@ function searchFlights(
 }
 
 // Function to load complete results using session ID
-function loadCompleteResults(sessionId) {
+function loadCompleteResults(sessionId, isOneWay) {
   $(".flight-loader-wrapper").show();
   var apiUrl = "https://sky-scanner3.p.rapidapi.com/flights/search-incomplete";
   $.ajax({
@@ -75,7 +140,7 @@ function loadCompleteResults(sessionId) {
     },
     success: function (data) {
       // Handle the complete results
-      processDataStyleTwo(data);
+      processDataStyleTwo(data, isOneWay);
       console.log("Complete flight search results:", data);
       $(".flight-loader-wrapper").hide();
       $("#flight-load-more-button").hide();
@@ -90,13 +155,13 @@ function loadCompleteResults(sessionId) {
 }
 
 // Function to process flight search results
-function processData(data) {
+function processData(data, isOneWay) {
   var searchResultsDiv = document.getElementById("search-results");
   searchResultsDiv.innerHTML = "";
 
   var itineraries = data.data.itineraries;
 
-  if (itineraries.length === 0) {
+  if (itineraries.length === 0 || itineraries === undefined) {
     searchResultsDiv.innerHTML = "<p>No flights found.</p>";
     return;
   }
@@ -139,13 +204,13 @@ function processData(data) {
   });
 }
 
-function processDataStyleTwo(data) {
+function processDataStyleTwo(data, isOneWay) {
   var searchResultsDiv = document.getElementById("search-results");
   searchResultsDiv.innerHTML = "";
 
   var itineraries = data.data.itineraries;
 
-  if (itineraries.length === 0) {
+  if (itineraries.length === 0 || itineraries === undefined) {
     searchResultsDiv.innerHTML = "<p>No flights found.</p>";
     return;
   }
@@ -163,8 +228,9 @@ function processDataStyleTwo(data) {
     var outboundCard = flightCardStyleTwo(itinerary.legs[0]);
 
     // Return flight card
-    var returnCard = flightCardStyleTwo(itinerary.legs[1]);
-
+    if (isOneWay === false) {
+      var returnCard = flightCardStyleTwo(itinerary.legs[1]);
+    }
     // Parent is .row = mainRow
     var columnOfEight = document.createElement("div");
     columnOfEight.classList.add("col-md-9");
@@ -214,7 +280,7 @@ function processDataStyleTwo(data) {
     priceAndButton.appendChild(bookNowButton);
 
     columnOfEight.appendChild(outboundCard); // Row 1
-    columnOfEight.appendChild(returnCard); // Row 2
+    isOneWay === false ? columnOfEight.appendChild(returnCard) : null; // Row 2
     columnOfEight.appendChild(divider); // Divider
     columnOfEight.appendChild(lastRowForPricingAndOperator); // Row 3
     columnOfFour.appendChild(priceAndButton); // col-md-4 (price, button)
@@ -228,11 +294,11 @@ function processDataStyleTwo(data) {
 }
 
 // Event handler for the "Load More" button click
-$("#flight-load-more-button").click(function () {
+$("#flight-load-more-button").click(function (isOneWay) {
   // Check if currentSessionId is defined
   if (currentSessionId) {
     // Call the function to load more flights with the current session ID
-    loadCompleteResults(currentSessionId);
+    loadCompleteResults(currentSessionId, isOneWay);
   } else {
     console.error("Error: Current session ID is undefined");
   }
