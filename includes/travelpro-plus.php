@@ -9,7 +9,7 @@ add_action('wp_footer', 'travelproPlusbeforeBodyClosingScripts', 9999);
 
 function show_flight_search_form()
 {
-    include TRAVELPRO_PLUS_PLUGIN_PATH . '/includes/templates/flights/flight-search.php';
+    include TRAVELPRO_PLUS_PLUGIN_PATH . '/includes/templates/flights/flight-search-style-2.php';
 }
 
 function showFlightSearchResults()
@@ -97,6 +97,18 @@ function travelproPlusbeforeBodyClosingScripts()
                 $('.origin-loader').hide();
                 $('.destination-loader').hide();
                 $('.travelpro-plus-flight-results-heading').hide();
+
+                // Hide and Show return date on the basis of trip type.
+                $('input[type=radio][name=tripType]').change(function() {
+                    if (this.value === 'oneWay') {
+                        $('.return-date').hide();
+                        $('.depart-date').removeClass('col-md-3').addClass('col-md-6');
+                    } else if (this.value === 'roundTrip') {
+                        $('.return-date').show();
+                        $('.depart-date').removeClass('col-md-6').addClass('col-md-3');
+                    }
+                });
+
                 // Event handler for the search form submission
                 $('form[name="search-form"]').submit(function(event) {
                     event.preventDefault(); // Prevent the default form submission
@@ -124,8 +136,6 @@ function travelproPlusbeforeBodyClosingScripts()
                         alert('Please enter a valid destination and wait for the results to appear. Then, select your destination from the list.');
                         return;
                     }
-
-                    // console.log([departureDate, returnDate])
 
                     // Perform flight search
                     if ($("#search-results").length) {

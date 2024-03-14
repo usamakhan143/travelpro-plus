@@ -1035,6 +1035,10 @@ input[type="number"]::-webkit-outer-spin-button {
     padding: 40px 30px;
     padding-bottom: 55px;
   }
+
+  .bootstrap-form-label {
+    padding-top: 15px;
+  }
 }
 
 /* custom Css */
@@ -1050,4 +1054,61 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .error-field {
   background: #ff6c6ce3 !important;
+}
+
+/* bootstrap form */
+
+.bootstrap-form-label {
+  font-size: 14px;
+  color: #fff;
+  padding-left: 8px;
+  text-transform: capitalize;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.btn-submit-for-bootstrap {
+  /* line-height: 52px; */
+  font-family: inherit;
+  background-color: #00ad5f !important;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: #fff !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  padding: 11.5px 14px !important;
+}
+
+.triptypelabel {
+  font-size: 16px;
+  color: #fff;
+  padding-left: 10px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.flight-form-card-6 {
+  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#c0984c),
+    to(#e1c976)
+  );
+  background-image: -webkit-linear-gradient(bottom, #c0984c 0%, #e1c976 100%);
+  background-image: -moz-linear-gradient(bottom, #c0984c 0%, #e1c976 100%);
+  background-image: -o-linear-gradient(bottom, #c0984c 0%, #e1c976 100%);
+  background-image: linear-gradient(to top, #c0984c 0%, #e1c976 100%);
+}
+
+.travelpro-search-flight-input-group-2 {
+  position: relative;
 }
