@@ -107,6 +107,7 @@ function flightCardStyleTwo(leg) {
 
   // Airline logo
   var airlineLogo = document.createElement("img");
+  airlineLogo.classList.add("airlineLogos");
   airlineLogo.src = leg.carriers.marketing[0].logoUrl;
   airlineLogo.alt = leg.carriers.marketing[0].name;
 

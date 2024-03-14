@@ -143,6 +143,11 @@
   margin-top: 15px;
 }
 
+.airlineLogos {
+  height: 32px;
+  width: 32px;
+}
+
 @media (max-width: 768px) {
   .travelpro-plus-select-border {
     border-left: none;
