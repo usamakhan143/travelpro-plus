@@ -23,7 +23,7 @@ function searchFlights(
       toEntityId: destinationEntityId,
       departDate: departureDate,
       returnDate: returnDate,
-      adult: adult,
+      adults: adult,
       children: child,
       infants: infants,
       cabinClass: cabinClass,
@@ -31,22 +31,29 @@ function searchFlights(
     success: function (data) {
       // Store the current session ID
       currentSessionId = data.data.context.sessionId;
-      if (data.data.context.status === "incomplete") {
+      if (
+        data.data.context.status === "incomplete" &&
+        data.data.context.totalResults === 0
+      ) {
         // Call function to load complete results
         $("#flight-load-more-button").show();
-        processDataStyleTwo(data);
-      } else if (data.data.context.status === "complete") {
+        loadCompleteResults(currentSessionId);
+      } else if (
+        data.data.context.status === "incomplete" &&
+        data.data.context.totalResults > 0
+      ) {
         // Process the flight search results as needed
-        console.log("complete Flight search results:", data);
-        processDataStyleTwo(data);
-      } else {
-        console.log("Else Flight search results:", data);
+        console.log("Incomplete Flight search results:", data);
         processDataStyleTwo(data);
       }
       $(".flight-loader-wrapper").hide();
     },
     error: function (xhr, status, error) {
       console.error("Error:", error);
+      $(".flight-loader-wrapper").hide();
+      alert(
+        "Please try again! There is something went wrong while searching flights."
+      );
       // Handle the error gracefully
     },
   });
@@ -68,13 +75,15 @@ function loadCompleteResults(sessionId) {
     },
     success: function (data) {
       // Handle the complete results
-      console.log("Complete flight search results:", data);
       processDataStyleTwo(data);
+      console.log("Complete flight search results:", data);
       $(".flight-loader-wrapper").hide();
       $("#flight-load-more-button").hide();
     },
     error: function (xhr, status, error) {
       console.error("Error:", error);
+
+      $(".flight-loader-wrapper").hide();
       // Handle the error gracefully
     },
   });

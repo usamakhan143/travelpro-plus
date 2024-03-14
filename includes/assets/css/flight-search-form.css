@@ -331,7 +331,7 @@ a:active {
   -o-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
   transition: all 0.4s ease;
-  margin-top: 35px;
+  margin-top: 26px;
   padding: 15.5px 14px;
 }
 
@@ -942,13 +942,13 @@ input[type="number"]::-webkit-outer-spin-button {
     linear,
     left bottom,
     left top,
-    from(#c949fe),
-    to(#47a9ff)
+    from(#c0984c),
+    to(#e1c976)
   );
-  background-image: -webkit-linear-gradient(bottom, #c949fe 0%, #47a9ff 100%);
-  background-image: -moz-linear-gradient(bottom, #c949fe 0%, #47a9ff 100%);
-  background-image: -o-linear-gradient(bottom, #c949fe 0%, #47a9ff 100%);
-  background-image: linear-gradient(to top, #c949fe 0%, #47a9ff 100%);
+  background-image: -webkit-linear-gradient(bottom, #c0984c 0%, #e1c976 100%);
+  background-image: -moz-linear-gradient(bottom, #c0984c 0%, #e1c976 100%);
+  background-image: -o-linear-gradient(bottom, #c0984c 0%, #e1c976 100%);
+  background-image: linear-gradient(to top, #c0984c 0%, #e1c976 100%);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
