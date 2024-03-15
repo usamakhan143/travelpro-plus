@@ -54,7 +54,7 @@
                         </div>
                         <div class="col-md-3 return-date">
                             <label class="bootstrap-form-label">Return</label>
-                            <input class="form-control input--style-1" type="date" name="return" required>
+                            <input class="form-control input--style-1" type="date" name="return">
                         </div>
                         <div class="col-md-5">
                             <label class="bootstrap-form-label">Passengers</label>
