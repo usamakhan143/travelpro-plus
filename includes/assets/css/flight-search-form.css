@@ -658,11 +658,11 @@ button {
   font-size: 24px;
   color: #808080;
   position: absolute;
-  line-height: 43px;
+  line-height: 40px;
   right: 20px;
   top: 1px;
   width: 20px;
-  background: #fff;
+  background: transparent;
   text-align: center;
   cursor: pointer;
 }
@@ -1039,6 +1039,10 @@ input[type="number"]::-webkit-outer-spin-button {
   .bootstrap-form-label {
     padding-top: 15px;
   }
+
+  .flight-form-card-6 {
+    padding: 30px 25px !important;
+  }
 }
 
 /* custom Css */
@@ -1071,7 +1075,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .btn-submit-for-bootstrap {
   /* line-height: 52px; */
   font-family: inherit;
-  background-color: #00ad5f !important;
+  background-color: #aa8643 !important;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -1084,6 +1088,11 @@ input[type="number"]::-webkit-outer-spin-button {
   -moz-transition: all 0.4s ease;
   transition: all 0.4s ease;
   padding: 11.5px 14px !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-submit-for-bootstrap:hover {
+  background-color: #000 !important;
 }
 
 .triptypelabel {
@@ -1096,20 +1105,20 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .flight-form-card-6 {
   font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#c0984c),
-    to(#e1c976)
+  background: rgb(192, 152, 76);
+  background: linear-gradient(
+    0deg,
+    rgba(192, 152, 76, 0.9164040616246498) 24%,
+    rgba(0, 0, 0, 1) 100%
   );
-  background-image: -webkit-linear-gradient(bottom, #c0984c 0%, #e1c976 100%);
-  background-image: -moz-linear-gradient(bottom, #c0984c 0%, #e1c976 100%);
-  background-image: -o-linear-gradient(bottom, #c0984c 0%, #e1c976 100%);
-  background-image: linear-gradient(to top, #c0984c 0%, #e1c976 100%);
+  opacity: 0.9;
   padding: 22px 50px;
 }
 
 .travelpro-search-flight-input-group-2 {
   position: relative;
+}
+
+.return-date {
+  display: none;
 }

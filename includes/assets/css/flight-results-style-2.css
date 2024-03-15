@@ -148,6 +148,11 @@
   width: 32px;
 }
 
+.book-select-btn {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
 @media (max-width: 768px) {
   .travelpro-plus-select-border {
     border-left: none;

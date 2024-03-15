@@ -147,7 +147,7 @@ function loadCompleteResults(sessionId, isOneWay) {
     },
     error: function (xhr, status, error) {
       console.error("Error:", error);
-
+      alert("Try Again! Please click again to load the complete flights.");
       $(".flight-loader-wrapper").hide();
       // Handle the error gracefully
     },
@@ -264,7 +264,7 @@ function processDataStyleTwo(data, isOneWay) {
 
     // Book now button created
     var bookNowButton = document.createElement("button");
-    bookNowButton.classList.add("btn", "btn-success");
+    bookNowButton.classList.add("btn", "btn-success", "book-select-btn");
     bookNowButton.textContent = "Select ➜";
 
     bookNowButton.setAttribute("type", "button");

@@ -98,7 +98,7 @@ function travelproPlusbeforeBodyClosingScripts()
                 $('.destination-loader').hide();
                 $('.travelpro-plus-flight-results-heading').hide();
 
-                let isOneWay = false;
+                let isOneWay = true;
 
                 // Hide and Show return date on the basis of trip type.
                 $('input[type=radio][name=tripType]').change(function() {
@@ -120,6 +120,11 @@ function travelproPlusbeforeBodyClosingScripts()
                     event.preventDefault(); // Prevent the default form submission
 
                     $('.travelpro-plus-flight-results-heading').show();
+
+                    // Scroll to the search result section
+                    $('html, body').animate({
+                        scrollTop: $("#search-results").offset().top
+                    }, 1000); // Adjust the duration as needed
 
 
                     var originEntityId = $('input[name="origin"]').data('id');
