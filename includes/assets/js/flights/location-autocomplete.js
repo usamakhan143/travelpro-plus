@@ -1,7 +1,7 @@
 const apiWithEndpoint =
-  "https://sky-scanner3.p.rapidapi.com/flights/auto-complete?";
+  "https://priceline-com-provider.p.rapidapi.com/v2/flight/autoComplete?";
 const apiKey = "aa97ac4b72mshe4ad620e30f1ba2p19ff5ajsn93214a8b8fb3";
-const apiHost = "sky-scanner3.p.rapidapi.com";
+const apiHost = "priceline-com-provider.p.rapidapi.com";
 var debounceTimer; // Variable to hold the debounce timer
 var currentSessionId;
 
@@ -18,27 +18,38 @@ function makeFlightAutocompleteAPIRequest(request, response, fieldId) {
     : null;
 
   if (keyword.length >= 3) {
-    var apiUrl = apiWithEndpoint + "query=" + keyword;
+    var apiUrl = apiWithEndpoint + "string=" + keyword;
 
     $.ajax({
       url: apiUrl,
       method: "GET",
+      data: {
+        airports: true,
+        pois: false,
+        cities: false,
+        hotels: false,
+        regions: false,
+      },
       headers: {
         "X-RapidAPI-Key": apiKey,
         "X-RapidAPI-Host": apiHost,
       },
       success: function (data) {
+        let airports =
+          data.getAirAutoComplete.results.getSolr.results.data.airport_data;
         // Handle the API response and display results in the autocomplete
-        var autocompleteData = data.data.map(function (item) {
-          var dataItem = item.presentation.suggestionTitle;
-          if (dataItem.includes(" (Any)")) {
-            dataItem = dataItem.replace(" (Any)", "");
-          }
+
+        var autocompleteData = Object.keys(airports).map(function (item) {
+          var dataItem =
+            airports[item].airport + " " + "(" + airports[item].iata + ")";
+          // if (dataItem.includes(" (Any)")) {
+          //   dataItem = dataItem.replace(" (Any)", "");
+          // }
 
           return {
             label: dataItem, // Display city and country
             value: dataItem, // Value to be placed in the input field
-            id: item.presentation.id, // Include entityId in autocomplete data
+            id: airports[item].iata, // Include entityId in autocomplete data
           };
         });
         // Display autocomplete suggestions
