@@ -5,8 +5,8 @@ function searchFlights(
   departureDate,
   returnDate,
   adult,
-  child,
   infants,
+  child,
   cabinClass,
   isOneWay
 ) {
