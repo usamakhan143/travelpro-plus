@@ -2,11 +2,12 @@
 
 add_shortcode('flights_search_form', 'show_flight_search_form');
 add_shortcode('flights_search_results', 'showFlightSearchResults');
+add_shortcode('hotel_search_form', 'show_hotel_search_form');
 add_action('wp_head', 'runJqueryTravelproPlus');
 add_action('wp_enqueue_scripts', 'enqueue_travelproplus_styles', 100);
 add_action('wp_footer', 'travelproPlusbeforeBodyClosingScripts', 9999);
 
-
+// Flight Search Form
 function show_flight_search_form()
 {
     include TRAVELPRO_PLUS_PLUGIN_PATH . '/includes/templates/flights/flight-search-style-2.php';
@@ -15,6 +16,12 @@ function show_flight_search_form()
 function showFlightSearchResults()
 {
     include TRAVELPRO_PLUS_PLUGIN_PATH . '/includes/templates/flights/flight-search-results.php';
+}
+
+// Hotel Search Form
+function show_hotel_search_form()
+{
+    include TRAVELPRO_PLUS_PLUGIN_PATH . '/includes/templates/hotels/hotel-search.php';
 }
 
 function runJqueryTravelproPlus()
@@ -36,7 +43,7 @@ function enqueue_travelproplus_styles()
 {
     // Check if the current page or post contains your plugin's shortcode
     if (is_page() || is_single()) {
-        if ((has_shortcode(get_the_content(), 'flights_search_form') && has_shortcode(get_the_content(), 'flights_search_results'))) {
+        if ((has_shortcode(get_the_content(), 'flights_search_form') && has_shortcode(get_the_content(), 'flights_search_results')) || has_shortcode(get_the_content(), 'hotel_search_form')) {
 
             // Register your plugin's styles
             $fontAwesome = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/font-awesome-4.7/css/font-awesome.min.css';
@@ -73,10 +80,11 @@ function enqueue_travelproplus_styles()
 
 function travelproPlusbeforeBodyClosingScripts()
 {
-    if (is_page() && (has_shortcode(get_the_content(), 'flights_search_form') && has_shortcode(get_the_content(), 'flights_search_results'))) {
+    if (is_page() && (has_shortcode(get_the_content(), 'flights_search_form') && has_shortcode(get_the_content(), 'flights_search_results')) || has_shortcode(get_the_content(), 'hotel_search_form')) {
     ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/flights/location-autocomplete.js'; ?>"> </script>
+        <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/hotels/hotel-autocomplete.js'; ?>"> </script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/utilities.js'; ?>"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/flights/search-flights.js'; ?>"> </script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/flights/flight-card.js'; ?>"> </script>
@@ -97,6 +105,7 @@ function travelproPlusbeforeBodyClosingScripts()
                 $('.origin-loader').hide();
                 $('.destination-loader').hide();
                 $('.travelpro-plus-flight-results-heading').hide();
+                $(".hotel-destination-loader").hide();
 
                 let isOneWay = true;
 

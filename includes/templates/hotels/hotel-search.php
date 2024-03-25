@@ -2,36 +2,34 @@
 <div class="flight-loader-wrapper">
     <div class="loader"></div>
 </div>
-
-<div class="flight-form-card flight-form-card-5">
-    <div class="flight-form-card-body">
-        <form name="search-form" method="post">
-            <div class="travelpro-search-fm-flight-row row-space">
-                <div class="travelpro-search-flight-col-2">
-                    <div class="travelpro-search-flight-input-group">
-                        <label class="travelpro-search-flight-label">from</label>
-                        <input class="input--style-1" id="travelpro-plus-flight-origin" type="text" name="origin" placeholder="City, Region or Airport" required="required" />
-                        <div class="icon-container origin-loader">
-                            <i class="spinner"></i>
+<div class="row justify-content-center">
+    <div class="col-md-12">
+        <div class="card flight-form-card-6">
+            <div class="card-body">
+                <form name="search-form" method="post">
+                    <div class="mb-3 row">
+                        <div class="col-md-4">
+                            <div class="travelpro-search-flight-input-group-2">
+                                <label class="bootstrap-form-label">Destination</label>
+                                <input class="form-control input--style-1" type="text" id="travelpro-plus-hotel-destination" name="destination" placeholder="City, Region" required="required">
+                                <div class="icon-container hotel-destination-loader">
+                                    <i class="spinner"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="bootstrap-form-label">Check-in</label>
+                            <input class="form-control input--style-1" type="date" name="depart" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="bootstrap-form-label">Check-out</label>
+                            <input class="form-control input--style-1" type="date" name="return" required>
                         </div>
                     </div>
-                </div>
-                <div class="travelpro-search-flight-col-2">
-                    <div class="travelpro-search-flight-input-group">
-                        <label class="travelpro-search-flight-label">to</label>
-                        <input class="input--style-1" id="travelpro-plus-flight-destination" type="text" name="destination" placeholder="City, Region or Airport" required="required" />
-                        <div class="icon-container destination-loader">
-                            <i class="spinner"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="travelpro-search-fm-flight-row row-space">
-                <div class="travelpro-search-flight-col-2">
-                    <div class="travelpro-search-fm-flight-row row-space">
-                        <div class="travelpro-search-flight-col-2">
-                            <div class="travelpro-search-flight-input-group m-b-0">
-                                <label class="travelpro-search-flight-label">Passengers</label>
+                    <div class="mb-3 row">
+                        <div class="col-md-10">
+                            <label class="bootstrap-form-label">Passengers</label>
+                            <div class="input-group">
                                 <div class="input-group-icon" id="js-select-special">
                                     <input class="input--style-1 input--text-small" type="text" name="passengers" value="1 Adult, 0 Child, 0 Infant" disabled="disabled" id="info" />
                                     <i class="zmdi zmdi-plus input-icon"></i>
@@ -45,7 +43,7 @@
                                                     <span class="name">Adult</span>
                                                     <div class="quantity quantity1">
                                                         <span class="minus">-</span>
-                                                        <input class="inputQty" type="number" min="0" value="1" />
+                                                        <input class="inputQty" type="number" min="1" value="1" />
                                                         <span class="plus">+</span>
                                                     </div>
                                                 </li>
@@ -68,47 +66,18 @@
                                             </ul>
                                         </li>
                                     </ul>
-                                    <!-- <div class="list-room__footer">
-                            <a href="#" id="btn-add-room">Add room</a>
-                          </div> -->
                                 </div>
                             </div>
                         </div>
-                        <div class="travelpro-search-flight-col-2">
-                            <div class="travelpro-search-flight-input-group m-b-0">
-                                <label class="travelpro-search-flight-label">Depart</label>
-                                <input class="input--style-1" type="date" name="depart" />
+                        <div class="col-md-2">
+                            <label class="bootstrap-form-label">&nbsp;</label>
+                            <div class="d-grid">
+                                <button class="btn btn-submit-for-bootstrap" type="submit">Search</button>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="travelpro-search-flight-col-2">
-                    <div class="travelpro-search-fm-flight-row row-space">
-                        <div class="travelpro-search-flight-col-2">
-                            <div class="travelpro-search-flight-input-group m-b-0">
-                                <label class="travelpro-search-flight-label">Return</label>
-                                <input class="input--style-1" type="date" name="return" />
-                            </div>
-                        </div>
-                        <div class="travelpro-search-flight-col-2">
-                            <div class="submission-row">
-                                <div class="select-container">
-                                    <label class="travelpro-search-flight-label">Cabin Class</label>
-                                    <select id="cabin" name="cabin" class="select--style-1">
-                                        <option value="economy">Economy</option>
-                                        <option value="premium_economy">Premium Economy</option>
-                                        <option value="business">Business</option>
-                                        <option value="first">First</option>
-                                    </select>
-                                </div>
-                                <div class="button-container">
-                                    <button class="travelpro-flight-search-btn-submit" type="submit">search</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </div>
