@@ -1,5 +1,5 @@
 <!-- Loader HTML -->
-<div class="flight-loader-wrapper">
+<div class="hotel-loader-wrapper">
     <div class="loader"></div>
 </div>
 <div class="row justify-content-center">

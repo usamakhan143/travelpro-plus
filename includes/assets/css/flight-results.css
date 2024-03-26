@@ -213,11 +213,13 @@ html,
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.flight-load-more-container {
+.flight-load-more-container,
+.hotel-load-more-container {
   display: flex;
 }
 
-#flight-load-more-button {
+#flight-load-more-button,
+#hotel-load-more-button {
   flex: 1;
   padding: 12px 26px;
   background-color: lightblue;
@@ -232,7 +234,8 @@ html,
 }
 
 /* Loader CSS */
-.flight-loader-wrapper {
+.flight-loader-wrapper,
+.hotel-loader-wrapper {
   position: fixed;
   top: 0;
   left: 0;
@@ -264,7 +267,8 @@ html,
   }
 }
 
-.travelpro-plus-flight-results-heading {
+.travelpro-plus-flight-results-heading,
+.travelpro-plus-hotel-results-heading {
   text-align: center;
   font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
   padding-bottom: 20px;

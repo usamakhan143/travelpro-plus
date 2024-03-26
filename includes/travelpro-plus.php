@@ -3,6 +3,7 @@
 add_shortcode('flights_search_form', 'show_flight_search_form');
 add_shortcode('flights_search_results', 'showFlightSearchResults');
 add_shortcode('hotel_search_form', 'show_hotel_search_form');
+add_shortcode('hotels_search_results', 'showHotelSearchResults');
 add_action('wp_head', 'runJqueryTravelproPlus');
 add_action('wp_enqueue_scripts', 'enqueue_travelproplus_styles', 100);
 add_action('wp_footer', 'travelproPlusbeforeBodyClosingScripts', 9999);
@@ -22,6 +23,12 @@ function showFlightSearchResults()
 function show_hotel_search_form()
 {
     include TRAVELPRO_PLUS_PLUGIN_PATH . '/includes/templates/hotels/hotel-search.php';
+}
+
+// Hotel Results
+function showHotelSearchResults()
+{
+    include TRAVELPRO_PLUS_PLUGIN_PATH . '/includes/templates/hotels/hotel-search-results.php';
 }
 
 function runJqueryTravelproPlus()
@@ -105,6 +112,8 @@ function travelproPlusbeforeBodyClosingScripts()
                 $('.origin-loader').hide();
                 $('.destination-loader').hide();
                 $('.travelpro-plus-flight-results-heading').hide();
+                $('.travelpro-plus-hotel-results-heading').hide();
+                $("#hotel-load-more-button").hide();
                 $(".hotel-destination-loader").hide();
 
                 let isOneWay = true;
@@ -128,12 +137,32 @@ function travelproPlusbeforeBodyClosingScripts()
                 $('form[name="hotel-search-form"]').submit(function(event) {
                     event.preventDefault();
 
+                    $('.travelpro-plus-hotel-results-heading').show();
+
                     const hotelDestinationId = $('input[name="hotel-destination"]').data('id');
                     const hotelDestinationName = $('input[name="hotel-destination"]').val();
                     const hotelCheckIn = $('input[name="hotel-check-in"]').val();
                     const hotelCheckOut = $('input[name="hotel-check-out"]').val();
 
-                    console.log([hotelDestinationId, hotelDestinationName, hotelCheckIn, hotelCheckOut], 'On Submit');
+                    // Scroll to the search result section
+                    $('html, body').animate({
+                        scrollTop: $("#search-results").offset().top
+                    }, 1000); // Adjust the duration as needed
+
+                    if (hotelDestinationId === undefined) {
+                        alert('Please enter a valid region, destination and wait for the results to appear. Then, select your region, destination from the list.');
+                        return;
+                    }
+
+                    // Perform Hotels search
+                    if ($("#search-results").length) {
+
+                        console.log([hotelDestinationId, hotelDestinationName, hotelCheckIn, hotelCheckOut], 'On Submit');
+
+                    } else {
+                        alert("Please add a [hotels_search_results] on this page to show the search results otherwise you can't be able to view the hotels data");
+                        return null;
+                    }
                 });
 
                 // Event handler for the flight search form submission
