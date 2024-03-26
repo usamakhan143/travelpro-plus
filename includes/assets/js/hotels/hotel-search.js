@@ -26,6 +26,7 @@ function searchHotels(regionId, checkInDate, checkOutDate) {
     },
     success: function (data) {
       console.log("data", data);
+      processData(data);
       //   if (
       //     data.data.context.status === "incomplete" &&
       //     data.data.context.totalResults === 0
@@ -51,5 +52,33 @@ function searchHotels(regionId, checkInDate, checkOutDate) {
       );
       // Handle the error gracefully
     },
+  });
+}
+
+// Function to process hotel search results
+function processData(data) {
+  var searchResultsDiv = document.getElementById("search-results");
+  searchResultsDiv.innerHTML = "";
+
+  var hotels = data.properties;
+
+  if (hotels.length === 0 || hotels === undefined) {
+    searchResultsDiv.innerHTML = "<p>No hotels found.</p>";
+    return;
+  }
+
+  const HotelContainer = document.createElement("div");
+  HotelContainer.classList.add("container-fluid");
+
+  const HotelRow = document.createElement("div");
+  HotelRow.classList.add("row", "row-cols-1", "row-cols-md-3", "g-4");
+
+  hotels.forEach(function (property) {
+    // Outbound flight card
+    let hotelCard = createHotelCard(property);
+
+    HotelRow.appendChild(hotelCard);
+    HotelContainer.appendChild(HotelRow);
+    searchResultsDiv.appendChild(HotelContainer);
   });
 }
