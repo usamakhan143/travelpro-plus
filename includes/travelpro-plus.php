@@ -124,7 +124,19 @@ function travelproPlusbeforeBodyClosingScripts()
                     }
                 });
 
-                // Event handler for the search form submission
+                // Event handler for the hotel search form submission
+                $('form[name="hotel-search-form"]').submit(function(event) {
+                    event.preventDefault();
+
+                    const hotelDestinationId = $('input[name="hotel-destination"]').data('id');
+                    const hotelDestinationName = $('input[name="hotel-destination"]').val();
+                    const hotelCheckIn = $('input[name="hotel-check-in"]').val();
+                    const hotelCheckOut = $('input[name="hotel-check-out"]').val();
+
+                    console.log([hotelDestinationId, hotelDestinationName, hotelCheckIn, hotelCheckOut], 'On Submit');
+                });
+
+                // Event handler for the flight search form submission
                 $('form[name="search-form"]').submit(function(event) {
                     event.preventDefault(); // Prevent the default form submission
 

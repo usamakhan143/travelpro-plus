@@ -6,12 +6,12 @@
     <div class="col-md-12">
         <div class="card flight-form-card-6">
             <div class="card-body">
-                <form name="search-form" method="post">
+                <form name="hotel-search-form" method="post">
                     <div class="mb-3 row">
                         <div class="col-md-4">
                             <div class="travelpro-search-flight-input-group-2">
                                 <label class="bootstrap-form-label">Destination</label>
-                                <input class="form-control input--style-1" type="text" id="travelpro-plus-hotel-destination" name="destination" placeholder="City, Region" required="required">
+                                <input class="form-control input--style-1" type="text" id="travelpro-plus-hotel-destination" name="hotel-destination" placeholder="City, Region" required="required">
                                 <div class="icon-container hotel-destination-loader">
                                     <i class="spinner"></i>
                                 </div>
@@ -19,15 +19,15 @@
                         </div>
                         <div class="col-md-4">
                             <label class="bootstrap-form-label">Check-in</label>
-                            <input class="form-control input--style-1" type="date" name="depart" required>
+                            <input class="form-control input--style-1" type="date" name="hotel-check-in" required>
                         </div>
                         <div class="col-md-4">
                             <label class="bootstrap-form-label">Check-out</label>
-                            <input class="form-control input--style-1" type="date" name="return" required>
+                            <input class="form-control input--style-1" type="date" name="hotel-check-out" required>
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <div class="col-md-10">
+                        <!-- <div class="col-md-10">
                             <label class="bootstrap-form-label">Passengers</label>
                             <div class="input-group">
                                 <div class="input-group-icon" id="js-select-special">
@@ -68,8 +68,8 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-2">
+                        </div> -->
+                        <div class="col-md-12">
                             <label class="bootstrap-form-label">&nbsp;</label>
                             <div class="d-grid">
                                 <button class="btn btn-submit-for-bootstrap" type="submit">Search</button>
