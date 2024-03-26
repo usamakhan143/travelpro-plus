@@ -113,6 +113,7 @@ function travelproPlusbeforeBodyClosingScripts()
                 $('.destination-loader').hide();
                 $('.travelpro-plus-flight-results-heading').hide();
                 $('.travelpro-plus-hotel-results-heading').hide();
+                $(".hotel-loader-wrapper").hide();
                 $("#hotel-load-more-button").hide();
                 $(".hotel-destination-loader").hide();
 
