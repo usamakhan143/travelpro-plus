@@ -149,6 +149,7 @@ function travelproPlusbeforeBodyClosingScripts()
                     const hotelDestinationName = $('input[name="hotel-destination"]').val();
                     const hotelCheckIn = $('input[name="hotel-check-in"]').val();
                     const hotelCheckOut = $('input[name="hotel-check-out"]').val();
+                    const childernInfo = $('input[name="numberOfChildren"]').val();
 
                     // Scroll to the search result section
                     $('html, body').animate({
@@ -164,7 +165,7 @@ function travelproPlusbeforeBodyClosingScripts()
                     if ($("#search-results").length) {
 
                         searchHotels(hotelDestinationId, hotelCheckIn, hotelCheckOut)
-                        console.log([hotelDestinationId, hotelDestinationName, hotelCheckIn, hotelCheckOut], 'On Submit');
+                        console.log([hotelDestinationId, hotelDestinationName, hotelCheckIn, hotelCheckOut, childernInfo], 'On Submit');
 
                     } else {
                         alert("Please add a [hotels_search_results] on this page to show the search results otherwise you can't be able to view the hotels data");

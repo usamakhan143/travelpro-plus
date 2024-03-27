@@ -57,3 +57,65 @@ function getStarRating(averageRating) {
 // var minutes = 10; // Change this value to whatever you want
 // var formattedTime = convertMinutesToHoursAndMinutes(minutes);
 // console.log(formattedTime);
+
+$("#numberOfChildren").click(function () {
+  $("#childrenModal").modal("show");
+});
+
+$("#numberOfChildrenModal").on("input", function () {
+  var numberOfChildren = parseInt($(this).val());
+  if (numberOfChildren > 4) {
+    $(this).val(4);
+    numberOfChildren = 4;
+  }
+  var childrenAgeFields = $("#childAgeFieldsModal");
+  childrenAgeFields.empty(); // Clear previous fields
+
+  for (var i = 1; i <= numberOfChildren; i++) {
+    var div = $('<div class="mb-3 col-sm-6"></div>');
+    div.append(
+      '<label for="childAgeFieldsModal' +
+        i +
+        '" class="form-label">Age of Child ' +
+        i +
+        ":</label>"
+    );
+    div.append(
+      '<input type="number" class="form-control childAgeFieldsModal" id="childAgeFieldsModal' +
+        i +
+        '" name="childAgeFieldsModal' +
+        i +
+        '" min="0" max="17" required>'
+    );
+    childrenAgeFields.append(div);
+    $("#childAgeFieldsModal" + i).on("input", function () {
+      var ageNumberOfChild = parseInt($(this).val());
+      if (ageNumberOfChild > 17) {
+        $(this).val(17);
+      }
+    });
+  }
+});
+
+$("#childrenModal").on("hidden.bs.modal", function () {
+  $("#numberOfChildrenModal").val("");
+  $("#childAgeFieldsModal").empty();
+});
+
+$("#addChildrenBtn").click(function () {
+  var childAges = [];
+  $("#childAgeFieldsModal")
+    .find("input")
+    .each(function () {
+      childAges.push($(this).val());
+    });
+  $("#numberOfChildren").val(childAges.join(","));
+  $("#childrenModal").modal("hide");
+});
+
+$("#numberOfAdultsInHotel").on("input", function () {
+  var numberOfAdultsInHotel = parseInt($(this).val());
+  if (numberOfAdultsInHotel > 10) {
+    $(this).val(10);
+  }
+});

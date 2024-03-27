@@ -27,49 +27,15 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <!-- <div class="col-md-10">
-                            <label class="bootstrap-form-label">Passengers</label>
-                            <div class="input-group">
-                                <div class="input-group-icon" id="js-select-special">
-                                    <input class="input--style-1 input--text-small" type="text" name="passengers" value="1 Adult, 0 Child, 0 Infant" disabled="disabled" id="info" />
-                                    <i class="zmdi zmdi-plus input-icon"></i>
-                                </div>
-                                <div class="dropdown-select">
-                                    <ul class="list-room">
-                                        <li class="list-room__item">
-                                            <span class="list-room__name">Passengers</span>
-                                            <ul class="list-person">
-                                                <li class="list-person__item">
-                                                    <span class="name">Adult</span>
-                                                    <div class="quantity quantity1">
-                                                        <span class="minus">-</span>
-                                                        <input class="inputQty" type="number" min="1" value="1" />
-                                                        <span class="plus">+</span>
-                                                    </div>
-                                                </li>
-                                                <li class="list-person__item">
-                                                    <span class="name">Child</span>
-                                                    <div class="quantity quantity2">
-                                                        <span class="minus">-</span>
-                                                        <input class="inputQty" type="number" min="0" value="0" />
-                                                        <span class="plus">+</span>
-                                                    </div>
-                                                </li>
-                                                <li class="list-person__item">
-                                                    <span class="name">Infant</span>
-                                                    <div class="quantity quantity3">
-                                                        <span class="minus">-</span>
-                                                        <input class="inputQty" type="number" min="0" value="0" />
-                                                        <span class="plus">+</span>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div> -->
-                        <div class="col-md-12">
+                        <div class="col-md-2">
+                            <label class="bootstrap-form-label">Childrens</label>
+                            <input class="form-control input--style-1" type="text" id="numberOfChildren" name="numberOfChildren" placeholder="Enter Child" readonly>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="bootstrap-form-label">Adults</label>
+                            <input class="form-control input--style-1" type="text" id="numberOfAdultsInHotel" name="numberOfAdultsInHotel" placeholder="Enter Adult" value="1" required>
+                        </div>
+                        <div class="col-md-2">
                             <label class="bootstrap-form-label">&nbsp;</label>
                             <div class="d-grid">
                                 <button class="btn btn-submit-for-bootstrap" type="submit">Search</button>
@@ -77,6 +43,31 @@
                         </div>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="childrenModal" tabindex="-1" aria-labelledby="childrenModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="childrenModalLabel">
+                    Enter Children Information
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="numberOfChildrenModal" class="form-label">Number of Children (Max 4):</label>
+                    <input type="number" class="form-control" id="numberOfChildrenModal" min="1" max="4" />
+                </div>
+                <div class="row" id="childAgeFieldsModal"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="addChildrenBtn">
+                    Add
+                </button>
             </div>
         </div>
     </div>
