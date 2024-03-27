@@ -27,13 +27,13 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <div class="col-md-2">
+                        <div class="col-md-5">
                             <label class="bootstrap-form-label">Childrens</label>
                             <input class="form-control input--style-1" type="text" id="numberOfChildren" name="numberOfChildren" placeholder="Enter Child" readonly>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-5">
                             <label class="bootstrap-form-label">Adults</label>
-                            <input class="form-control input--style-1" type="text" id="numberOfAdultsInHotel" name="numberOfAdultsInHotel" placeholder="Enter Adult" value="1" required>
+                            <input class="form-control input--style-1" type="number" id="numberOfAdultsInHotel" name="numberOfAdultsInHotel" placeholder="Enter Adult" required>
                         </div>
                         <div class="col-md-2">
                             <label class="bootstrap-form-label">&nbsp;</label>

@@ -115,7 +115,12 @@ $("#addChildrenBtn").click(function () {
 
 $("#numberOfAdultsInHotel").on("input", function () {
   var numberOfAdultsInHotel = parseInt($(this).val());
-  if (numberOfAdultsInHotel > 10) {
+
+  if (numberOfAdultsInHotel == "") {
+    $(this).val(1);
+  } else if (numberOfAdultsInHotel > 10) {
     $(this).val(10);
+  } else if (numberOfAdultsInHotel < 1) {
+    $(this).val(1);
   }
 });

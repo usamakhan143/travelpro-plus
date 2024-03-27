@@ -283,9 +283,9 @@ html,
   overflow: hidden; /* Ensure content doesn't overflow */
 }
 
-.card:hover {
+/* .card:hover {
   transform: translateY(-5px);
-}
+} */
 
 .hotel-card-img-top {
   height: 230px; /* Ensure the image fills the height of the card */
