@@ -61,9 +61,11 @@ function enqueue_travelproplus_styles()
             $select2 = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/select2/select2.min.css';
             $flightResultsStyleTwo = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/flight-results-style-2.css';
             $bootstrap5 = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css";
+            $fontAwesomeNewVersion = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css";
 
             wp_register_style('travelpro-plus-materialDesignIconic', $materialDesignIconic, array(), '1.0.0');
             wp_register_style('travelpro-plus-fontawesome', $fontAwesome, array(), '1.0.0');
+            wp_register_style('travelpro-plus-fontawesome-5', $fontAwesomeNewVersion, array(), '1.1.0');
             wp_register_style('travelpro-plus-select2', $select2, array(), '1.0.0');
             wp_register_style('travelpro-plus-daterangepicker', $datePickerRangeCss, array(), '1.0.0');
             wp_register_style('travelpro-plus-style', $searchFormCss, array(), '1.0.0');
@@ -74,6 +76,7 @@ function enqueue_travelproplus_styles()
             // Enqueue your plugin's styles
             wp_enqueue_style('travelpro-plus-materialDesignIconic');
             wp_enqueue_style('travelpro-plus-fontawesome');
+            wp_enqueue_style('travelpro-plus-fontawesome-5');
             wp_enqueue_style('travelpro-plus-select2');
             wp_enqueue_style('travelpro-plus-daterangepicker');
             wp_enqueue_style('travelpro-plus-style');

@@ -274,9 +274,65 @@ html,
   padding-bottom: 20px;
 }
 
+/* Hotel Result Card CSS */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
 .hotel-card-img-top {
   height: 230px; /* Ensure the image fills the height of the card */
   object-fit: cover; /* Maintain aspect ratio while covering the area */
+}
+
+.card-body {
+  padding: 1rem;
+  height: 40%; /* Adjusted height */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push elements to top and bottom */
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 13px;
+  margin-bottom: 0.5rem;
+}
+
+.entry-content p {
+  margin-bottom: 0px;
+}
+
+.hotel-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.availability {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.btn-book-now {
+  font-size: 1rem;
+  padding: 0.5rem 1rem; /* Adjusted padding */
+}
+
+/* Custom color for icons */
+.card i {
+  color: #bf974c;
 }
 
 @media (max-width: 768px) {
