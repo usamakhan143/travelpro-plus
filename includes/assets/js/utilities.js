@@ -28,7 +28,7 @@ function generateRandomString(length) {
 // Stars Rating
 function getStarRating(averageRating) {
   if (averageRating < 1) {
-    return "No ratings yet";
+    return "No star ratings yet";
   }
 
   const totalStars = 5;
