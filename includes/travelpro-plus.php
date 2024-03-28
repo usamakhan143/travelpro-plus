@@ -4,6 +4,7 @@ add_shortcode('flights_search_form', 'show_flight_search_form');
 add_shortcode('flights_search_results', 'showFlightSearchResults');
 add_shortcode('hotel_search_form', 'show_hotel_search_form');
 add_shortcode('hotels_search_results', 'showHotelSearchResults');
+add_shortcode('hotel_detail', 'showHotelDetail');
 add_action('wp_head', 'runJqueryTravelproPlus');
 add_action('wp_enqueue_scripts', 'enqueue_travelproplus_styles', 100);
 add_action('wp_footer', 'travelproPlusbeforeBodyClosingScripts', 9999);
@@ -29,6 +30,12 @@ function show_hotel_search_form()
 function showHotelSearchResults()
 {
     include TRAVELPRO_PLUS_PLUGIN_PATH . '/includes/templates/hotels/hotel-search-results.php';
+}
+
+// Hotel Detail
+function showHotelDetail()
+{
+    include TRAVELPRO_PLUS_PLUGIN_PATH . '/includes/templates/hotels/hotel-detail.php';
 }
 
 function runJqueryTravelproPlus()

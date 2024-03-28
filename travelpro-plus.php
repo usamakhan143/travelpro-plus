@@ -20,7 +20,7 @@ function travelpro_plus_plugin_activate()
 	if (!$hotel_detail_page) {
 		$hotel_detail_page_id = wp_insert_post(array(
 			'post_title'   => 'Hotel Detail',
-			'post_content' => '',
+			'post_content' => '[hotel_detail]',
 			'post_status'  => 'publish',
 			'post_type'    => 'page',
 		));
