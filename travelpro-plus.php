@@ -1,6 +1,5 @@
 <?php
-
-/**
+/*
  * Plugin Name: Travelpro Plus
  * Description: Just a user-friendly WordPress plugin enabling seamless flight and hotel bookings. Users search, view adjusted prices, and book with ease. Secure payments and admin notifications included.
  * Version: 1.0.0
@@ -9,6 +8,57 @@
  * Requires PHP: 7.4
  * Text Domain: translate-travelpro-plus
  */
+ob_end_clean();
+register_activation_hook(__FILE__, 'travelpro_plus_plugin_activate');
+
+function travelpro_plus_plugin_activate()
+{
+	// Check if the hotel detail page exists
+	$hotel_detail_page = get_page_by_path('hotel-detail');
+
+	// If the page doesn't exist, create it
+	if (!$hotel_detail_page) {
+		$hotel_detail_page_id = wp_insert_post(array(
+			'post_title'   => 'Hotel Detail',
+			'post_content' => '',
+			'post_status'  => 'publish',
+			'post_type'    => 'page',
+		));
+
+		if ($hotel_detail_page_id) {
+			// Page creation successful
+			error_log('Hotel Detail page created with ID: ' . $hotel_detail_page_id);
+		} else {
+			// Page creation failed
+			error_log('Failed to create Hotel Detail page');
+		}
+	} else {
+		// Page already exists
+		error_log('Hotel Detail page already exists');
+	}
+}
+
+// Plugin deactivation hook
+register_deactivation_hook(__FILE__, 'travelpro_plus_plugin_deactivate');
+
+function travelpro_plus_plugin_deactivate()
+{
+	// Check if the hotel detail page exists
+	$hotel_detail_page = get_page_by_path('hotel-detail');
+
+	// If the page exists, delete it
+	if ($hotel_detail_page) {
+		$deleted = wp_delete_post($hotel_detail_page->ID, true);
+
+		if ($deleted) {
+			// Page deletion successful
+			error_log('Hotel Detail page deleted');
+		} else {
+			// Page deletion failed
+			error_log('Failed to delete Hotel Detail page');
+		}
+	}
+}
 
 if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
