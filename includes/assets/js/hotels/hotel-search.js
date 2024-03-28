@@ -80,5 +80,21 @@ function processData(data) {
     HotelRow.appendChild(hotelCard);
     HotelContainer.appendChild(HotelRow);
     searchResultsDiv.appendChild(HotelContainer);
+
+    hotelCard.addEventListener("click", function () {
+      let hotelId = property.id;
+      const mainDomain = $(location).attr("origin");
+      const detailPageSlug = "/hotel-detail";
+      let hotelDetailPageUrl = "";
+      if (mainDomain === "http://localhost") {
+        hotelDetailPageUrl =
+          mainDomain + "/wpplugindev" + detailPageSlug + "?hotel-id=" + hotelId;
+      } else {
+        hotelDetailPageUrl =
+          mainDomain + detailPageSlug + "?hotel-id=" + hotelId;
+      }
+
+      window.open(hotelDetailPageUrl, "_blank");
+    });
   });
 }
