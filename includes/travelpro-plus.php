@@ -57,7 +57,7 @@ function enqueue_travelproplus_styles()
 {
     // Check if the current page or post contains your plugin's shortcode
     if (is_page() || is_single()) {
-        if ((has_shortcode(get_the_content(), 'flights_search_form') && has_shortcode(get_the_content(), 'flights_search_results')) || has_shortcode(get_the_content(), 'hotel_search_form')) {
+        if ((has_shortcode(get_the_content(), 'flights_search_form') && has_shortcode(get_the_content(), 'flights_search_results')) || has_shortcode(get_the_content(), 'hotel_search_form') || has_shortcode(get_the_content(), 'hotel_detail')) {
 
             // Register your plugin's styles
             $fontAwesome = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/font-awesome-4.7/css/font-awesome.min.css';
@@ -69,6 +69,7 @@ function enqueue_travelproplus_styles()
             $flightResultsStyleTwo = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/flight-results-style-2.css';
             $bootstrap5 = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css";
             $fontAwesomeNewVersion = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css";
+            $hotelDetail = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/hotel-detail.css';
 
             wp_register_style('travelpro-plus-materialDesignIconic', $materialDesignIconic, array(), '1.0.0');
             wp_register_style('travelpro-plus-fontawesome', $fontAwesome, array(), '1.0.0');
@@ -79,6 +80,7 @@ function enqueue_travelproplus_styles()
             wp_register_style('travelpro-plus-bootstrapFive', $bootstrap5, array(), '1.0.0');
             wp_register_style('travelpro-plus-flightresults', $flightResults, array(), '1.0.0');
             wp_register_style('travelpro-plus-flightresultsStyleTwo', $flightResultsStyleTwo, array(), '1.0.0');
+            wp_register_style('travelpro-plus-hotelDetail', $hotelDetail, array(), '1.0.0');
 
             // Enqueue your plugin's styles
             wp_enqueue_style('travelpro-plus-materialDesignIconic');
@@ -90,6 +92,7 @@ function enqueue_travelproplus_styles()
             wp_enqueue_style('travelpro-plus-bootstrapFive');
             wp_enqueue_style('travelpro-plus-flightresults');
             wp_enqueue_style('travelpro-plus-flightresultsStyleTwo');
+            wp_enqueue_style('travelpro-plus-hotelDetail');
         }
     }
 }
@@ -97,7 +100,7 @@ function enqueue_travelproplus_styles()
 
 function travelproPlusbeforeBodyClosingScripts()
 {
-    if (is_page() && (has_shortcode(get_the_content(), 'flights_search_form') && has_shortcode(get_the_content(), 'flights_search_results')) || has_shortcode(get_the_content(), 'hotel_search_form')) {
+    if (is_page() && (has_shortcode(get_the_content(), 'flights_search_form') && has_shortcode(get_the_content(), 'flights_search_results')) || has_shortcode(get_the_content(), 'hotel_search_form') || has_shortcode(get_the_content(), 'hotel_detail')) {
     ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/flights/location-autocomplete.js'; ?>"> </script>
