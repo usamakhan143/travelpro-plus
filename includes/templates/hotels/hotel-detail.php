@@ -42,29 +42,37 @@
             <h1 class="display-5 fw-bold">Park Inn by Radisson Istanbul Atasehir</h1>
             <p class="lead">9.0/10 Wonderful (630 reviews)</p>
             <p><i class="fas fa-star" style="color: #bf974c;"></i><i class="fas fa-star" style="color: #bf974c;"></i><i class="fas fa-star" style="color: #bf974c;"></i><i class="fas fa-star" style="color: #bf974c;"></i><i class="fas fa-star" style="color: #bf974c;"></i></p>
-            <h3 class="mt-5">At a glance</h3>
-            <ul class="list-unstyled">
-                <li><b>Hotel size:</b> 127 rooms arranged over 11 floors</li>
-                <li><b>Check-in start time:</b> 3:00 PM; Check-in end time: anytime</li>
-                <li><b>Minimum check-in age:</b> 18</li>
-                <li><b>Special check-in instructions:</b> Front desk staff will greet guests on arrival</li>
-            </ul>
-            <h3 class="mt-5">Accessibility</h3>
-            <ul class="list-unstyled">
-                <li><b>Braille/raised signage</b></li>
-                <li><b>Elevator</b></li>
-            </ul>
-            <h3 class="mt-5">Location</h3>
-            <ul class="list-unstyled">
-                <li><b>Address:</b> Serifali Mah. Kible Sokak No:25, Istanbul, 34775</li>
-                <li><b>Nearby Points of Interest:</b></li>
-                <ul class="list-unstyled">
-                    <li>Brandium AVM - 3 min drive</li>
-                    <li>Bağdat Avenue - 8 min drive</li>
-                    <li>Emaar Square Mall - 9 min drive</li>
-                    <li>Istanbul (SAW-Sabiha Gokcen Intl.) - 28 min drive</li>
-                </ul>
-            </ul>
+            <div class="glance-container">
+                <div class="detail-section">
+                    <h5 class="glance-heading">At a Glance</h5>
+                    <div class="card detail-card">
+                        <div class="detail-header">
+                            <i class="fas fa-info-circle detail-icon"></i>
+                            <span class="detail-text">At a Glance</span>
+                        </div>
+                        <div class="detail-body">
+                            <p><i class="fas fa-bed detail-icon"></i> Hotel size: 127 rooms arranged over 11 floors</p>
+                            <p><i class="far fa-clock detail-icon"></i> Check-in start time: 3:00 PM; Check-in end time: anytime</p>
+                            <p><i class="fas fa-user detail-icon"></i> Minimum check-in age: 18</p>
+                            <p><i class="fas fa-info-circle detail-icon"></i> Special check-in instructions: Front desk staff will greet guests on arrival</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="detail-section">
+                    <h5 class="glance-heading">Accessibility</h5>
+                    <div class="card detail-card">
+                        <div class="detail-header">
+                            <i class="fas fa-wheelchair detail-icon"></i>
+                            <span class="detail-text">Accessibility</span>
+                        </div>
+                        <div class="detail-body">
+                            <p><i class="fas fa-braille detail-icon"></i> Braille/raised signage</p>
+                            <p><i class="fas fa-elevator detail-icon"></i> Elevator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <hr>
