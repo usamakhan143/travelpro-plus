@@ -68,7 +68,7 @@ function enqueue_travelproplus_styles()
             $select2 = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/select2/select2.min.css';
             $flightResultsStyleTwo = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/flight-results-style-2.css';
             $bootstrap5 = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css";
-            $fontAwesomeNewVersion = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css";
+            $fontAwesomeNewVersion = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css";
             $hotelDetail = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/hotel-detail.css';
 
             wp_register_style('travelpro-plus-materialDesignIconic', $materialDesignIconic, array(), '1.0.0');
