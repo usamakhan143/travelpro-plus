@@ -3,8 +3,8 @@
   "summary": {
     "__typename": "PropertySummary",
     "fees": null,
-    "id": "1105156",
-    "name": "Hotel Roma Prague",
+    "id": "5984886",
+    "name": "The Edge Bali",
     "map": {
       "__typename": "PropertyInfoMap",
       "markers": null
@@ -13,8 +13,8 @@
       "__typename": "PropertyPolicies",
       "checkinEnd": null,
       "checkinInstructions": [
-        "Front desk staff will greet guests on arrival",
-        "At check-in, guests must provide a record of full COVID-19 vaccination"
+        "This property offers transfers from the airport (surcharges may apply); to arrange pick-up, guests must contact the property 24 hours prior to arrival, using the contact information on the booking confirmation",
+        "Front desk staff will greet guests on arrival"
       ],
       "checkinMinAge": null,
       "checkinStart": null,
@@ -22,8 +22,10 @@
       "childAndBed": {
         "__typename": "PropertyInfoSubSection",
         "body": [
-          "Up to 2 children (5 years old and younger) stay free when occupying the parent or guardian's room, using existing bedding ",
-          "Babysitting*"
+          "Up to 2 children (2 years old and younger) stay free when occupying the parent or guardian's room, using existing bedding ",
+          "No cribs (infant beds)",
+          "Babysitting*",
+          "Supervised childcare*"
         ],
         "descriptions": [],
         "title": null
@@ -31,10 +33,9 @@
       "needToKnow": {
         "__typename": "PropertyInfoSubSection",
         "body": [
-          "Only registered guests are allowed in the guestrooms.  ",
           "Guests can rest easy knowing there's a fire extinguisher, a smoke detector, a security system, and a first aid kit on site. ",
-          "This property accepts credit cards. Cash is not accepted.",
-          "Cashless transactions are available."
+          "The name on the credit card used at check-in to pay for incidentals must be the primary name on the guestroom reservation. ",
+          "This property accepts credit cards, debit cards and cash."
         ],
         "descriptions": [],
         "title": "You need to know"
@@ -42,17 +43,17 @@
       "paymentOptions": [],
       "pets": {
         "__typename": "PropertyInfoSubSection",
-        "body": ["Pets not allowed"],
+        "body": ["Pets not allowed", "Service animals welcome"],
         "descriptions": [],
         "title": "Pets"
       },
       "shouldMention": {
         "__typename": "PropertyInfoSubSection",
         "body": [
-          "Reservations are required for massage services; reservations can be made by contacting the property prior to arrival, using the contact information on the booking confirmation",
-          "Only registered guests are allowed in the guestrooms",
-          "A car is not required for transportation to and from this property",
-          "Parking height restrictions apply"
+          "Reservations are required for massage services and spa treatments; reservations can be made by contacting the property prior to arrival, using the contact information on the booking confirmation",
+          "Parking height restrictions apply",
+          "Children under 6 years old are not allowed in the swimming pool or fitness facility without adult supervision",
+          "Guests under 8 years old are not allowed in the spa"
         ],
         "descriptions": [],
         "title": "We should mention"
@@ -61,21 +62,21 @@
     "telesalesPhoneNumber": "",
     "bannerMessage": null,
     "latinAlphabetName": "",
-    "tagline": "Upscale hotel with restaurant, near Charles Bridge ",
+    "tagline": "Waterfront hotel in Pecatu with 3 restaurants and spa ",
     "starRatingIcon": {
       "__typename": "Icon",
       "token": "STAR"
     },
     "overview": {
       "__typename": "PropertyOverview",
-      "vipMessaging": "VIP Access",
+      "vipMessaging": null,
       "inventoryType": null,
-      "accessibilityLabel": "Overview of Hotel Roma Prague",
+      "accessibilityLabel": "Overview of The Edge Bali",
       "label": null,
       "propertyRating": {
         "__typename": "EGDSIconRating",
-        "rating": 4,
-        "accessibility": "4.0 star property",
+        "rating": 5,
+        "accessibility": "5.0 star property",
         "icon": {
           "__typename": "Icon",
           "id": "star",
@@ -122,14 +123,7 @@
               "items": [
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "87 rooms",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
-                  "text": "Arranged over 5 floors",
+                  "text": "10 rooms",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -163,6 +157,13 @@
                 },
                 {
                   "__typename": "PropertyInfoItem",
+                  "text": "Contactless check-in available",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
                   "text": "Express check-in/out available",
                   "state": null,
                   "moreInfo": null,
@@ -170,7 +171,7 @@
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Early check-in subject to availability",
+                  "text": "Late check-in subject to availability",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -192,13 +193,6 @@
                 {
                   "__typename": "PropertyInfoItem",
                   "text": "Contactless check-out available",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
-                  "text": "Late check-out subject to availability",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -229,13 +223,6 @@
                   "state": null,
                   "moreInfo": null,
                   "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
-                  "text": "At check-in, guests must provide a record of full COVID-19 vaccination",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
                 }
               ]
             },
@@ -259,14 +246,14 @@
               "items": [
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Front desk staff will greet guests on arrival",
+                  "text": "This property offers transfers from the airport (surcharges may apply); to arrange pick-up, guests must contact the property 24 hours prior to arrival, using the contact information on the booking confirmation",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "At check-in, guests must provide a record of full COVID-19 vaccination",
+                  "text": "Front desk staff will greet guests on arrival",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -334,7 +321,14 @@
               "items": [
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Up to 2 children (5 years old and younger) stay free when occupying the parent or guardian's room, using existing bedding ",
+                  "text": "Up to 2 children (2 years old and younger) stay free when occupying the parent or guardian's room, using existing bedding ",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "No cribs (infant beds)",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -342,6 +336,13 @@
                 {
                   "__typename": "PropertyInfoItem",
                   "text": "Babysitting*",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Supervised childcare*",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -372,6 +373,13 @@
                   "state": null,
                   "moreInfo": null,
                   "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Service animals welcome",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
                 }
               ]
             },
@@ -395,14 +403,14 @@
               "items": [
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Free WiFi and wired internet access in public areas",
+                  "text": "Free WiFi in public areas",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Free WiFi and wired internet access in rooms",
+                  "text": "Free WiFi in rooms",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -429,7 +437,21 @@
               "items": [
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Onsite self parking (EUR 30 per day)",
+                  "text": "Free onsite self parking",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Free onsite valet parking",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Wheelchair-accessible parking on site",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -444,6 +466,74 @@
                 {
                   "__typename": "PropertyInfoItem",
                   "text": "Height restrictions apply for onsite parking",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Free offsite parking nearby; reservations required",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                }
+              ]
+            },
+            {
+              "__typename": "PropertyInfoContent",
+              "header": {
+                "__typename": "LodgingHeader",
+                "text": "Transfers",
+                "subText": null,
+                "mark": null
+              },
+              "icon": {
+                "__typename": "Icon",
+                "id": "done",
+                "description": "",
+                "size": null,
+                "token": "done",
+                "theme": null
+              },
+              "jumpLink": null,
+              "items": [
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Airport shuttle on request (available 24 hours)* ",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                }
+              ]
+            },
+            {
+              "__typename": "PropertyInfoContent",
+              "header": {
+                "__typename": "LodgingHeader",
+                "text": "Offsite",
+                "subText": null,
+                "mark": null
+              },
+              "icon": {
+                "__typename": "Icon",
+                "id": "done",
+                "description": "",
+                "size": null,
+                "token": "done",
+                "theme": null
+              },
+              "jumpLink": null,
+              "items": [
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Free area shuttle within 5 kilometers ",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Free beach shuttle ",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -510,14 +600,21 @@
               "items": [
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Free buffet breakfast each morning 6:00 AM–10:30 AM",
+                  "text": "Free full breakfast each morning 6 AM–noon",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Restaurant",
+                  "text": "3 restaurants",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "18 coffee shops",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -531,7 +628,7 @@
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Coffee shop",
+                  "text": "Poolside bar",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -545,7 +642,14 @@
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Room service (limited hours)",
+                  "text": "Barbecue grills",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "24-hour room service",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -586,7 +690,28 @@
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Babysitting (surcharge)",
+                  "text": "Bowling alley",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Free local shuttle",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Supervised childcare (surcharge)",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Children's menu",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -613,7 +738,77 @@
               "items": [
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Bicycle rentals nearby",
+                  "text": "Free beach shuttle",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Tennis",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Pilates classes",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Yoga classes",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Bowling alley",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Karaoke",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Pool table",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Beach nearby",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Access to nearby outdoor pool",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Free use of nearby fitness center",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Golfing nearby",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -627,7 +822,14 @@
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Scooter/moped rentals nearby",
+                  "text": "Parasailing nearby",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Snorkeling nearby",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -661,21 +863,7 @@
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Meeting room",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
                   "text": "Computer station",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
-                  "text": "Conference space (431 square feet)",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -723,21 +911,7 @@
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "On-site car rental",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
                   "text": "Dry cleaning/laundry services",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
-                  "text": "Hair salon",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -758,7 +932,49 @@
                 },
                 {
                   "__typename": "PropertyInfoItem",
+                  "text": "Wedding services",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
                   "text": "Multilingual staff",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Porter/bellhop",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Free beach shuttle",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Free pool cabanas",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Pool loungers",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Pool umbrellas",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -785,14 +1001,14 @@
               "items": [
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Built in 2004",
+                  "text": "5 buildings/towers",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "ATM/banking",
+                  "text": "Built in 2010",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -820,20 +1036,6 @@
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Television in common areas",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
-                  "text": "Piano",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
                   "text": "Fitness center",
                   "state": null,
                   "moreInfo": null,
@@ -841,7 +1043,28 @@
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Sauna",
+                  "text": "2 outdoor pools",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Arcade/game room",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Full-service spa",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Outdoor tennis court",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -855,14 +1078,7 @@
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Locally-owned & organized tours & activities",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
-                  "text": "Traditional architecture",
+                  "text": "Steam room",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -889,13 +1105,6 @@
               "items": [
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Wheelchair accessible",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
                   "text": "Elevator",
                   "state": null,
                   "moreInfo": null,
@@ -903,49 +1112,7 @@
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Assistive listening devices available",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
-                  "text": "Wheelchair-accessible registration desk",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
-                  "text": "Wheelchair-accessible lounge",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
-                  "text": "Raised toilet seat",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
-                  "text": "Low-height counter/sink",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
-                  "text": "Grab bar near toilet",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
-                  "text": "Bathroom emergency pull cord",
+                  "text": "Wheelchair-accessible parking",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -985,14 +1152,21 @@
               "items": [
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "26-inch flat-screen TV",
+                  "text": "DVD player",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Cable TV channels",
+                  "text": "60-inch plasma TV",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Premium satellite channels",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -1019,7 +1193,7 @@
               "items": [
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Climate-controlled air conditioning and heating",
+                  "text": "Air conditioning",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -1041,6 +1215,13 @@
                 {
                   "__typename": "PropertyInfoItem",
                   "text": "Electric kettle",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Bathrobes and slippers",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -1074,14 +1255,7 @@
               "items": [
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Hypo-allergenic bedding",
-                  "state": null,
-                  "moreInfo": null,
-                  "icon": null
-                },
-                {
-                  "__typename": "PropertyInfoItem",
-                  "text": "Down comforter",
+                  "text": "Pillow menu",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -1095,14 +1269,14 @@
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Premium bedding",
+                  "text": "Soundproofed rooms",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Free crib/infant bed",
+                  "text": "Turndown service",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -1110,6 +1284,13 @@
                 {
                   "__typename": "PropertyInfoItem",
                   "text": "Rollaway/extra bed (surcharge)",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Bed sheets provided",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -1136,7 +1317,35 @@
               "items": [
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Individually decorated",
+                  "text": "Private pool",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "In-room massage",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Balcony or patio",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Separate dining area",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Separate living room",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -1163,14 +1372,14 @@
               "items": [
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Private bathroom",
+                  "text": "Separate bathtub and shower",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Bathtub or shower",
+                  "text": "Rainfall showerhead",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -1232,7 +1441,55 @@
                 },
                 {
                   "__typename": "PropertyInfoItem",
-                  "text": "Free WiFi and wired internet",
+                  "text": "Free newspapers",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Free WiFi",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Phone",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                }
+              ]
+            },
+            {
+              "__typename": "PropertyInfoContent",
+              "header": {
+                "__typename": "LodgingHeader",
+                "text": "Food and drink",
+                "subText": null,
+                "mark": null
+              },
+              "icon": {
+                "__typename": "Icon",
+                "id": "local_dining",
+                "description": "",
+                "size": null,
+                "token": "local_dining",
+                "theme": null
+              },
+              "jumpLink": null,
+              "items": [
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Refrigerator",
+                  "state": null,
+                  "moreInfo": null,
+                  "icon": null
+                },
+                {
+                  "__typename": "PropertyInfoItem",
+                  "text": "Free bottled water",
                   "state": null,
                   "moreInfo": null,
                   "icon": null
@@ -1289,6 +1546,20 @@
         "items": [
           {
             "__typename": "PropertyInfoItem",
+            "text": "Pool",
+            "state": null,
+            "moreInfo": null,
+            "icon": {
+              "__typename": "Icon",
+              "id": "pool",
+              "description": "",
+              "size": null,
+              "token": "pool",
+              "theme": null
+            }
+          },
+          {
+            "__typename": "PropertyInfoItem",
             "text": "Spa",
             "state": null,
             "moreInfo": null,
@@ -1317,7 +1588,7 @@
           },
           {
             "__typename": "PropertyInfoItem",
-            "text": "Parking available",
+            "text": "Free parking",
             "state": null,
             "moreInfo": null,
             "icon": {
@@ -1326,6 +1597,20 @@
               "description": "",
               "size": null,
               "token": "local_parking",
+              "theme": null
+            }
+          },
+          {
+            "__typename": "PropertyInfoItem",
+            "text": "Free WiFi",
+            "state": null,
+            "moreInfo": null,
+            "icon": {
+              "__typename": "Icon",
+              "id": "wifi",
+              "description": "",
+              "size": null,
+              "token": "wifi",
               "theme": null
             }
           },
@@ -1359,20 +1644,6 @@
           },
           {
             "__typename": "PropertyInfoItem",
-            "text": "Free WiFi",
-            "state": null,
-            "moreInfo": null,
-            "icon": {
-              "__typename": "Icon",
-              "id": "wifi",
-              "description": "",
-              "size": null,
-              "token": "wifi",
-              "theme": null
-            }
-          },
-          {
-            "__typename": "PropertyInfoItem",
             "text": "Laundry facilities",
             "state": null,
             "moreInfo": null,
@@ -1382,20 +1653,6 @@
               "description": "",
               "size": null,
               "token": "local_laundry_service",
-              "theme": null
-            }
-          },
-          {
-            "__typename": "PropertyInfoItem",
-            "text": "Gym",
-            "state": null,
-            "moreInfo": null,
-            "icon": {
-              "__typename": "Icon",
-              "id": "fitness_center",
-              "description": "",
-              "size": null,
-              "token": "fitness_center",
               "theme": null
             }
           },
@@ -1415,29 +1672,43 @@
           },
           {
             "__typename": "PropertyInfoItem",
-            "text": "24/7 front desk",
+            "text": "Gym",
             "state": null,
             "moreInfo": null,
             "icon": {
               "__typename": "Icon",
-              "id": "local_convenience_store",
+              "id": "fitness_center",
               "description": "",
               "size": null,
-              "token": "local_convenience_store",
+              "token": "fitness_center",
               "theme": null
             }
           },
           {
             "__typename": "PropertyInfoItem",
-            "text": "Non-smoking",
+            "text": "Child-friendly activities",
             "state": null,
             "moreInfo": null,
             "icon": {
               "__typename": "Icon",
-              "id": "smoke_free",
+              "id": "child",
               "description": "",
               "size": null,
-              "token": "smoke_free",
+              "token": "child",
+              "theme": null
+            }
+          },
+          {
+            "__typename": "PropertyInfoItem",
+            "text": "Airport transfer",
+            "state": null,
+            "moreInfo": null,
+            "icon": {
+              "__typename": "Icon",
+              "id": "airport_shuttle",
+              "description": "",
+              "size": null,
+              "token": "airport_shuttle",
               "theme": null
             }
           }
@@ -1485,6 +1756,20 @@
             "items": [
               {
                 "__typename": "PropertyInfoItem",
+                "text": "Pool",
+                "state": null,
+                "moreInfo": null,
+                "icon": {
+                  "__typename": "Icon",
+                  "id": "pool",
+                  "description": "",
+                  "size": null,
+                  "token": "pool",
+                  "theme": null
+                }
+              },
+              {
+                "__typename": "PropertyInfoItem",
                 "text": "Spa",
                 "state": null,
                 "moreInfo": null,
@@ -1513,7 +1798,7 @@
               },
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Parking available",
+                "text": "Free parking",
                 "state": null,
                 "moreInfo": null,
                 "icon": {
@@ -1522,6 +1807,20 @@
                   "description": "",
                   "size": null,
                   "token": "local_parking",
+                  "theme": null
+                }
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Free WiFi",
+                "state": null,
+                "moreInfo": null,
+                "icon": {
+                  "__typename": "Icon",
+                  "id": "wifi",
+                  "description": "",
+                  "size": null,
+                  "token": "wifi",
                   "theme": null
                 }
               },
@@ -1555,20 +1854,6 @@
               },
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Free WiFi",
-                "state": null,
-                "moreInfo": null,
-                "icon": {
-                  "__typename": "Icon",
-                  "id": "wifi",
-                  "description": "",
-                  "size": null,
-                  "token": "wifi",
-                  "theme": null
-                }
-              },
-              {
-                "__typename": "PropertyInfoItem",
                 "text": "Laundry facilities",
                 "state": null,
                 "moreInfo": null,
@@ -1578,6 +1863,20 @@
                   "description": "",
                   "size": null,
                   "token": "local_laundry_service",
+                  "theme": null
+                }
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Air conditioning",
+                "state": null,
+                "moreInfo": null,
+                "icon": {
+                  "__typename": "Icon",
+                  "id": "ac_unit",
+                  "description": "",
+                  "size": null,
+                  "token": "ac_unit",
                   "theme": null
                 }
               },
@@ -1597,15 +1896,29 @@
               },
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Air conditioning",
+                "text": "Child-friendly activities",
                 "state": null,
                 "moreInfo": null,
                 "icon": {
                   "__typename": "Icon",
-                  "id": "ac_unit",
+                  "id": "child",
                   "description": "",
                   "size": null,
-                  "token": "ac_unit",
+                  "token": "child",
+                  "theme": null
+                }
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Airport transfer",
+                "state": null,
+                "moreInfo": null,
+                "icon": {
+                  "__typename": "Icon",
+                  "id": "airport_shuttle",
+                  "description": "",
+                  "size": null,
+                  "token": "airport_shuttle",
                   "theme": null
                 }
               },
@@ -1661,14 +1974,21 @@
             "items": [
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Free buffet breakfast each morning 6:00 AM–10:30 AM",
+                "text": "Free full breakfast each morning 6 AM–noon",
                 "state": null,
                 "moreInfo": null,
                 "icon": null
               },
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Restaurant",
+                "text": "3 restaurants",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "18 coffee shops",
                 "state": null,
                 "moreInfo": null,
                 "icon": null
@@ -1682,7 +2002,7 @@
               },
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Coffee shop",
+                "text": "Poolside bar",
                 "state": null,
                 "moreInfo": null,
                 "icon": null
@@ -1696,7 +2016,14 @@
               },
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Room service (limited hours)",
+                "text": "Barbecue grills",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "24-hour room service",
                 "state": null,
                 "moreInfo": null,
                 "icon": null
@@ -1737,7 +2064,28 @@
               },
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Babysitting (surcharge)",
+                "text": "Bowling alley",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Free local shuttle",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Supervised childcare (surcharge)",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Children's menu",
                 "state": null,
                 "moreInfo": null,
                 "icon": null
@@ -1764,7 +2112,77 @@
             "items": [
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Bicycle rentals nearby",
+                "text": "Free beach shuttle",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Tennis",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Pilates classes",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Yoga classes",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Bowling alley",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Karaoke",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Pool table",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Beach nearby",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Access to nearby outdoor pool",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Free use of nearby fitness center",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Golfing nearby",
                 "state": null,
                 "moreInfo": null,
                 "icon": null
@@ -1778,7 +2196,14 @@
               },
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Scooter/moped rentals nearby",
+                "text": "Parasailing nearby",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Snorkeling nearby",
                 "state": null,
                 "moreInfo": null,
                 "icon": null
@@ -1812,21 +2237,7 @@
               },
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Meeting room",
-                "state": null,
-                "moreInfo": null,
-                "icon": null
-              },
-              {
-                "__typename": "PropertyInfoItem",
                 "text": "Computer station",
-                "state": null,
-                "moreInfo": null,
-                "icon": null
-              },
-              {
-                "__typename": "PropertyInfoItem",
-                "text": "Conference space (431 square feet)",
                 "state": null,
                 "moreInfo": null,
                 "icon": null
@@ -1874,21 +2285,7 @@
               },
               {
                 "__typename": "PropertyInfoItem",
-                "text": "On-site car rental",
-                "state": null,
-                "moreInfo": null,
-                "icon": null
-              },
-              {
-                "__typename": "PropertyInfoItem",
                 "text": "Dry cleaning/laundry services",
-                "state": null,
-                "moreInfo": null,
-                "icon": null
-              },
-              {
-                "__typename": "PropertyInfoItem",
-                "text": "Hair salon",
                 "state": null,
                 "moreInfo": null,
                 "icon": null
@@ -1909,7 +2306,49 @@
               },
               {
                 "__typename": "PropertyInfoItem",
+                "text": "Wedding services",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
                 "text": "Multilingual staff",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Porter/bellhop",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Free beach shuttle",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Free pool cabanas",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Pool loungers",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Pool umbrellas",
                 "state": null,
                 "moreInfo": null,
                 "icon": null
@@ -1936,14 +2375,14 @@
             "items": [
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Built in 2004",
+                "text": "5 buildings/towers",
                 "state": null,
                 "moreInfo": null,
                 "icon": null
               },
               {
                 "__typename": "PropertyInfoItem",
-                "text": "ATM/banking",
+                "text": "Built in 2010",
                 "state": null,
                 "moreInfo": null,
                 "icon": null
@@ -1971,20 +2410,6 @@
               },
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Television in common areas",
-                "state": null,
-                "moreInfo": null,
-                "icon": null
-              },
-              {
-                "__typename": "PropertyInfoItem",
-                "text": "Piano",
-                "state": null,
-                "moreInfo": null,
-                "icon": null
-              },
-              {
-                "__typename": "PropertyInfoItem",
                 "text": "Fitness center",
                 "state": null,
                 "moreInfo": null,
@@ -1992,7 +2417,28 @@
               },
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Sauna",
+                "text": "2 outdoor pools",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Arcade/game room",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Full-service spa",
+                "state": null,
+                "moreInfo": null,
+                "icon": null
+              },
+              {
+                "__typename": "PropertyInfoItem",
+                "text": "Outdoor tennis court",
                 "state": null,
                 "moreInfo": null,
                 "icon": null
@@ -2006,14 +2452,7 @@
               },
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Locally-owned & organized tours & activities",
-                "state": null,
-                "moreInfo": null,
-                "icon": null
-              },
-              {
-                "__typename": "PropertyInfoItem",
-                "text": "Traditional architecture",
+                "text": "Steam room",
                 "state": null,
                 "moreInfo": null,
                 "icon": null
@@ -2040,13 +2479,6 @@
             "items": [
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Wheelchair accessible",
-                "state": null,
-                "moreInfo": null,
-                "icon": null
-              },
-              {
-                "__typename": "PropertyInfoItem",
                 "text": "Elevator",
                 "state": null,
                 "moreInfo": null,
@@ -2054,49 +2486,7 @@
               },
               {
                 "__typename": "PropertyInfoItem",
-                "text": "Assistive listening devices available",
-                "state": null,
-                "moreInfo": null,
-                "icon": null
-              },
-              {
-                "__typename": "PropertyInfoItem",
-                "text": "Wheelchair-accessible registration desk",
-                "state": null,
-                "moreInfo": null,
-                "icon": null
-              },
-              {
-                "__typename": "PropertyInfoItem",
-                "text": "Wheelchair-accessible lounge",
-                "state": null,
-                "moreInfo": null,
-                "icon": null
-              },
-              {
-                "__typename": "PropertyInfoItem",
-                "text": "Raised toilet seat",
-                "state": null,
-                "moreInfo": null,
-                "icon": null
-              },
-              {
-                "__typename": "PropertyInfoItem",
-                "text": "Low-height counter/sink",
-                "state": null,
-                "moreInfo": null,
-                "icon": null
-              },
-              {
-                "__typename": "PropertyInfoItem",
-                "text": "Grab bar near toilet",
-                "state": null,
-                "moreInfo": null,
-                "icon": null
-              },
-              {
-                "__typename": "PropertyInfoItem",
-                "text": "Bathroom emergency pull cord",
+                "text": "Wheelchair-accessible parking",
                 "state": null,
                 "moreInfo": null,
                 "icon": null
@@ -2111,29 +2501,29 @@
       "__typename": "PropertyLocation",
       "address": {
         "__typename": "PropertyAddress",
-        "addressLine": "Újezd 425/24, Praha 1-Malá Strana, Prague, 11800",
-        "city": "Prague",
-        "province": "",
-        "countryCode": "CZE",
-        "firstAddressLine": "Újezd 425/24",
-        "secondAddressLine": "Praha 1-Malá Strana"
+        "addressLine": "Jl Pura Goa Lempeh Br Dinas Kangin, Pecatu, Bali, 80364",
+        "city": "Pecatu",
+        "province": "Bali",
+        "countryCode": "IDN",
+        "firstAddressLine": "Jl Pura Goa Lempeh Br Dinas Kangin",
+        "secondAddressLine": ""
       },
       "coordinates": {
         "__typename": "Coordinates",
-        "latitude": 50.082025,
-        "longitude": 14.404841
+        "latitude": -8.845527,
+        "longitude": 115.124814
       },
       "multiCityRegion": {
         "__typename": "Region",
-        "id": "180014"
+        "id": "null"
       },
       "whatsAround": {
         "__typename": "PropertyWhatsAround",
         "editorial": {
           "__typename": "PropertyEditorial",
-          "title": "Prague",
+          "title": "Pecatu",
           "content": [
-            "Hotel Roma Prague is located in Prague City Center, a neighborhood in Prague, and is near a metro station. Notable landmarks in the area include Prague Castle and Charles Bridge, and travelers wishing to experience a bit of culture can try O2 Arena. Traveling with kids? Consider AquaPalace and Czech National Museum. Be sure not to miss outdoor adventures like hiking/biking trails and mountain biking, or hop on a moped rental nearby and take a self-guided tour around Prague. Guests appreciate the hotel's convenience to public transportation: Újezd Stop and Ujezd Funicular Stop are just steps away. "
+            "Located in Pecatu, The Edge Bali is near theme parks and on the waterfront. Beachwalk Shopping Center and Eat Street are worth checking out if shopping is on the agenda, while those wishing to experience the area's natural beauty can explore Padang Padang Beach and Bingin Beach. Traveling with kids? Consider Waterbom Bali and Paintball Bali Jimbaran Hill Activity Village. Discover the area's water adventures with snorkeling, parasailing, and windsurfing nearby, or enjoy the great outdoors with hiking/biking trails. "
           ]
         }
       },
@@ -2161,7 +2551,7 @@
       "staticImage": {
         "__typename": "Image",
         "description": "Map",
-        "url": "https://maps.googleapis.com/maps/api/staticmap?&size=600x120&zoom=13&markers=icon:https%3A%2F%2Fa.travel-assets.com%2Ftravel-assets-manager%2Feg-maps%2Fproperty-hotels.png%7C50.08202%2C14.40484&channel=expedia-HotelInformation&maptype=roadmap&scale=2&key=AIzaSyCYjQus5kCufOpSj932jFoR_AJiL9yiwOw&signature=_Z8DO-ymIMdKluGR8Kczj54z8XI=",
+        "url": "https://maps.googleapis.com/maps/api/staticmap?&size=600x120&zoom=13&markers=icon:https%3A%2F%2Fa.travel-assets.com%2Ftravel-assets-manager%2Feg-maps%2Fproperty-hotels.png%7C-8.84553%2C115.12482&channel=expedia-HotelInformation&maptype=roadmap&scale=2&key=AIzaSyCYjQus5kCufOpSj932jFoR_AJiL9yiwOw&signature=oqGcVK2om-lAIHYTlDdKsC5LQBk=",
         "aspectRatio": null
       }
     },
@@ -2178,9 +2568,9 @@
       "items": [
         {
           "__typename": "PropertyInfoItem",
-          "text": "Charles Bridge",
+          "text": "Uluwatu Temple",
           "state": null,
-          "moreInfo": "12 min walk",
+          "moreInfo": "9 min drive",
           "icon": {
             "__typename": "Icon",
             "id": "place",
@@ -2192,9 +2582,9 @@
         },
         {
           "__typename": "PropertyInfoItem",
-          "text": "Prague Castle",
+          "text": "Padang Padang Beach",
           "state": null,
-          "moreInfo": "18 min walk",
+          "moreInfo": "18 min drive",
           "icon": {
             "__typename": "Icon",
             "id": "place",
@@ -2206,9 +2596,9 @@
         },
         {
           "__typename": "PropertyInfoItem",
-          "text": "Old Town Square",
+          "text": "Bingin Beach",
           "state": null,
-          "moreInfo": "19 min walk",
+          "moreInfo": "21 min drive",
           "icon": {
             "__typename": "Icon",
             "id": "place",
@@ -2220,9 +2610,9 @@
         },
         {
           "__typename": "PropertyInfoItem",
-          "text": "Prague (PRG-Vaclav Havel)",
+          "text": "Denpasar (DPS-Ngurah Rai Intl.)",
           "state": null,
-          "moreInfo": "29 min drive",
+          "moreInfo": "46 min drive",
           "icon": {
             "__typename": "Icon",
             "id": "lob_flights",
@@ -2242,638 +2632,1298 @@
     "images": [
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Terrace/patio, image",
+        "accessibilityText": "Front of property - evening/night, image",
         "actionLabel": "Go to full screen",
-        "imageId": "15289035",
+        "imageId": "113673674",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/0e8e8100.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Terrace/patio"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/f07db500.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Front of property - evening/night"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Poolside bar, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "11365850",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/2c63d48f.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Poolside bar"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The One) | 1 bedroom, minibar, in-room safe, desk, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "31416217",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/3a88a31f.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The One) | 1 bedroom, minibar, in-room safe, desk"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 1 Bedroom, Private Pool, Ocean View (The Villa) | Breakfast meal | Free daily full breakfast, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "14863156",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/817b7862.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 1 Bedroom, Private Pool, Ocean View (The Villa) | Breakfast meal | Free daily full breakfast"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Couples treatment rooms, steam room, body treatments, aromatherapy, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "15611369",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/89319e44.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Couples treatment rooms, steam room, body treatments, aromatherapy"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Mood) | Living area | 60-inch plasma TV with satellite channels, TV, DVD player, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "15206004",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/25cc91f0.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Mood) | Living area | 60-inch plasma TV with satellite channels, TV, DVD player"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 1 Bedroom, Private Pool (The Breeze) | Bathroom | Separate tub and shower, rainfall showerhead, designer toiletries, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "49297203",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/67e6e319.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 1 Bedroom, Private Pool (The Breeze) | Bathroom | Separate tub and shower, rainfall showerhead, designer toiletries"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Sports facility, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "31062077",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/9a08a720.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Sports facility"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Snack bar, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "70209519",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/15d519fd.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Snack bar"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "View from property, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "31061039",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/46f90976.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "View from property"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The Ocean 1 Bedroom Usage) | 1 bedroom, minibar, in-room safe, desk, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "622989076",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/w2880h2299x0y2-fb8a67f8.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The Ocean 1 Bedroom Usage) | 1 bedroom, minibar, in-room safe, desk"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Mood) | View from room, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "70210530",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/9d1292d8.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Mood) | View from room"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 2 Bedrooms, Private Pool, Ocean View (The Ocean) | 1 bedroom, minibar, in-room safe, desk, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "51406655",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/d1cc2720.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 2 Bedrooms, Private Pool, Ocean View (The Ocean) | 1 bedroom, minibar, in-room safe, desk"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 2 Bedrooms, Private Pool, Ocean View (The Ocean) | View from room, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "51406654",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/5e94f9a6.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 2 Bedrooms, Private Pool, Ocean View (The Ocean) | View from room"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 1 Bedroom, Private Pool (The Breeze) | 1 bedroom, minibar, in-room safe, desk, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "49297295",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/002aef5d.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 1 Bedroom, Private Pool (The Breeze) | 1 bedroom, minibar, in-room safe, desk"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Aerial view, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "113673839",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/bf69c20d.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Aerial view"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 1 Bedroom, Private Pool, Ocean View (The Villa) | Floor plan, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "70211892",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/dcd50c64.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 1 Bedroom, Private Pool, Ocean View (The Villa) | Floor plan"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Porch, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "15602635",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/5f956ed7.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Porch"
         }
       },
       {
         "__typename": "PropertyImage",
         "accessibilityText": "Exterior, image",
         "actionLabel": "Go to full screen",
-        "imageId": "50736146",
+        "imageId": "74608200",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/cc1949ba.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/389f9194.jpg?impolicy=resizecrop&rw=500&ra=fit",
           "description": "Exterior"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Triple Room | Premium bedding, down comforters, minibar, in-room safe, image",
+        "accessibilityText": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | Terrace/patio, image",
         "actionLabel": "Go to full screen",
-        "imageId": "855814827",
+        "imageId": "11367739",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/963ccc8b.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Triple Room | Premium bedding, down comforters, minibar, in-room safe"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/12515000.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | Terrace/patio"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Free daily buffet breakfast, image",
+        "accessibilityText": "3 restaurants, breakfast, lunch, dinner served; international cuisine, image",
         "actionLabel": "Go to full screen",
-        "imageId": "50736937",
+        "imageId": "74608296",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/43ffc9cf.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Free daily buffet breakfast"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/ee9782fe.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "3 restaurants, breakfast, lunch, dinner served; international cuisine"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Lobby, image",
+        "accessibilityText": "3 restaurants, breakfast, lunch, dinner served; international cuisine, image",
         "actionLabel": "Go to full screen",
-        "imageId": "50737231",
+        "imageId": "622989270",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/f88c1cda.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Lobby"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/w2880h1981x0y1-19f4ca76.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "3 restaurants, breakfast, lunch, dinner served; international cuisine"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Designer toiletries, hair dryer, bidet, towels, image",
+        "accessibilityText": "Villa, 1 Bedroom, Private Pool (The Breeze) | In-room dining, image",
         "actionLabel": "Go to full screen",
-        "imageId": "15289025",
+        "imageId": "44501364",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/32112858.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Designer toiletries, hair dryer, bidet, towels"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/eb84d020.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 1 Bedroom, Private Pool (The Breeze) | In-room dining"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Sauna, image",
+        "accessibilityText": "Free daily full breakfast, image",
         "actionLabel": "Go to full screen",
-        "imageId": "70135749",
+        "imageId": "31061620",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/6e5f1fb1.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Sauna"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/efd67396.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Free daily full breakfast"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Massage/treatment rooms, massages, image",
+        "accessibilityText": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | Bathroom | Separate tub and shower, rainfall showerhead, designer toiletries, image",
         "actionLabel": "Go to full screen",
-        "imageId": "70139151",
+        "imageId": "51852858",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/16b03979.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Massage/treatment rooms, massages"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/86bbc087.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | Bathroom | Separate tub and shower, rainfall showerhead, designer toiletries"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Lounge, image",
+        "accessibilityText": "Separate tub and shower, rainfall showerhead, designer toiletries, image",
         "actionLabel": "Go to full screen",
-        "imageId": "37347965",
+        "imageId": "14883130",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/91bc6251.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Lounge"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/35357fdf.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Separate tub and shower, rainfall showerhead, designer toiletries"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "View from room, image",
+        "accessibilityText": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The Ocean 1 Bedroom Usage) | Bathroom | Separate tub and shower, rainfall showerhead, designer toiletries, image",
         "actionLabel": "Go to full screen",
-        "imageId": "66702645",
+        "imageId": "622989050",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/9239eea9.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "View from room"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/w2880h2013x0y0-b3b98ecc.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The Ocean 1 Bedroom Usage) | Bathroom | Separate tub and shower, rainfall showerhead, designer toiletries"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Suite | Premium bedding, down comforters, minibar, in-room safe, image",
+        "accessibilityText": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | Living room | 60-inch plasma TV with satellite channels, TV, DVD player, image",
         "actionLabel": "Go to full screen",
-        "imageId": "855816992",
+        "imageId": "11367742",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/c6ccb7c0.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Suite | Premium bedding, down comforters, minibar, in-room safe"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/67feb9a0.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | Living room | 60-inch plasma TV with satellite channels, TV, DVD player"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Triple Room | View from room, image",
+        "accessibilityText": "Villa, 1 Bedroom, Private Pool (The Breeze) | Living room | 60-inch plasma TV with satellite channels, TV, DVD player, image",
         "actionLabel": "Go to full screen",
-        "imageId": "66702675",
+        "imageId": "70210682",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/7636b54f.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Triple Room | View from room"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/62992183.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 1 Bedroom, Private Pool (The Breeze) | Living room | 60-inch plasma TV with satellite channels, TV, DVD player"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Double or Twin Room | View from room, image",
+        "accessibilityText": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | Living room | 60-inch plasma TV with satellite channels, TV, DVD player, image",
         "actionLabel": "Go to full screen",
-        "imageId": "66702620",
+        "imageId": "11367740",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/b700b32e.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Double or Twin Room | View from room"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/34558fc4.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | Living room | 60-inch plasma TV with satellite channels, TV, DVD player"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Terrace/patio, image",
+        "accessibilityText": "60-inch plasma TV with satellite channels, TV, DVD player, image",
         "actionLabel": "Go to full screen",
-        "imageId": "28854830",
+        "imageId": "575111945",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/81a78102.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Terrace/patio"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/443880cf.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "60-inch plasma TV with satellite channels, TV, DVD player"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Restaurant, image",
+        "accessibilityText": "Luxury Villa, 1 Bedroom, Ocean View (The Ridge) | Living area | 60-inch plasma TV with satellite channels, TV, DVD player, image",
         "actionLabel": "Go to full screen",
-        "imageId": "855812858",
+        "imageId": "373278949",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/d744bf74.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Restaurant"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/ec3d39c0.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 1 Bedroom, Ocean View (The Ridge) | Living area | 60-inch plasma TV with satellite channels, TV, DVD player"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Reception, image",
+        "accessibilityText": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The One) | View from room, image",
         "actionLabel": "Go to full screen",
-        "imageId": "28854898",
+        "imageId": "70212183",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/aa275286.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Reception"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/412ebfa9.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The One) | View from room"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Terrace/patio, image",
+        "accessibilityText": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | Living area | 60-inch plasma TV with satellite channels, TV, DVD player, image",
         "actionLabel": "Go to full screen",
-        "imageId": "15289028",
+        "imageId": "70211064",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/4eadd104.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Terrace/patio"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/e5acb370.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | Living area | 60-inch plasma TV with satellite channels, TV, DVD player"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Reception, image",
+        "accessibilityText": "60-inch plasma TV with satellite channels, TV, DVD player, image",
         "actionLabel": "Go to full screen",
-        "imageId": "855816174",
+        "imageId": "375337346",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/c5ede803.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Reception"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/39a14eaf.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "60-inch plasma TV with satellite channels, TV, DVD player"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Free daily buffet breakfast, image",
+        "accessibilityText": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The One) | Living room | 60-inch plasma TV with satellite channels, TV, DVD player, image",
         "actionLabel": "Go to full screen",
-        "imageId": "17460618",
+        "imageId": "49297110",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/118d7477.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Free daily buffet breakfast"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/71fe7bfb.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The One) | Living room | 60-inch plasma TV with satellite channels, TV, DVD player"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Restaurant, image",
+        "accessibilityText": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | Living area | 60-inch plasma TV with satellite channels, TV, DVD player, image",
         "actionLabel": "Go to full screen",
-        "imageId": "15289029",
+        "imageId": "70211100",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/f6e0cf2b.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Restaurant"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/235bc344.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | Living area | 60-inch plasma TV with satellite channels, TV, DVD player"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Free daily buffet breakfast, image",
+        "accessibilityText": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | Private kitchen | Fridge, coffee/tea maker, electric kettle, image",
         "actionLabel": "Go to full screen",
-        "imageId": "37348332",
+        "imageId": "70210191",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/90b40b92.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Free daily buffet breakfast"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/58a91bff.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | Private kitchen | Fridge, coffee/tea maker, electric kettle"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Delicatessen, image",
+        "accessibilityText": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | Private kitchen | Fridge, coffee/tea maker, electric kettle, image",
         "actionLabel": "Go to full screen",
-        "imageId": "37348343",
+        "imageId": "74607132",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/5a648e91.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Delicatessen"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/8331896d.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | Private kitchen | Fridge, coffee/tea maker, electric kettle"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Buffet, image",
+        "accessibilityText": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Shore) | Private kitchen | Fridge, coffee/tea maker, electric kettle, image",
         "actionLabel": "Go to full screen",
-        "imageId": "37348341",
+        "imageId": "74607091",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/4912e5d1.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Buffet"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/d3525868.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Shore) | Private kitchen | Fridge, coffee/tea maker, electric kettle"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Food and drink, image",
+        "accessibilityText": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Mood) | Private kitchen | Fridge, coffee/tea maker, electric kettle, image",
         "actionLabel": "Go to full screen",
-        "imageId": "37348342",
+        "imageId": "74607104",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/91d41285.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Food and drink"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/df0c1a93.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Mood) | Private kitchen | Fridge, coffee/tea maker, electric kettle"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Superior Room | Bathroom | Designer toiletries, hair dryer, bidet, towels, image",
+        "accessibilityText": "Luxury Villa, 2 Bedrooms, Private Pool, Ocean View (The Ocean) | Private kitchen | Fridge, coffee/tea maker, electric kettle, image",
         "actionLabel": "Go to full screen",
-        "imageId": "37348378",
+        "imageId": "74060366",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/6b51a0ef.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Superior Room | Bathroom | Designer toiletries, hair dryer, bidet, towels"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/a24c17c6.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 2 Bedrooms, Private Pool, Ocean View (The Ocean) | Private kitchen | Fridge, coffee/tea maker, electric kettle"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Meeting facility, image",
+        "accessibilityText": "2 outdoor pools, free cabanas, pool umbrellas, image",
         "actionLabel": "Go to full screen",
-        "imageId": "50743380",
+        "imageId": "113673541",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/1bbbcf44.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Meeting facility"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/3d3c02d7.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "2 outdoor pools, free cabanas, pool umbrellas"
         }
       },
       {
         "__typename": "PropertyImage",
         "accessibilityText": "Front of property, image",
         "actionLabel": "Go to full screen",
-        "imageId": "37348593",
+        "imageId": "74608003",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/a82b4de4.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/fbe5547f.jpg?impolicy=resizecrop&rw=500&ra=fit",
           "description": "Front of property"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Lobby lounge, image",
+        "accessibilityText": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The One) | Living area | 60-inch plasma TV with satellite channels, TV, DVD player, image",
         "actionLabel": "Go to full screen",
-        "imageId": "15289026",
+        "imageId": "70212221",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/2f2a0a16.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Lobby lounge"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/47751eab.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The One) | Living area | 60-inch plasma TV with satellite channels, TV, DVD player"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Interior detail, image",
+        "accessibilityText": "Bowling, image",
         "actionLabel": "Go to full screen",
-        "imageId": "15289031",
+        "imageId": "70209440",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/d71899f0.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Interior detail"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/b1a0c9a5.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Bowling"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Superior Room | Living area | 26-inch flat-screen TV with cable channels, TV, image",
+        "accessibilityText": "Couples treatment rooms, steam room, body treatments, aromatherapy, image",
         "actionLabel": "Go to full screen",
-        "imageId": "15289032",
+        "imageId": "14883137",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/004a5fc3.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Superior Room | Living area | 26-inch flat-screen TV with cable channels, TV"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/44df6ef0.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Couples treatment rooms, steam room, body treatments, aromatherapy"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Hallway, image",
+        "accessibilityText": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | 1 bedroom, minibar, in-room safe, desk, image",
         "actionLabel": "Go to full screen",
-        "imageId": "855816120",
+        "imageId": "11364970",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/d20cf5fd.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Hallway"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/b95078ec.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | 1 bedroom, minibar, in-room safe, desk"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "26-inch flat-screen TV with cable channels, TV, image",
+        "accessibilityText": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | 1 bedroom, minibar, in-room safe, desk, image",
         "actionLabel": "Go to full screen",
-        "imageId": "15289018",
+        "imageId": "11366292",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/cd70f58c.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "26-inch flat-screen TV with cable channels, TV"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/f97164dc.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | 1 bedroom, minibar, in-room safe, desk"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Fitness facility, image",
+        "accessibilityText": "Lobby sitting area, image",
         "actionLabel": "Go to full screen",
-        "imageId": "17460617",
+        "imageId": "15153127",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/0d9f34c4.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Fitness facility"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/383a8c5b.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Lobby sitting area"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Children's play area - indoor, image",
+        "accessibilityText": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | 1 bedroom, minibar, in-room safe, desk, image",
         "actionLabel": "Go to full screen",
-        "imageId": "6215637",
+        "imageId": "14883142",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/a41faff4.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Children's play area - indoor"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/71ce7a67.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | 1 bedroom, minibar, in-room safe, desk"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 1 Bedroom, Ocean View (The Ridge) | Beach/ocean view, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "373281255",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/63b34e3a.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 1 Bedroom, Ocean View (The Ridge) | Beach/ocean view"
         }
       },
       {
         "__typename": "PropertyImage",
         "accessibilityText": "Exterior, image",
         "actionLabel": "Go to full screen",
-        "imageId": "759977679",
+        "imageId": "74608608",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/15bb4be3.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/5d399f25.jpg?impolicy=resizecrop&rw=500&ra=fit",
           "description": "Exterior"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Concierge desk, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "15602279",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/0e38eef5.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Concierge desk"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Gym, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "14863149",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/d4c03643.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Gym"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Gym, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "15610564",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/0474ce3d.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Gym"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Sports facility, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "70209422",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/83340ff7.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Sports facility"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | 1 bedroom, minibar, in-room safe, desk, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "31061318",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/0717d05f.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | 1 bedroom, minibar, in-room safe, desk"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Shore) | In-room business center, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "11364163",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/4940ae0a.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Shore) | In-room business center"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Children's play area - indoor, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "70211328",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/b4297a01.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Children's play area - indoor"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 1 Bedroom, Ocean View (The Ridge) | Bathroom | Separate tub and shower, rainfall showerhead, designer toiletries, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "373280745",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/ff6c508f.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 1 Bedroom, Ocean View (The Ridge) | Bathroom | Separate tub and shower, rainfall showerhead, designer toiletries"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "View from room, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "51406659",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/2234c580.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "View from room"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 1 Bedroom, Private Pool (The Breeze) | Outdoor pool | 2 outdoor pools, free cabanas, pool umbrellas, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "44501353",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/0a06eb7b.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 1 Bedroom, Private Pool (The Breeze) | Outdoor pool | 2 outdoor pools, free cabanas, pool umbrellas"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Mood) | Balcony view, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "70210518",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/bd2f0ed3.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Mood) | Balcony view"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 1 Bedroom, Private Pool, Ocean View (The Villa) | View from room, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "14863146",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/2d1d65fa.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 1 Bedroom, Private Pool, Ocean View (The Villa) | View from room"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 1 Bedroom, Private Pool, Ocean View (The Villa) | 1 bedroom, minibar, in-room safe, desk, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "14863148",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/b0a781e6.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 1 Bedroom, Private Pool, Ocean View (The Villa) | 1 bedroom, minibar, in-room safe, desk"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | Balcony view, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "70211670",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/a8fd9118.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | Balcony view"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | Beach/ocean view, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "11369006",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/288c0d7c.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | Beach/ocean view"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "3 restaurants, breakfast, lunch, dinner served; international cuisine, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "373283821",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/a615d193.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "3 restaurants, breakfast, lunch, dinner served; international cuisine"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 1 Bedroom, Private Pool, Ocean View (The Villa) | In-room dining, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "14863159",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/cc4c7fb7.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 1 Bedroom, Private Pool, Ocean View (The Villa) | In-room dining"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Aerial view, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "44501693",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/c2fbf0a5.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Aerial view"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 1 Bedroom, Private Pool, Ocean View (The Villa) | 1 bedroom, minibar, in-room safe, desk, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "70212883",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/07a5561f.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 1 Bedroom, Private Pool, Ocean View (The Villa) | 1 bedroom, minibar, in-room safe, desk"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Shore) | Beach/ocean view, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "70210738",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/77d5ebea.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Shore) | Beach/ocean view"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Separate tub and shower, rainfall showerhead, designer toiletries, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "51406652",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/fd48e78a.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Separate tub and shower, rainfall showerhead, designer toiletries"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 1 Bedroom, Ocean View (The Ridge) | 1 bedroom, minibar, in-room safe, desk, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "373284527",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/0977a08e.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 1 Bedroom, Ocean View (The Ridge) | 1 bedroom, minibar, in-room safe, desk"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | Family dining | 3 restaurants, breakfast, lunch, dinner served; international cuisine, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "31061817",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/bae5a15b.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | Family dining | 3 restaurants, breakfast, lunch, dinner served; international cuisine"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | 1 bedroom, minibar, in-room safe, desk, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "51853103",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/059e32f0.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | 1 bedroom, minibar, in-room safe, desk"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Couples treatment rooms, steam room, body treatments, aromatherapy, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "14863158",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/42ff0d5d.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Couples treatment rooms, steam room, body treatments, aromatherapy"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | View from room, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "14883138",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/98d3c633.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | View from room"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | 1 bedroom, minibar, in-room safe, desk, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "70211294",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/95d5aa2a.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | 1 bedroom, minibar, in-room safe, desk"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 2 Bedrooms, Private Pool, Ocean View (The Ocean) | In-room dining, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "51406651",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/ed96d741.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 2 Bedrooms, Private Pool, Ocean View (The Ocean) | In-room dining"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Shore) | Bathroom | Separate tub and shower, rainfall showerhead, designer toiletries, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "49296858",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/1ca02c45.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Shore) | Bathroom | Separate tub and shower, rainfall showerhead, designer toiletries"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The One) | Balcony, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "49296587",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/63afe82a.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The One) | Balcony"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Mood) | 1 bedroom, minibar, in-room safe, desk, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "12095454",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/74ded1d6.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Mood) | 1 bedroom, minibar, in-room safe, desk"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Aerial view, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "70213149",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/bd2c8b61.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Aerial view"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 1 Bedroom, Private Pool, Ocean View (The Villa) | View from room, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "14863150",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/037000d0.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 1 Bedroom, Private Pool, Ocean View (The Villa) | View from room"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 1 Bedroom, Private Pool (The Breeze) | View from room, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "44501411",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/6fce8da9.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 1 Bedroom, Private Pool (The Breeze) | View from room"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 1 Bedroom, Private Pool (The Breeze) | 1 bedroom, minibar, in-room safe, desk, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "70210636",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/15c3f75e.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 1 Bedroom, Private Pool (The Breeze) | 1 bedroom, minibar, in-room safe, desk"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | View from room, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "70211640",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/273edf01.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | View from room"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | In-room dining, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "14883133",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/e8f2c6f6.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | In-room dining"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "2 outdoor pools, free cabanas, pool umbrellas, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "31347224",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/ba0d6337.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "2 outdoor pools, free cabanas, pool umbrellas"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The One) | Outdoor pool | 2 outdoor pools, free cabanas, pool umbrellas, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "31416205",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/99fff699.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The One) | Outdoor pool | 2 outdoor pools, free cabanas, pool umbrellas"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "3 restaurants, breakfast, lunch, dinner served; international cuisine, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "373283421",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/b802778c.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "3 restaurants, breakfast, lunch, dinner served; international cuisine"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 1 Bedroom, Private Pool, Ocean View (The Villa) | Terrace/patio, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "70212533",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/1f33fb8a.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 1 Bedroom, Private Pool, Ocean View (The Villa) | Terrace/patio"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Shore) | Living area | 60-inch plasma TV with satellite channels, TV, DVD player, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "15205914",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/38df884d.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Shore) | Living area | 60-inch plasma TV with satellite channels, TV, DVD player"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The Ocean 1 Bedroom Usage) | 1 bedroom, minibar, in-room safe, desk, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "622989007",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/w2879h2299x0y0-b9339e17.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The Ocean 1 Bedroom Usage) | 1 bedroom, minibar, in-room safe, desk"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Exterior, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "51879042",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/967def81.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Exterior"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Exterior, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "74608698",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/3fe25d84.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Exterior"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | Front of property - evening/night, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "14883132",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/0e1b5a36.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 5 Bedrooms, Private Pool, Ocean View (The View) | Front of property - evening/night"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Deep soaking bathtub, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "15205659",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/88db5f35.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Deep soaking bathtub"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Shore) | View from room, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "70210711",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/35ed2c14.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Shore) | View from room"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Poolside bar, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "113673785",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/5f2bfd63.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Poolside bar"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Poolside bar, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "113673811",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/0cc6158b.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Poolside bar"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The One) | Bathroom | Separate tub and shower, rainfall showerhead, designer toiletries, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "49297087",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/7b8978a1.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 1 Bedroom, Private Pool, Ocean View (The One) | Bathroom | Separate tub and shower, rainfall showerhead, designer toiletries"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Meeting facility, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "70210340",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/7c435821.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Meeting facility"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Separate tub and shower, rainfall showerhead, designer toiletries, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "14863145",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/e087ce62.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Separate tub and shower, rainfall showerhead, designer toiletries"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | 1 bedroom, minibar, in-room safe, desk, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "51860307",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/1072a1ab.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | 1 bedroom, minibar, in-room safe, desk"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 1 Bedroom, Ocean View (The Ridge) | In-room dining, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "373285905",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/1eb50172.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 1 Bedroom, Ocean View (The Ridge) | In-room dining"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | Family dining | 3 restaurants, breakfast, lunch, dinner served; international cuisine, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "51853240",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/1fe988b0.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Luxury Villa, 3 Bedrooms, Private Pool, Ocean View (The Ridge) | Family dining | 3 restaurants, breakfast, lunch, dinner served; international cuisine"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "2 outdoor pools, free cabanas, pool umbrellas, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "15179792",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/831300d0.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "2 outdoor pools, free cabanas, pool umbrellas"
+        }
+      },
+      {
+        "__typename": "PropertyImage",
+        "accessibilityText": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Shore) | 1 bedroom, minibar, in-room safe, desk, image",
+        "actionLabel": "Go to full screen",
+        "imageId": "12095461",
+        "image": {
+          "__typename": "Image",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/2265185f.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Shore) | 1 bedroom, minibar, in-room safe, desk"
         }
       },
       {
         "__typename": "PropertyImage",
         "accessibilityText": "Interior entrance, image",
         "actionLabel": "Go to full screen",
-        "imageId": "15289037",
+        "imageId": "15602278",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/65dfdd1e.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/10309f7d.jpg?impolicy=resizecrop&rw=500&ra=fit",
           "description": "Interior entrance"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Triple Room | Premium bedding, down comforters, minibar, in-room safe, image",
+        "accessibilityText": "Concierge desk, image",
         "actionLabel": "Go to full screen",
-        "imageId": "855815852",
+        "imageId": "15152964",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/c5913082.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Triple Room | Premium bedding, down comforters, minibar, in-room safe"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/1d6a0ee1.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Concierge desk"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Suite | Premium bedding, down comforters, minibar, in-room safe, image",
+        "accessibilityText": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Mood) | Bathroom | Separate tub and shower, rainfall showerhead, designer toiletries, image",
         "actionLabel": "Go to full screen",
-        "imageId": "15289036",
+        "imageId": "49296967",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/9ad8643b.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Suite | Premium bedding, down comforters, minibar, in-room safe"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/6d625bb6.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Mood) | Bathroom | Separate tub and shower, rainfall showerhead, designer toiletries"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Superior Room | Premium bedding, down comforters, minibar, in-room safe, image",
+        "accessibilityText": "Exterior, image",
         "actionLabel": "Go to full screen",
-        "imageId": "15289022",
+        "imageId": "575113803",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/f8f7b8f2.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Superior Room | Premium bedding, down comforters, minibar, in-room safe"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/e34732ae.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Exterior"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Double or Twin Room | Premium bedding, down comforters, minibar, in-room safe, image",
+        "accessibilityText": "3 restaurants, breakfast, lunch, dinner served; international cuisine, image",
         "actionLabel": "Go to full screen",
-        "imageId": "855817060",
+        "imageId": "373283595",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/ddfa5525.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Double or Twin Room | Premium bedding, down comforters, minibar, in-room safe"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/1d8ab911.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "3 restaurants, breakfast, lunch, dinner served; international cuisine"
         }
       },
       {
         "__typename": "PropertyImage",
-        "accessibilityText": "Superior Room | Premium bedding, down comforters, minibar, in-room safe, image",
+        "accessibilityText": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Mood) | In-room dining, image",
         "actionLabel": "Go to full screen",
-        "imageId": "855815413",
+        "imageId": "14863144",
         "image": {
           "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/66832b10.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Superior Room | Premium bedding, down comforters, minibar, in-room safe"
-        }
-      },
-      {
-        "__typename": "PropertyImage",
-        "accessibilityText": "Double or Twin Room | Premium bedding, down comforters, minibar, in-room safe, image",
-        "actionLabel": "Go to full screen",
-        "imageId": "37348366",
-        "image": {
-          "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/606e3c92.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Double or Twin Room | Premium bedding, down comforters, minibar, in-room safe"
-        }
-      },
-      {
-        "__typename": "PropertyImage",
-        "accessibilityText": "Superior Room | Premium bedding, down comforters, minibar, in-room safe, image",
-        "actionLabel": "Go to full screen",
-        "imageId": "15289013",
-        "image": {
-          "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/62ac68d2.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Superior Room | Premium bedding, down comforters, minibar, in-room safe"
-        }
-      },
-      {
-        "__typename": "PropertyImage",
-        "accessibilityText": "Superior Room | Premium bedding, down comforters, minibar, in-room safe, image",
-        "actionLabel": "Go to full screen",
-        "imageId": "855815029",
-        "image": {
-          "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/5c15a472.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Superior Room | Premium bedding, down comforters, minibar, in-room safe"
-        }
-      },
-      {
-        "__typename": "PropertyImage",
-        "accessibilityText": "Premium bedding, down comforters, minibar, in-room safe, image",
-        "actionLabel": "Go to full screen",
-        "imageId": "70138729",
-        "image": {
-          "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/7541bb51.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Premium bedding, down comforters, minibar, in-room safe"
-        }
-      },
-      {
-        "__typename": "PropertyImage",
-        "accessibilityText": "Suite | Premium bedding, down comforters, minibar, in-room safe, image",
-        "actionLabel": "Go to full screen",
-        "imageId": "15289017",
-        "image": {
-          "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/4933b3a6.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Suite | Premium bedding, down comforters, minibar, in-room safe"
-        }
-      },
-      {
-        "__typename": "PropertyImage",
-        "accessibilityText": "Superior Room | Premium bedding, down comforters, minibar, in-room safe, image",
-        "actionLabel": "Go to full screen",
-        "imageId": "855815184",
-        "image": {
-          "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/b4437a30.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Superior Room | Premium bedding, down comforters, minibar, in-room safe"
-        }
-      },
-      {
-        "__typename": "PropertyImage",
-        "accessibilityText": "Superior Room | Premium bedding, down comforters, minibar, in-room safe, image",
-        "actionLabel": "Go to full screen",
-        "imageId": "70138638",
-        "image": {
-          "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/a34a6475.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Superior Room | Premium bedding, down comforters, minibar, in-room safe"
-        }
-      },
-      {
-        "__typename": "PropertyImage",
-        "accessibilityText": "Suite | View from room, image",
-        "actionLabel": "Go to full screen",
-        "imageId": "66702715",
-        "image": {
-          "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/47dda57e.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Suite | View from room"
-        }
-      },
-      {
-        "__typename": "PropertyImage",
-        "accessibilityText": "Garden, image",
-        "actionLabel": "Go to full screen",
-        "imageId": "15289030",
-        "image": {
-          "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/535b4ca9.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Garden"
-        }
-      },
-      {
-        "__typename": "PropertyImage",
-        "accessibilityText": "Terrace/patio, image",
-        "actionLabel": "Go to full screen",
-        "imageId": "37348629",
-        "image": {
-          "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/dbc5e6c5.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Terrace/patio"
-        }
-      },
-      {
-        "__typename": "PropertyImage",
-        "accessibilityText": "Suite | View from room, image",
-        "actionLabel": "Go to full screen",
-        "imageId": "66702893",
-        "image": {
-          "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/3308ce1f.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Suite | View from room"
-        }
-      },
-      {
-        "__typename": "PropertyImage",
-        "accessibilityText": "Double or Twin Room | Premium bedding, down comforters, minibar, in-room safe, image",
-        "actionLabel": "Go to full screen",
-        "imageId": "15289033",
-        "image": {
-          "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/630092c1.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Double or Twin Room | Premium bedding, down comforters, minibar, in-room safe"
-        }
-      },
-      {
-        "__typename": "PropertyImage",
-        "accessibilityText": "Premium bedding, down comforters, minibar, in-room safe, image",
-        "actionLabel": "Go to full screen",
-        "imageId": "15289014",
-        "image": {
-          "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/e113ff33.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Premium bedding, down comforters, minibar, in-room safe"
-        }
-      },
-      {
-        "__typename": "PropertyImage",
-        "accessibilityText": "Premium bedding, down comforters, minibar, in-room safe, image",
-        "actionLabel": "Go to full screen",
-        "imageId": "15289020",
-        "image": {
-          "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/57ff165c.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Premium bedding, down comforters, minibar, in-room safe"
-        }
-      },
-      {
-        "__typename": "PropertyImage",
-        "accessibilityText": "Double or Twin Room | Premium bedding, down comforters, minibar, in-room safe, image",
-        "actionLabel": "Go to full screen",
-        "imageId": "17460622",
-        "image": {
-          "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/72ebbbfd.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Double or Twin Room | Premium bedding, down comforters, minibar, in-room safe"
-        }
-      },
-      {
-        "__typename": "PropertyImage",
-        "accessibilityText": "Double or Twin Room | Premium bedding, down comforters, minibar, in-room safe, image",
-        "actionLabel": "Go to full screen",
-        "imageId": "17460619",
-        "image": {
-          "__typename": "Image",
-          "url": "https://images.trvl-media.com/lodging/2000000/1110000/1105200/1105156/530fd1ad.jpg?impolicy=resizecrop&rw=500&ra=fit",
-          "description": "Double or Twin Room | Premium bedding, down comforters, minibar, in-room safe"
+          "url": "https://images.trvl-media.com/lodging/6000000/5990000/5984900/5984886/2783f99c.jpg?impolicy=resizecrop&rw=500&ra=fit",
+          "description": "Villa, 2 Bedrooms, Private Pool, Ocean View (The Mood) | In-room dining"
         }
       }
     ],
-    "accessibilityLabel": "Photo gallery for Hotel Roma Prague",
+    "accessibilityLabel": "Photo gallery for The Edge Bali",
     "thumbnailGalleryDialog": {
       "__typename": "LodgingGalleryDialog",
       "trigger": {
         "__typename": "LodgingDialogTriggerMessage",
-        "value": "56+",
+        "value": "116+",
         "icon": {
           "__typename": "Icon",
           "id": "photo_library",
@@ -2890,7 +3940,7 @@
       },
       "toolbar": {
         "__typename": "LodgingDialogToolbar",
-        "title": "Hotel Roma Prague",
+        "title": "The Edge Bali",
         "icon": {
           "__typename": "Icon",
           "id": "arrow_back",
@@ -2906,13 +3956,13 @@
       "__typename": "LodgingGalleryDialog",
       "trigger": {
         "__typename": "LodgingDialogTriggerMessage",
-        "value": "56+",
+        "value": "116+",
         "icon": null,
         "clientSideAnalytics": null
       },
       "toolbar": {
         "__typename": "LodgingDialogToolbar",
-        "title": "Hotel Roma Prague",
+        "title": "The Edge Bali",
         "icon": {
           "__typename": "Icon",
           "id": "close",
@@ -2931,11 +3981,11 @@
       "__typename": "PropertyReviewSummary",
       "overallScoreWithDescriptionA11y": {
         "__typename": "LodgingEnrichedMessage",
-        "value": "8.8/10 Excellent"
+        "value": "10/10 Exceptional"
       },
       "propertyReviewCountDetails": {
         "__typename": "PropertyReviewCountDetails",
-        "shortDescription": "See all 1,004 reviews"
+        "shortDescription": "See all 26 reviews"
       },
       "highlightMessage": null,
       "seeAllAction": {
@@ -2975,7 +4025,7 @@
                   "__typename": "PropertyContent",
                   "header": {
                     "__typename": "LodgingHeader",
-                    "text": "Hotel Roma Prague",
+                    "text": "The Edge Bali",
                     "subText": null,
                     "icon": null,
                     "headerImage": null
@@ -2985,7 +4035,7 @@
                       "__typename": "PropertyContentItemMarkup",
                       "content": {
                         "__typename": "MarkupText",
-                        "text": "Hotel Roma Prague puts you just a 5-minute drive from Old Town Square and Wenceslas Square. Guests indulge in massages, then grab a bite to eat at the coffee shop/cafe. This upscale hotel also features a bar/lounge, a fitness center, and a sauna. Fellow travelers like that it's only a short walk to public transportation: Újezd Stop is steps away and Ujezd Funicular Stop is 2 minutes. ",
+                        "text": "When you stay at The Edge Bali, you'll be within a 10-minute drive of Uluwatu Temple and Uluwatu Cliffs. Guests can visit the spa to be pampered with deep-tissue massages, body wraps, or facials, and The Cliff Bar, one of 3 restaurants, serves international cuisine and is open for breakfast, lunch, and dinner. Other highlights at this luxurious hotel include 2 outdoor pools, a poolside bar, and a fitness center.   ",
                         "markupType": "HTML"
                       }
                     }
@@ -3014,7 +4064,7 @@
                         "__typename": "PropertyContentText",
                         "primary": {
                           "__typename": "LodgingEnrichedMessage",
-                          "value": "Czech, Dutch, English, French, German, Italian, Russian, Spanish",
+                          "value": "Dutch, English, French, Indonesian",
                           "accessibilityLabel": null,
                           "icon": null
                         },
@@ -3053,7 +4103,7 @@
                   "__typename": "PropertyContent",
                   "header": {
                     "__typename": "LodgingHeader",
-                    "text": "Mandatory fees",
+                    "text": "Optional extras",
                     "subText": null,
                     "icon": null,
                     "headerImage": null
@@ -3063,15 +4113,7 @@
                       "__typename": "PropertyContentItemMarkup",
                       "content": {
                         "__typename": "MarkupText",
-                        "text": "You'll be asked to pay the following charges by the property at check-in or check-out: <br/>",
-                        "markupType": "HTML"
-                      }
-                    },
-                    {
-                      "__typename": "PropertyContentItemMarkup",
-                      "content": {
-                        "__typename": "MarkupText",
-                        "text": "<ul><li><strong>A tax</strong> is imposed by the city: EUR 2.02 per person, per night, up to 60 nights </li></ul>",
+                        "text": "<ul><li><strong>Airport shuttle</strong> service is offered for an extra charge of IDR 363000 per vehicle (one-way, maximum occupancy 3)</li></ul>",
                         "markupType": "HTML"
                       }
                     }
@@ -3088,7 +4130,7 @@
                   "__typename": "PropertyContent",
                   "header": {
                     "__typename": "LodgingHeader",
-                    "text": "Optional extras",
+                    "text": "Renovations and closures",
                     "subText": null,
                     "icon": null,
                     "headerImage": null
@@ -3098,7 +4140,7 @@
                       "__typename": "PropertyContentItemMarkup",
                       "content": {
                         "__typename": "MarkupText",
-                        "text": "<ul><li><strong>Early check-in</strong> can be arranged for an extra charge of EUR 35 (subject to availability)</li><li><strong>Late check-out</strong> can be arranged for an extra charge of EUR 45 (subject to availability)</li></ul>",
+                        "text": "In accordance with local regulations, all visitors must remain within the property during Seclusion Day (Nyepi)/Hindu New Year for a 24-hour period (starting at 6 AM). Seclusion Day typically falls in March or April (dates subject to change each year). Check-in and check-out will not be possible on that date. Ngurah Rai Airport (Bali International Airport) is also closed on Seclusion Day. ",
                         "markupType": "HTML"
                       }
                     }
@@ -3125,7 +4167,7 @@
                       "__typename": "PropertyContentItemMarkup",
                       "content": {
                         "__typename": "MarkupText",
-                        "text": "<ul><li>Babysitting is available for an extra charge</li><li>Rollaway beds are available for EUR 40.0 per night</li></ul>",
+                        "text": "<ul><li>Supervised childcare is available for an extra charge</li><li>Babysitting is available for an extra charge</li><li>Rollaway beds are available for IDR 1500000.0 per day</li><li>Airport shuttle service for children up to age 10 costs IDR 181500 (one-way)</li></ul>",
                         "markupType": "HTML"
                       }
                     }
@@ -3152,7 +4194,7 @@
                       "__typename": "PropertyContentItemMarkup",
                       "content": {
                         "__typename": "MarkupText",
-                        "text": "<ul><li>Self parking costs EUR 30 per day</li><li>Parking height restrictions apply </li></ul>",
+                        "text": "<ul><li>Parking height restrictions apply </li></ul>",
                         "markupType": "HTML"
                       }
                     }
@@ -3179,7 +4221,7 @@
                       "__typename": "PropertyContentItemMarkup",
                       "content": {
                         "__typename": "MarkupText",
-                        "text": "<ul><li>Reservations are required for massage services and can be made by contacting the property before arrival at the number on the booking confirmation</li></ul>",
+                        "text": "<ul><li>Children under 6 years old are not allowed in the swimming pool or fitness facility without adult supervision</li><li>Guests under 8 years old are not allowed in the spa </li><li>Reservations are required for massage services and spa treatments and can be made by contacting the property before arrival at the number on the booking confirmation</li></ul>",
                         "markupType": "HTML"
                       }
                     }
@@ -3209,16 +4251,6 @@
                           "__typename": "PropertyContentText",
                           "primary": {
                             "__typename": "LodgingEnrichedMessage",
-                            "value": "Only registered guests are allowed in the guestrooms.  ",
-                            "accessibilityLabel": null,
-                            "icon": null
-                          },
-                          "secondary": null
-                        },
-                        {
-                          "__typename": "PropertyContentText",
-                          "primary": {
-                            "__typename": "LodgingEnrichedMessage",
                             "value": "Guests can rest easy knowing there's a fire extinguisher, a smoke detector, a security system, and a first aid kit on site. ",
                             "accessibilityLabel": null,
                             "icon": null
@@ -3229,7 +4261,7 @@
                           "__typename": "PropertyContentText",
                           "primary": {
                             "__typename": "LodgingEnrichedMessage",
-                            "value": "This property accepts credit cards. Cash is not accepted.",
+                            "value": "The name on the credit card used at check-in to pay for incidentals must be the primary name on the guestroom reservation. ",
                             "accessibilityLabel": null,
                             "icon": null
                           },
@@ -3239,7 +4271,7 @@
                           "__typename": "PropertyContentText",
                           "primary": {
                             "__typename": "LodgingEnrichedMessage",
-                            "value": "Cashless transactions are available.",
+                            "value": "This property accepts credit cards, debit cards and cash.",
                             "accessibilityLabel": null,
                             "icon": null
                           },
@@ -3272,7 +4304,7 @@
                         "__typename": "PropertyContentText",
                         "primary": {
                           "__typename": "LodgingEnrichedMessage",
-                          "value": "Hotel Roma Prague",
+                          "value": "edge Hotel Pecatu",
                           "accessibilityLabel": null,
                           "icon": null
                         },
@@ -3285,7 +4317,7 @@
                         "__typename": "PropertyContentText",
                         "primary": {
                           "__typename": "LodgingEnrichedMessage",
-                          "value": "Roma Prague",
+                          "value": "edge Pecatu",
                           "accessibilityLabel": null,
                           "icon": null
                         },
@@ -3298,7 +4330,7 @@
                         "__typename": "PropertyContentText",
                         "primary": {
                           "__typename": "LodgingEnrichedMessage",
-                          "value": "Prague Roma Hotel",
+                          "value": "Edge Bali Hotel Pecatu",
                           "accessibilityLabel": null,
                           "icon": null
                         },
@@ -3311,7 +4343,7 @@
                         "__typename": "PropertyContentText",
                         "primary": {
                           "__typename": "LodgingEnrichedMessage",
-                          "value": "Roma Hotel Prague",
+                          "value": "The Edge Bali/Pecatu",
                           "accessibilityLabel": null,
                           "icon": null
                         },
@@ -3324,7 +4356,7 @@
                         "__typename": "PropertyContentText",
                         "primary": {
                           "__typename": "LodgingEnrichedMessage",
-                          "value": "Hotel Roma Prague Hotel",
+                          "value": "The Edge Hotel Pecatu",
                           "accessibilityLabel": null,
                           "icon": null
                         },
@@ -3337,7 +4369,7 @@
                         "__typename": "PropertyContentText",
                         "primary": {
                           "__typename": "LodgingEnrichedMessage",
-                          "value": "Hotel Roma Prague Prague",
+                          "value": "Edge Bali Hotel",
                           "accessibilityLabel": null,
                           "icon": null
                         },
@@ -3350,7 +4382,59 @@
                         "__typename": "PropertyContentText",
                         "primary": {
                           "__typename": "LodgingEnrichedMessage",
-                          "value": "Hotel Roma Prague Hotel Prague",
+                          "value": "Edge Bali Pecatu",
+                          "accessibilityLabel": null,
+                          "icon": null
+                        },
+                        "secondary": null
+                      }
+                    },
+                    {
+                      "__typename": "PropertyContentItemText",
+                      "content": {
+                        "__typename": "PropertyContentText",
+                        "primary": {
+                          "__typename": "LodgingEnrichedMessage",
+                          "value": "The Edge Bali Hotel",
+                          "accessibilityLabel": null,
+                          "icon": null
+                        },
+                        "secondary": null
+                      }
+                    },
+                    {
+                      "__typename": "PropertyContentItemText",
+                      "content": {
+                        "__typename": "PropertyContentText",
+                        "primary": {
+                          "__typename": "LodgingEnrichedMessage",
+                          "value": "The Edge Bali Pecatu",
+                          "accessibilityLabel": null,
+                          "icon": null
+                        },
+                        "secondary": null
+                      }
+                    },
+                    {
+                      "__typename": "PropertyContentItemText",
+                      "content": {
+                        "__typename": "PropertyContentText",
+                        "primary": {
+                          "__typename": "LodgingEnrichedMessage",
+                          "value": "The Edge Bali Hotel Pecatu",
+                          "accessibilityLabel": null,
+                          "icon": null
+                        },
+                        "secondary": null
+                      }
+                    },
+                    {
+                      "__typename": "PropertyContentItemText",
+                      "content": {
+                        "__typename": "PropertyContentText",
+                        "primary": {
+                          "__typename": "LodgingEnrichedMessage",
+                          "value": "The Edge Bali CHSE Certified",
                           "accessibilityLabel": null,
                           "icon": null
                         },

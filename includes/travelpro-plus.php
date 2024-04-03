@@ -70,6 +70,8 @@ function enqueue_travelproplus_styles()
             $bootstrap5 = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css";
             $fontAwesomeNewVersion = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css";
             $hotelDetail = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/hotel-detail.css';
+            $materialIcons = "https://fonts.googleapis.com/icon?family=Material+Icons";
+            $lightbox2Css = TRAVELPRO_PLUS_PLUGIN_URL . 'node_modules/lightbox2/dist/css/lightbox.min.css';
 
             wp_register_style('travelpro-plus-materialDesignIconic', $materialDesignIconic, array(), '1.0.0');
             wp_register_style('travelpro-plus-fontawesome', $fontAwesome, array(), '1.0.0');
@@ -81,6 +83,8 @@ function enqueue_travelproplus_styles()
             wp_register_style('travelpro-plus-flightresults', $flightResults, array(), '1.0.0');
             wp_register_style('travelpro-plus-flightresultsStyleTwo', $flightResultsStyleTwo, array(), '1.0.0');
             wp_register_style('travelpro-plus-hotelDetail', $hotelDetail, array(), '1.0.0');
+            wp_register_style('travelpro-plus-materialIcons', $materialIcons, array(), '1.0.0');
+            wp_register_style('travelpro-plus-lightbox2', $lightbox2Css, array(), '1.0.0');
 
             // Enqueue your plugin's styles
             wp_enqueue_style('travelpro-plus-materialDesignIconic');
@@ -93,6 +97,8 @@ function enqueue_travelproplus_styles()
             wp_enqueue_style('travelpro-plus-flightresults');
             wp_enqueue_style('travelpro-plus-flightresultsStyleTwo');
             wp_enqueue_style('travelpro-plus-hotelDetail');
+            wp_enqueue_style('travelpro-plus-materialIcons');
+            wp_enqueue_style('travelpro-plus-lightbox2');
         }
     }
 }
@@ -117,6 +123,7 @@ function travelproPlusbeforeBodyClosingScripts()
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/datepicker/moment.min.js'; ?>"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/datepicker/daterangepicker.js'; ?>"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/global.js'; ?>"></script>
+        <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'node_modules/lightbox2/dist/js/lightbox-plus-jquery.js'; ?>"></script>
 
         <script>
             $(document).ready(function() {

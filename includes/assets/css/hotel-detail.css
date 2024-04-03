@@ -3,10 +3,11 @@
   margin: auto;
 }
 h5 {
-  margin-top: 30px;
+  margin-top: 30px !important;
   margin-bottom: 20px;
   font-size: 20px;
   color: #333;
+  line-height: normal;
 }
 .amenity-item {
   text-align: center;
@@ -132,4 +133,23 @@ h5 {
   margin-left: 15px;
   font-size: 18px;
   color: #333;
+}
+
+.push-content-left {
+  padding-left: 25px;
+}
+.push-content-right {
+  padding-right: 25px;
+}
+
+.hotel-gallery-image {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
+#hotal-main-image {
+  height: 450px;
+  object-fit: cover;
+  width: 100%;
 }

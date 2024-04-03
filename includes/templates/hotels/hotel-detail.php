@@ -1,40 +1,40 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-5">
-            <img src="https://i.natgeofe.com/n/9a5f801c-0882-4ac2-ad7a-2d2d582591a1/sleepCapellaUbudBalibyGeorgRoske.jpg" class="img-fluid rounded" alt="Hotel Image">
-            <div class="row row-cols-4">
+            <img src="https://i.natgeofe.com/n/9a5f801c-0882-4ac2-ad7a-2d2d582591a1/sleepCapellaUbudBalibyGeorgRoske.jpg" class="img-fluid rounded" alt="Hotel Image" id="hotal-main-image">
+            <div class="row row-cols-4" id="images-thumbnail">
                 <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/id/237/200/300" class="img-fluid rounded" alt="Gallery Image Here is the corrected code with the necessary Bootstrap classes and images:" />
+                    <a href="https://picsum.photos/id/237/200/300" data-lightbox="image-1"><img src="https://picsum.photos/id/237/200/300" class="img-fluid rounded" /></a>
                 </div>
                 <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/seed/picsum/200/300" class="img-fluid rounded" alt="Gallery Image Here is the corrected code with the necessary Bootstrap classes and images:" />
+                    <img src="https://picsum.photos/seed/picsum/200/300" class="img-fluid rounded" />
                 </div>
                 <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300?grayscale" class="img-fluid rounded" alt="Gallery Image Here is the corrected code with the necessary Bootstrap classes and images:" />
+                    <img src="https://picsum.photos/200/300?grayscale" class="img-fluid rounded" />
                 </div>
                 <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" alt="Gallery Image Here is the corrected code with the necessary Bootstrap classes and images:" />
+                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" />
                 </div>
                 <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" alt="Gallery Image Here is the corrected code with the necessary Bootstrap classes and images:" />
+                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" />
                 </div>
                 <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" alt="Gallery Image Here is the corrected code with the necessary Bootstrap classes and images:" />
+                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" />
                 </div>
                 <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" alt="Gallery Image Here is the corrected code with the necessary Bootstrap classes and images:" />
+                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" />
                 </div>
                 <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" alt="Gallery Image Here is the corrected code with the necessary Bootstrap classes and images:" />
+                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" />
                 </div>
                 <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" alt="Gallery Image Here is the corrected code with the necessary Bootstrap classes and images:" />
+                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" />
                 </div>
                 <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" alt="Gallery Image Here is the corrected code with the necessary Bootstrap classes and images:" />
+                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" />
                 </div>
                 <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" alt="Gallery Image Here is the corrected code with the necessary Bootstrap classes and images:" />
+                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" />
                 </div>
             </div>
         </div>
@@ -64,11 +64,11 @@
                 </div>
 
                 <div class="detail-section">
-                    <h5 class="glance-heading">Accessibility</h5>
+                    <h5 class="glance-heading accessibility-heading-dynamic">Accessibility</h5>
                     <div class="card detail-card">
                         <div class="detail-header">
                             <i class="fas fa-wheelchair detail-icon"></i>
-                            <span class="detail-text">Accessibility</span>
+                            <span class="detail-text accessibility-heading-dynamic">Accessibility</span>
                         </div>
                         <div class="detail-body" id="detail-body-accessibility">
                             <p><i class="fa fa-play" aria-hidden="true"></i>
@@ -83,11 +83,11 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 push-content-right">
             <h3>Amenities</h3>
             <div class="amenities-container">
-                <h5>Property Highlights</h5>
-                <div class="row">
+                <h5 id="property-highlights">Property Highlights</h5>
+                <div class="row" id="property-highlights-dynamic">
                     <div class="col-md-3 p-2">
                         <div class="amenity-item">
                             <i class="fas fa-wifi amenity-icon"></i>
@@ -126,8 +126,8 @@
                     </div>
                 </div>
 
-                <h5>Food and Drink</h5>
-                <div class="row">
+                <h5 id="food-and-drink-heading">Food and Drink</h5>
+                <div class="row" id="food-and-drinks-data-list">
                     <div class="col-md-6">
                         <div class="amenity-item">
                             <i class="fas fa-coffee amenity-icon"></i>
@@ -143,7 +143,7 @@
                 </div>
 
                 <h5>Children and Bed</h5>
-                <div class="row">
+                <div class="row" id="children-and-beds-data-list">
                     <div class="col-md-12">
                         <div class="amenity-item">
                             <i class="fas fa-child amenity-icon"></i>
@@ -153,7 +153,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 push-content-left">
             <div class="checkin-checkout">
                 <h5>Check-in and Check-out</h5>
                 <div class="row">
@@ -174,6 +174,13 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                <h5>Overview</h5>
+                <div class="col">
+                    <p class="hotel-description-text">Savor exquisite culinary delights at our onsite restaurant, where our talented chefs craft a diverse menu of local and international cuisine. Whether you're craving a hearty breakfast to start your day or a romantic dinner for two, our restaurant offers a delightful dining experience for every palate.</p>
+                </div>
+
             </div>
         </div>
     </div>
@@ -199,17 +206,17 @@
 
 
             // => Amenities
-            const amenitesContents = data.summary.amenities.amenities[0].contents;
+            const amenitesGlanceContents = data.summary.amenities.amenities[0].contents;
             const atAGlanceHeading = data.summary.amenities.amenities[0].title;
 
             // Iterate over the contents
-            let hotelSize = extractAtAGlanceInfo(amenitesContents, "Hotel size", "rooms");
-            let floors = extractAtAGlanceInfo(amenitesContents, "Hotel size", "floors");
+            let hotelSize = extractAtAGlanceInfo(amenitesGlanceContents, "Hotel size", "rooms");
+            let floors = extractAtAGlanceInfo(amenitesGlanceContents, "Hotel size", "floors");
             // All the values for the at a glance list
             let atAGlanceHotelSizeresult = "Hotel size: " + hotelSize + " " + floors;
-            let checkInCheckout = extractAtAGlanceInfo(amenitesContents, "Arriving/Leaving", "Check-in");
-            let minAgeForCheckIn = extractAtAGlanceInfo(amenitesContents, "Arriving/Leaving", "check-in age");
-            let specialCheckInInstructions = extractAtAGlanceInfo(amenitesContents, "Special check-in instructions", "");
+            let checkInCheckout = extractAtAGlanceInfo(amenitesGlanceContents, "Arriving/Leaving", "Check-in");
+            let minAgeForCheckIn = extractAtAGlanceInfo(amenitesGlanceContents, "Arriving/Leaving", "check-in age");
+            let specialCheckInInstructions = extractAtAGlanceInfo(amenitesGlanceContents, "Special check-in instructions", "");
             let allAtAGlanceList = [atAGlanceHotelSizeresult, checkInCheckout, minAgeForCheckIn, specialCheckInInstructions];
             let allAtAGlanceFinalList = [];
 
@@ -224,9 +231,48 @@
 
 
             // => Accessibility
-            let getTrimAccessibilities = extractAtAGlanceInfo(amenitesContents, "Accessibility", "");
-            console.log(getTrimAccessibilities);
+            const accessibilityHeading = data.summary.amenities.amenities[1].contents[6].header.text;
+            let allAccessibilityFinalList = [];
+            const amenitesAccessibilityContents = data.summary.amenities.amenities[1].contents;
+            let getTrimAccessibilities = extractAccessibility(amenitesAccessibilityContents, "Accessibility", "");
+            // Convert whole string to array.
+            let accessibilityStrToArray = getTrimAccessibilities.split(', ');
+            // Remove comma from the last index in the array.
+            accessibilityStrToArray[accessibilityStrToArray.length - 1] = accessibilityStrToArray[accessibilityStrToArray.length - 1].replace(',', '');
 
+
+            // => Property Highlights
+            const propertyHighlightsHeading = data.summary.amenities.topAmenities.header.text;
+
+            // => Food and Drinks Section
+            const foodAndDrinksHeading = data.summary.amenities.amenities[1].contents[0].header.text;
+            const foodAndDrinkData = data.summary.amenities.amenities[1].contents[0].items;
+            let foodAndDrinksDataArray = [];
+            foodAndDrinkData.forEach(element => {
+                foodAndDrinksDataArray.push(element.text);
+            });
+
+            // => children And Bed section
+            const childrenAndBedData = data.summary.amenities.amenities[0].contents[5].items;
+            let childrenAndBedDataArray = [];
+            childrenAndBedData.forEach(element => {
+                childrenAndBedDataArray.push(element.text);
+            });
+
+
+            // => Check-in Starttime and Check-out Section
+            // => Property description
+            const descriptionHeading = data.propertyContentSectionGroups.aboutThisProperty.sections[0].header.text;
+            const hotelDescriptionText = data.propertyContentSectionGroups.aboutThisProperty.sections[0].bodySubSections[0].elements[0].items[0].content.text;
+
+
+            // => Hotel Images Section
+            const mainHotelImage = data.propertyGallery.images[0].image.url;
+            const imagesObj = data.propertyGallery.images;
+            let imagesArray = [];
+            imagesObj.forEach(function(img) {
+                imagesArray.push(img.image.url);
+            });
 
             // Rendering the data on the UI Elements
             $('#hotel-name').html(hotelName);
@@ -234,8 +280,17 @@
             $('#star-rating').html(starRating);
             $('.glance-heading-dynamic').html(atAGlanceHeading);
             // Loop through the newArray and dynamically generate content for each item
-            let glanceListwithIcon = playIconList(allAtAGlanceFinalList, "detail-body-glance");
-            // let accessibilityListwithIcon = playIconList(getTrimAccessibilities, "detail-body-accessibility");
+            let glanceListwithIcon = playIconList(allAtAGlanceFinalList.slice(0, 6), "detail-body-glance", "fa-play");
+            let accessibilityListwithIcon = playIconList(accessibilityStrToArray.slice(0, 6), "detail-body-accessibility", "fa-play");
+            $('.accessibility-heading-dynamic').html(accessibilityHeading);
+            let propertyHighlightItems = generateAmenitiesInBoxes(data.summary.amenities.topAmenities.items.slice(0, 8), "property-highlights-dynamic");
+            $('#property-highlights').html(propertyHighlightsHeading);
+            $('#food-and-drink-heading').html(foodAndDrinksHeading);
+            let foodAndDrinksData = playIconList(foodAndDrinksDataArray, "food-and-drinks-data-list", "fa-check", "green");
+            let childrenAndBedsData = playIconList(childrenAndBedDataArray, "children-and-beds-data-list", "fa-check", "green");
+            $('.hotel-description-text').html(hotelDescriptionText);
+            let showImagesToThumbnails = getImagesForHotels(imagesArray, "images-thumbnail", 12);
+            $('#hotal-main-image').attr("src", mainHotelImage);
         });
 
         function extractAtAGlanceInfo(contents, condition, includes) {
@@ -256,7 +311,25 @@
             return info.trim();
         }
 
-        function playIconList(array, targetDivId) {
+        function extractAccessibility(contents, condition, includes) {
+            // Initialize variables to store extracted information
+            let infoAccessibility = "";
+            contents.forEach(function(content) {
+                // Check if the content header matches "Hotel size"
+                if (content.header.text === condition) {
+                    // Iterate over the items within the content
+                    content.items.forEach(function(item) {
+                        // Extract the hotel size information
+                        if (item.text.includes(includes)) {
+                            infoAccessibility += item.text + ", ";
+                        }
+                    });
+                }
+            });
+            return infoAccessibility.trim();
+        }
+
+        function playIconList(array, targetDivId, iconClass, iconColor) {
             // Select the target div by its id
             var targetDiv = $("#" + targetDivId);
 
@@ -269,7 +342,7 @@
                 var paragraph = $("<p>");
 
                 // Add the icon <i> element
-                var icon = $("<i>").addClass("fa fa-play").attr("aria-hidden", "true");
+                var icon = $("<i>").addClass("fa").addClass(iconClass).addClass("fa-fw").css("color", iconColor).attr("aria-hidden", "true");
 
                 // Append the icon to the paragraph
                 paragraph.append(icon);
@@ -279,6 +352,39 @@
 
                 // Append the paragraph to the target div
                 targetDiv.append(paragraph);
+            });
+        }
+
+        // Property Highlights
+        function generateAmenitiesInBoxes(data, containerId) {
+            const amenitiesContainer = $("#" + containerId);
+            // Empty the amenitiesContainer to remove any existing content
+            amenitiesContainer.empty();
+            $.each(data, function(index, item) {
+                var amenityItemDiv = $("<div>").addClass("col-md-3 p-2");
+                var innerAmenityDiv = $("<div>").addClass("amenity-item");
+                var iconElement = $("<i>").addClass("material-icons").addClass("amenity-icon");
+                iconElement.html(item.icon.token);
+                var textElement = $("<p>").addClass("amenity-text").text(item.text);
+
+                innerAmenityDiv.append(iconElement);
+                innerAmenityDiv.append(textElement);
+
+                amenityItemDiv.append(innerAmenityDiv);
+                amenitiesContainer.append(amenityItemDiv);
+            });
+        }
+
+
+        // Hotel Gallery
+        function getImagesForHotels(imagesArray, containerId, numImages) {
+            // Clear existing thumbnails
+            $('#' + containerId).empty();
+
+            // Loop through the specified number of images or all images if less than numImages available
+            $.each(imagesArray.slice(0, numImages), function(index, imageUrl) {
+                var imgHtml = '<div class="col mt-2 p-1"><a href="' + imageUrl + '" data-lightbox="image-gallery"><img src="' + imageUrl + '" class="img-fluid rounded hotel-gallery-image" /></a></div>';
+                $('#' + containerId).append(imgHtml);
             });
         }
     });
