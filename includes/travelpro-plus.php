@@ -8,6 +8,7 @@ add_shortcode('hotel_detail', 'showHotelDetail');
 add_action('wp_head', 'runJqueryTravelproPlus');
 add_action('wp_enqueue_scripts', 'enqueue_travelproplus_styles', 100);
 add_action('wp_footer', 'travelproPlusbeforeBodyClosingScripts', 9999);
+add_action('init', 'travelproPlusStripePaymentHandling');
 
 // Flight Search Form
 function show_flight_search_form()
@@ -242,4 +243,10 @@ function travelproPlusbeforeBodyClosingScripts()
         </script>
 <?php
     }
+}
+
+// Stripe Payments Handling
+function travelproPlusStripePaymentHandling()
+{
+    include TRAVELPRO_PLUS_PLUGIN_PATH . 'includes/payments/stripe-payment.php';
 }
