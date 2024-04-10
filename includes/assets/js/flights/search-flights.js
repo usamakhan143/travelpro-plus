@@ -8,7 +8,8 @@ function searchFlights(
   infants,
   child,
   cabinClass,
-  isOneWay
+  isOneWay,
+  stpPk
 ) {
   var apiUrl = "https://sky-scanner3.p.rapidapi.com/flights/search-roundtrip";
   $(".flight-loader-wrapper").show();
@@ -38,7 +39,7 @@ function searchFlights(
         data.data.context.totalResults === 0
       ) {
         // Call function to load complete results
-        loadCompleteResults(currentSessionId, isOneWay);
+        loadCompleteResults(currentSessionId, isOneWay, stpPk);
       } else if (
         data.data.context.status === "incomplete" &&
         data.data.context.totalResults > 0
@@ -46,7 +47,7 @@ function searchFlights(
         // Process the flight search results as needed
         $("#flight-load-more-button").show();
         console.log("Incomplete Flight search results:", data);
-        processDataStyleTwo(data, isOneWay);
+        processDataStyleTwo(data, isOneWay, stpPk);
       }
       $(".flight-loader-wrapper").hide();
     },
@@ -70,7 +71,8 @@ function searchOneWayFlights(
   child,
   infants,
   cabinClass,
-  isOneWay
+  isOneWay,
+  stpPk
 ) {
   var apiUrl = "https://sky-scanner3.p.rapidapi.com/flights/search-one-way";
   $(".flight-loader-wrapper").show();
@@ -99,7 +101,7 @@ function searchOneWayFlights(
         data.data.context.totalResults === 0
       ) {
         // Call function to load complete results
-        loadCompleteResults(currentSessionId);
+        loadCompleteResults(currentSessionId, isOneWay, stpPk);
       } else if (
         data.data.context.status === "incomplete" &&
         data.data.context.totalResults > 0
@@ -107,7 +109,7 @@ function searchOneWayFlights(
         // Process the flight search results as needed
         $("#flight-load-more-button").show();
         console.log("Incomplete Flight search results:", data);
-        processDataStyleTwo(data);
+        processDataStyleTwo(data, isOneWay, stpPk);
       }
       $(".flight-loader-wrapper").hide();
     },
@@ -123,7 +125,7 @@ function searchOneWayFlights(
 }
 
 // Function to load complete results using session ID
-function loadCompleteResults(sessionId, isOneWay) {
+function loadCompleteResults(sessionId, isOneWay, stpPk) {
   $(".flight-loader-wrapper").show();
   var apiUrl = "https://sky-scanner3.p.rapidapi.com/flights/search-incomplete";
   $.ajax({
@@ -138,7 +140,7 @@ function loadCompleteResults(sessionId, isOneWay) {
     },
     success: function (data) {
       // Handle the complete results
-      processDataStyleTwo(data, isOneWay);
+      processDataStyleTwo(data, isOneWay, stpPk);
       console.log("Complete flight search results:", data);
       $(".flight-loader-wrapper").hide();
       $("#flight-load-more-button").hide();
@@ -190,7 +192,7 @@ function processData(data, isOneWay) {
     bookNowButton.addEventListener("click", function () {
       // Add your booking functionality here
       console.log("Book now button clicked for itinerary:", itinerary.price.raw);
-      makeFlightPayment(itinerary.price.raw);
+      makeFlightPayment(itinerary.price.raw, stpPk);
     });
     priceAndButton.appendChild(price);
     priceAndButton.appendChild(bookNowButton);
@@ -203,7 +205,7 @@ function processData(data, isOneWay) {
   });
 }
 
-function processDataStyleTwo(data, isOneWay) {
+function processDataStyleTwo(data, isOneWay, stpPk) {
   var searchResultsDiv = document.getElementById("search-results");
   searchResultsDiv.innerHTML = "";
 
@@ -271,9 +273,8 @@ function processDataStyleTwo(data, isOneWay) {
     bookNowButton.setAttribute("data-bs-target", "#staticBackdrop");
     // Add event listener for booking functionality
     bookNowButton.addEventListener("click", function () {
-      // Add your booking functionality here
-      console.log("Book now button clicked for itinerary:", itinerary.price.raw);
-      makeFlightPayment(itinerary.price.raw);
+
+      makeFlightPayment(itinerary.price.raw, stpPk);
     });
 
     priceAndButton.appendChild(price);
@@ -294,19 +295,19 @@ function processDataStyleTwo(data, isOneWay) {
 }
 
 // Event handler for the "Load More" button click
-$("#flight-load-more-button").click(function (isOneWay) {
+$("#flight-load-more-button").click(function (isOneWay, stpPk) {
   // Check if currentSessionId is defined
   if (currentSessionId) {
     // Call the function to load more flights with the current session ID
-    loadCompleteResults(currentSessionId, isOneWay);
+    loadCompleteResults(currentSessionId, isOneWay, stpPk);
   } else {
     console.error("Error: Current session ID is undefined");
   }
 });
 
-function makeFlightPayment(flightPrice) {
-  // Fetch the dynamic price (replace this with your logic to fetch the price)
-  var stripe = Stripe(`pk_test_51OhFRoEbj6GNeS6PXkZPkWasRLWdv162b1mHPO78lOb0q8U7XkmPI9YCMs4TVWfzNff69oGCqC83OlGxSrnRO4TP00Wgh04I7G`);
+function makeFlightPayment(flightPrice, stpPk) {
+
+  var stripe = Stripe(stpPk);
   var dynamicPrice = flightPrice;
 
   var elements = stripe.elements();
@@ -343,10 +344,39 @@ function makeFlightPayment(flightPrice) {
       } else {
         // Token created successfully, send token to server
         var token = result.token.id;
-        // sendTokenToServer(token);
+        sendTokenToServer(token, dynamicPrice);
 
-        console.log(token, 'token');
+        // console.log(token, 'token');
       }
     });
+  });
+}
+
+// Function to send payment token to server
+function sendTokenToServer(token, amount) {
+  const payApi = '/wp-json/stripe-payment/v1/charge';
+  const pluginHost = (window.location.host === 'localhost') ? window.location.origin + '/wpplugindev' : window.location.origin;
+
+  $(".flight-loader-wrapper").show();
+  $.ajax({
+    url: pluginHost + payApi,
+    method: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify({
+      stripeToken: token,
+      amount: amount
+    }),
+    success: function (response) {
+      // Handle success response
+      $(".flight-loader-wrapper").hide();
+      alert(response.message);
+      console.log('Payment successful');
+      location.reload();
+    },
+    error: function (xhr, status, error) {
+      // Handle error response
+      console.error('Payment failed:', error);
+      alert('Payment failed');
+    }
   });
 }

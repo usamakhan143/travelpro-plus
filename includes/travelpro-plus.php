@@ -143,6 +143,7 @@ function travelproPlusbeforeBodyClosingScripts()
                 $(".hotel-destination-loader").hide();
 
                 let isOneWay = true;
+                var stpPk = `<?php echo get_travelpro_options('travelproplus_stripepk'); ?>`;
 
                 // Hide and Show return date on the basis of trip type.
                 $('input[type=radio][name=tripType]').change(function() {
@@ -230,10 +231,10 @@ function travelproPlusbeforeBodyClosingScripts()
                     // Perform flight search
                     if ($("#search-results").length) {
                         if (isOneWay) {
-                            searchOneWayFlights(originEntityId, destinationEntityId, departureDate, adult, child, infants, cabinClass, isOneWay);
+                            searchOneWayFlights(originEntityId, destinationEntityId, departureDate, adult, child, infants, cabinClass, isOneWay, stpPk);
                         } else {
 
-                            searchFlights(originEntityId, destinationEntityId, departureDate, returnDate, adult, child, infants, cabinClass, isOneWay);
+                            searchFlights(originEntityId, destinationEntityId, departureDate, returnDate, adult, child, infants, cabinClass, isOneWay, stpPk);
                         }
                     } else {
                         alert("Please add a [flights_search_results] on this page to show the search results otherwise you can't be able to view the flights data");
