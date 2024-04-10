@@ -32,7 +32,6 @@ function searchFlights(
     success: function (data) {
       // Store the current session ID
       currentSessionId = data.data.context.sessionId;
-      console.log("sessionId", currentSessionId);
       console.log("data", data);
       if (
         data.data.context.status === "incomplete" &&
@@ -94,7 +93,6 @@ function searchOneWayFlights(
     success: function (data) {
       // Store the current session ID
       currentSessionId = data.data.context.sessionId;
-      console.log("sessionId", currentSessionId);
       console.log("One way", data);
       if (
         data.data.context.status === "incomplete" &&
@@ -191,7 +189,8 @@ function processData(data, isOneWay) {
     // Add event listener for booking functionality
     bookNowButton.addEventListener("click", function () {
       // Add your booking functionality here
-      console.log("Book now button clicked for itinerary:", itinerary.id);
+      console.log("Book now button clicked for itinerary:", itinerary.price.raw);
+      makeFlightPayment(itinerary.price.raw);
     });
     priceAndButton.appendChild(price);
     priceAndButton.appendChild(bookNowButton);
@@ -256,8 +255,8 @@ function processDataStyleTwo(data, isOneWay) {
     <div class="col">
       <div class="travelpro-plus-card-footer">
         <span class="travelpro-plus-operator-name">${new Date(
-          itinerary.legs[0].departure
-        ).toLocaleDateString()}</span>
+      itinerary.legs[0].departure
+    ).toLocaleDateString()}</span>
         <span class="travelpro-plus-footer-pricing">${price.textContent}</span>
       </div>
     </div>`;
@@ -273,7 +272,8 @@ function processDataStyleTwo(data, isOneWay) {
     // Add event listener for booking functionality
     bookNowButton.addEventListener("click", function () {
       // Add your booking functionality here
-      console.log("Book now button clicked for itinerary:", itinerary.id);
+      console.log("Book now button clicked for itinerary:", itinerary.price.raw);
+      makeFlightPayment(itinerary.price.raw);
     });
 
     priceAndButton.appendChild(price);
@@ -303,3 +303,50 @@ $("#flight-load-more-button").click(function (isOneWay) {
     console.error("Error: Current session ID is undefined");
   }
 });
+
+function makeFlightPayment(flightPrice) {
+  // Fetch the dynamic price (replace this with your logic to fetch the price)
+  var stripe = Stripe(`pk_test_51OhFRoEbj6GNeS6PXkZPkWasRLWdv162b1mHPO78lOb0q8U7XkmPI9YCMs4TVWfzNff69oGCqC83OlGxSrnRO4TP00Wgh04I7G`);
+  var dynamicPrice = flightPrice;
+
+  var elements = stripe.elements();
+
+  var cardNumber = elements.create('cardNumber');
+  cardNumber.mount('#cardNumber');
+
+  var cardExpiry = elements.create('cardExpiry');
+  cardExpiry.mount('#cardExpiry');
+
+  var cvc = elements.create('cardCvc');
+  cvc.mount('#cvc');
+
+  $('#paymentForm').on('submit', function (event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+    // Collect form data
+    var formData = {
+      firstName: $('#firstName').val(),
+      lastName: $('#lastName').val(),
+      address: $('#address').val(),
+      city: $('#city').val(),
+      state: $('#state').val(),
+      zip: $('#zip').val(),
+      country: $('#country').val(),
+      amount: dynamicPrice // Include the dynamic price in the form data
+    };
+
+    // Create a payment token using Stripe.js
+    stripe.createToken(cardNumber).then(function (result) {
+      if (result.error) {
+        // Handle error
+        console.error(result.error);
+      } else {
+        // Token created successfully, send token to server
+        var token = result.token.id;
+        // sendTokenToServer(token);
+
+        console.log(token, 'token');
+      }
+    });
+  });
+}

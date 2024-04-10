@@ -43,21 +43,17 @@
                     <h4>Card Information</h4>
                     <div class="mb-3">
                         <label for="cardNumber" class="form-label">Card Number:</label>
-                        <input type="text" id="cardNumber" data-stripe="number" class="form-control" required />
+                        <div id="cardNumber" class="form-control"></div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-md-6">
-                            <label for="expMonth" class="form-label">Expiration Month:</label>
-                            <input type="text" id="expMonth" data-stripe="exp_month" class="form-control" required />
+                            <label for="cardExpiry" class="form-label">Expiration Date:</label>
+                            <div id="cardExpiry" class="form-control"></div>
                         </div>
                         <div class="col-md-6">
-                            <label for="expYear" class="form-label">Expiration Year:</label>
-                            <input type="text" id="expYear" data-stripe="exp_year" class="form-control" required />
+                            <label for="cvc" class="form-label">CVC:</label>
+                            <div id="cvc" class="form-control"></div>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="cvc" class="form-label">CVC:</label>
-                        <input type="text" id="cvc" data-stripe="cvc" class="form-control" required />
                     </div>
                     <button type="submit" class="btn btn-success">Pay Now</button>
                 </form>
