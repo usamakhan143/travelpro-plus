@@ -15,9 +15,10 @@ function travelpro_plus_plugin_activate()
 {
 	// Check if the hotel detail page exists
 	$hotel_detail_page = get_page_by_path('hotel-detail');
+	$checkout_page = get_page_by_path('make-payment');
 
 	// If the page doesn't exist, create it
-	if (!$hotel_detail_page) {
+	if (!$hotel_detail_page && !$checkout_page) {
 		$hotel_detail_page_id = wp_insert_post(array(
 			'post_title'   => 'Hotel Detail',
 			'post_content' => '[hotel_detail]',
@@ -25,16 +26,24 @@ function travelpro_plus_plugin_activate()
 			'post_type'    => 'page',
 		));
 
-		if ($hotel_detail_page_id) {
+		$checkout_page_id = wp_insert_post(array(
+			'post_title'   => 'Checkout',
+			'post_content' => '[travelpro_plus_checkout]',
+			'post_status'  => 'publish',
+			'post_type'    => 'page',
+			'post_name'    => 'make-payment', // This sets the page slug
+		));
+
+		if ($hotel_detail_page_id && $checkout_page_id) {
 			// Page creation successful
-			error_log('Hotel Detail page created with ID: ' . $hotel_detail_page_id);
+			error_log('Hotel Detail page and checkout page created with their IDs. Hotel detail ID:' . $hotel_detail_page_id . ' checkout ID:' . $checkout_page_id);
 		} else {
 			// Page creation failed
-			error_log('Failed to create Hotel Detail page');
+			error_log('Failed to create Hotel Detail and checkout page');
 		}
 	} else {
 		// Page already exists
-		error_log('Hotel Detail page already exists');
+		error_log('Hotel Detail and checkout page already exists');
 	}
 }
 
@@ -45,17 +54,22 @@ function travelpro_plus_plugin_deactivate()
 {
 	// Check if the hotel detail page exists
 	$hotel_detail_page = get_page_by_path('hotel-detail');
+	// Check if the "Checkout" page exists
+	$checkout_page = get_page_by_path('make-payment');
 
 	// If the page exists, delete it
-	if ($hotel_detail_page) {
+	if ($hotel_detail_page && $checkout_page) {
 		$deleted = wp_delete_post($hotel_detail_page->ID, true);
+		$deletedCheckout = wp_delete_post($checkout_page->ID, true);
 
 		if ($deleted) {
 			// Page deletion successful
 			error_log('Hotel Detail page deleted');
+			error_log('Travelpro Plus Checkout page deleted');
 		} else {
 			// Page deletion failed
 			error_log('Failed to delete Hotel Detail page');
+			error_log('Failed to delete Travelpro Plus Checkout page');
 		}
 	}
 }

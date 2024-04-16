@@ -5,10 +5,19 @@ add_shortcode('flights_search_results', 'showFlightSearchResults');
 add_shortcode('hotel_search_form', 'show_hotel_search_form');
 add_shortcode('hotels_search_results', 'showHotelSearchResults');
 add_shortcode('hotel_detail', 'showHotelDetail');
+add_shortcode('travelpro_plus_checkout', 'showCheckout');
 add_action('wp_head', 'runJqueryTravelproPlus');
 add_action('wp_enqueue_scripts', 'enqueue_travelproplus_styles', 100);
+add_action('wp_enqueue_scripts', 'travelproCheckout_styles', 100);
 add_action('wp_footer', 'travelproPlusbeforeBodyClosingScripts', 9999);
 add_action('init', 'travelproPlusStripePaymentHandling');
+
+
+// Checkout Page
+function showCheckout()
+{
+    include TRAVELPRO_PLUS_PLUGIN_PATH . '/includes/templates/bookings/checkout.php';
+}
 
 // Flight Search Form
 function show_flight_search_form()
@@ -55,6 +64,24 @@ function runJqueryTravelproPlus()
     <script src="https://js.stripe.com/v3/"></script>
     <?php
 }
+
+
+function travelproCheckout_styles()
+{
+    // Check if the current page or post contains your plugin's shortcode
+    if (is_page() || is_single()) {
+        if ((has_shortcode(get_the_content(), 'travelpro_plus_checkout'))) {
+            $checkoutFormCss = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/checkout.css';
+            $bootstrap5 = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css";
+            wp_register_style('travelpro-plus-bootstrapFive', $bootstrap5, array(), '1.0.0');
+            wp_register_style('travelpro-plus-checkoutFormCss', $checkoutFormCss, array(), '1.0.0');
+
+            wp_enqueue_style('travelpro-plus-bootstrapFive');
+            wp_enqueue_style('travelpro-plus-checkoutFormCss');
+        }
+    }
+}
+
 
 function enqueue_travelproplus_styles()
 {
