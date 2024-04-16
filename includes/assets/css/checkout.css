@@ -1,6 +1,6 @@
 /* Custom styles */
 body {
-  background-color: #f8f9fa;
+  background-color: #000000;
 }
 
 .container {
@@ -10,11 +10,14 @@ body {
 /* Header */
 .header {
   padding: 10px;
-  background-color: #007bff;
-  color: white;
+  background-color: #c0984c;
   text-align: center;
   border-radius: 5px;
   margin-bottom: 20px;
+}
+
+.header h2 {
+  color: #ffffff;
 }
 
 /* Booking Summary */
@@ -28,10 +31,11 @@ body {
 }
 
 /* Booking Summary Details */
-.booking-summary h5 {
-  margin-bottom: 15px;
+.booking-summary-heading {
+  margin-bottom: 15px !important;
   font-weight: bold;
   color: #495057;
+  font-size: 20px !important;
 }
 
 /* Details Container */
@@ -69,6 +73,15 @@ body {
 }
 
 .btn-checkout:hover {
-  background-color: #0056b3;
+  background-color: #c0984c;
   color: white;
+}
+
+.entry-content h5,
+.entry-content h6 {
+  margin-bottom: 0px !important;
+}
+
+.entry-content h2 {
+  margin-bottom: 0px;
 }

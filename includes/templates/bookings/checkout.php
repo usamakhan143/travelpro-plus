@@ -60,27 +60,27 @@
             <div class="col-md-5">
                 <!-- Booking Summary -->
                 <div class="booking-summary">
-                    <h5>Booking Summary</h5>
+                    <h3 class="booking-summary-heading">Booking Summary</h3>
 
                     <!-- Flight Details -->
-                    <div class="details-container">
+                    <!-- <div class="details-container">
                         <h6>Flight Details:</h6>
                         <p><strong>Flight:</strong> XYZ123</p>
                         <p><strong>Date:</strong> April 25, 2024</p>
                         <p><strong>Time:</strong> 3:00 PM</p>
                         <p><strong>Departure:</strong> JFK Airport, New York</p>
                         <p><strong>Arrival:</strong> LAX Airport, Los Angeles</p>
-                    </div>
+                    </div> -->
 
                     <!-- Hotel Details -->
-                    <div class="details-container">
+                    <!-- <div class="details-container">
                         <h6>Hotel Details:</h6>
                         <p><strong>Hotel:</strong> Grand Hotel</p>
                         <p><strong>Check-in Date:</strong> April 25, 2024</p>
                         <p><strong>Check-out Date:</strong> April 27, 2024</p>
                         <p><strong>Room Type:</strong> Deluxe Suite</p>
                         <p><strong>Location:</strong> 123 Main St, Los Angeles</p>
-                    </div>
+                    </div> -->
 
                     <!-- Total Price -->
                     <div class="details-container">
