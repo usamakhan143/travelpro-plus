@@ -153,6 +153,13 @@
   font-weight: 700 !important;
 }
 
+.travelpro-plus-flight-results-heading,
+.travelpro-plus-hotel-results-heading {
+  text-align: center;
+  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+  padding-bottom: 20px;
+}
+
 @media (max-width: 768px) {
   .travelpro-plus-select-border {
     border-left: none;

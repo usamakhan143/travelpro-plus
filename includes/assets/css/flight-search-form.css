@@ -777,6 +777,8 @@ button {
   font-size: 18px;
   color: #555;
   font-weight: 700;
+  background-color: transparent;
+  margin-top: -10px;
 }
 
 .minus,
@@ -805,8 +807,8 @@ button {
 
 .minus:hover,
 .plus:hover {
-  background: #6c7ae0;
-  border-color: #6c7ae0;
+  background: #c0984c;
+  border-color: #c0984c;
   color: #fff;
 }
 

@@ -120,7 +120,7 @@ function enqueue_travelproplus_styles()
             wp_register_style('travelpro-plus-daterangepicker', $datePickerRangeCss, array(), '1.0.0');
             wp_register_style('travelpro-plus-style', $searchFormCss, array(), '1.0.0');
             wp_register_style('travelpro-plus-bootstrapFive', $bootstrap5, array(), '1.0.0');
-            wp_register_style('travelpro-plus-flightresults', $flightResults, array(), '1.0.0');
+            // wp_register_style('travelpro-plus-flightresults', $flightResults, array(), '1.0.0');
             wp_register_style('travelpro-plus-flightresultsStyleTwo', $flightResultsStyleTwo, array(), '1.0.0');
             wp_register_style('travelpro-plus-hotelDetail', $hotelDetail, array(), '1.0.0');
             wp_register_style('travelpro-plus-materialIcons', $materialIcons, array(), '1.0.0');
@@ -134,7 +134,7 @@ function enqueue_travelproplus_styles()
             wp_enqueue_style('travelpro-plus-daterangepicker');
             wp_enqueue_style('travelpro-plus-style');
             wp_enqueue_style('travelpro-plus-bootstrapFive');
-            wp_enqueue_style('travelpro-plus-flightresults');
+            // wp_enqueue_style('travelpro-plus-flightresults');
             wp_enqueue_style('travelpro-plus-flightresultsStyleTwo');
             wp_enqueue_style('travelpro-plus-hotelDetail');
             wp_enqueue_style('travelpro-plus-materialIcons');
