@@ -191,7 +191,10 @@ function processData(data, isOneWay) {
     // Add event listener for booking functionality
     bookNowButton.addEventListener("click", function () {
       // Add your booking functionality here
-      console.log("Book now button clicked for itinerary:", itinerary.price.raw);
+      console.log(
+        "Book now button clicked for itinerary:",
+        itinerary.price.raw
+      );
       makeFlightPayment(itinerary.price.raw, stpPk);
     });
     priceAndButton.appendChild(price);
@@ -257,8 +260,8 @@ function processDataStyleTwo(data, isOneWay, stpPk) {
     <div class="col">
       <div class="travelpro-plus-card-footer">
         <span class="travelpro-plus-operator-name">${new Date(
-      itinerary.legs[0].departure
-    ).toLocaleDateString()}</span>
+          itinerary.legs[0].departure
+        ).toLocaleDateString()}</span>
         <span class="travelpro-plus-footer-pricing">${price.textContent}</span>
       </div>
     </div>`;
@@ -269,12 +272,32 @@ function processDataStyleTwo(data, isOneWay, stpPk) {
     bookNowButton.textContent = "Select ➜";
 
     bookNowButton.setAttribute("type", "button");
-    bookNowButton.setAttribute("data-bs-toggle", "modal");
-    bookNowButton.setAttribute("data-bs-target", "#staticBackdrop");
+    // bookNowButton.setAttribute("data-bs-toggle", "modal");
+    // bookNowButton.setAttribute("data-bs-target", "#staticBackdrop");
     // Add event listener for booking functionality
-    bookNowButton.addEventListener("click", function () {
+    // bookNowButton.addEventListener("click", function () {
 
-      makeFlightPayment(itinerary.price.raw, stpPk);
+    //   makeFlightPayment(itinerary.price.raw, stpPk);
+    // });
+
+    bookNowButton.addEventListener("click", function () {
+      var price = itinerary.price.raw;
+      var key = stpPk;
+      var checkoutFile = SearchFlightParams.checkoutFileUrl;
+
+      setCookie("price", price, 1);
+      setCookie("key", key, 1);
+
+      const checkoutPageSlug = "/make-payment";
+      const mainDomain = window.location.origin;
+      let makePaymentPageUrl = "";
+      if (mainDomain === "http://localhost") {
+        makePaymentPageUrl = mainDomain + "/wpplugindev" + checkoutPageSlug;
+      } else {
+        makePaymentPageUrl = mainDomain + checkoutPageSlug;
+      }
+
+      window.open(makePaymentPageUrl, "_blank");
     });
 
     priceAndButton.appendChild(price);
@@ -304,79 +327,3 @@ $("#flight-load-more-button").click(function (isOneWay, stpPk) {
     console.error("Error: Current session ID is undefined");
   }
 });
-
-function makeFlightPayment(flightPrice, stpPk) {
-
-  var stripe = Stripe(stpPk);
-  var dynamicPrice = flightPrice;
-
-  var elements = stripe.elements();
-
-  var cardNumber = elements.create('cardNumber');
-  cardNumber.mount('#cardNumber');
-
-  var cardExpiry = elements.create('cardExpiry');
-  cardExpiry.mount('#cardExpiry');
-
-  var cvc = elements.create('cardCvc');
-  cvc.mount('#cvc');
-
-  $('#paymentForm').on('submit', function (event) {
-    event.preventDefault(); // Prevent the form from submitting
-
-    // Collect form data
-    var formData = {
-      firstName: $('#firstName').val(),
-      lastName: $('#lastName').val(),
-      address: $('#address').val(),
-      city: $('#city').val(),
-      state: $('#state').val(),
-      zip: $('#zip').val(),
-      country: $('#country').val(),
-      amount: dynamicPrice // Include the dynamic price in the form data
-    };
-
-    // Create a payment token using Stripe.js
-    stripe.createToken(cardNumber).then(function (result) {
-      if (result.error) {
-        // Handle error
-        console.error(result.error);
-      } else {
-        // Token created successfully, send token to server
-        var token = result.token.id;
-        sendTokenToServer(token, dynamicPrice);
-
-        // console.log(token, 'token');
-      }
-    });
-  });
-}
-
-// Function to send payment token to server
-function sendTokenToServer(token, amount) {
-  const payApi = '/wp-json/stripe-payment/v1/charge';
-  const pluginHost = (window.location.host === 'localhost') ? window.location.origin + '/wpplugindev' : window.location.origin;
-
-  $(".flight-loader-wrapper").show();
-  $.ajax({
-    url: pluginHost + payApi,
-    method: 'POST',
-    contentType: 'application/json',
-    data: JSON.stringify({
-      stripeToken: token,
-      amount: amount
-    }),
-    success: function (response) {
-      // Handle success response
-      $(".flight-loader-wrapper").hide();
-      alert(response.message);
-      console.log('Payment successful');
-      location.reload();
-    },
-    error: function (xhr, status, error) {
-      // Handle error response
-      console.error('Payment failed:', error);
-      alert('Payment failed');
-    }
-  });
-}

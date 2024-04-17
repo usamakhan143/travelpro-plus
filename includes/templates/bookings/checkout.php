@@ -1,3 +1,21 @@
+<?php
+
+// Retrieve the values of the cookies
+$price = isset($_COOKIE['price']) ? $_COOKIE['price'] : null;
+$stripeKey = isset($_COOKIE['key']) ? $_COOKIE['key'] : null;
+
+// Check if the values are missing, empty, or null
+if ($price === null || trim($price) === '' || $stripeKey === null || trim($stripeKey) === '') {
+    // Either redirect the user to another page
+    header('Location:' . get_home_url());
+    exit; // Terminate the script after redirecting
+
+    // Or display a message to the user (for example, using echo)
+    // echo 'Missing or invalid cookie values. Please go back and try again.';
+    // exit; // Terminate the script
+}
+
+?>
 <div class="container">
     <!-- Header -->
     <div class="header">
@@ -5,7 +23,7 @@
     </div>
 
     <!-- Parent Form -->
-    <form id="checkoutForm">
+    <form id="paymentForm">
         <div class="row">
             <!-- Personal Information Form -->
             <div class="col-md-7">
@@ -85,9 +103,9 @@
                     <!-- Total Price -->
                     <div class="details-container">
                         <h6>Total Price:</h6>
-                        <p><strong>Flight:</strong> $300.00</p>
-                        <p><strong>Hotel:</strong> $450.00</p>
-                        <p><strong>Grand Total:</strong> $750.00</p>
+                        <p><strong>Flight:</strong> $<?php echo htmlspecialchars($price) ?></p>
+                        <!-- <p><strong>Hotel:</strong> $450.00</p> -->
+                        <p><strong>Grand Total:</strong> $<?php echo htmlspecialchars($price) ?></p>
                     </div>
                 </div>
                 <div class="card">
@@ -96,6 +114,27 @@
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
+                            <label for="cardNumber" class="form-label">Card Number:</label>
+                            <div id="cardNumber" class="form-control"></div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="cardExpiry" class="form-label">Expiration Date:</label>
+                                <div id="cardExpiry" class="form-control"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="cvc" class="form-label">CVC:</label>
+                                <div id="cvc" class="form-control"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-checkout w-100 mt-3">Pay Now</button>
+                        </div>
+
+
+
+
+                        <!-- <div class="mb-3">
                             <label for="cardNumber" class="form-label">Card Number:</label>
                             <input type="text" id="cardNumber" name="cardNumber" class="form-control" required placeholder="1234 5678 9012 3456" />
                         </div>
@@ -109,15 +148,101 @@
                                 <input type="text" id="cvc" name="cvc" class="form-control" required placeholder="123" />
                             </div>
                             <div class="col-md-12">
-                                <!-- Checkout Button -->
+                                 Checkout Button
                                 <button type="submit" form="checkoutForm" class="btn btn-checkout w-100 mt-3">
                                     Pay now
                                 </button>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
     </form>
 </div>
+
+<script>
+    var priceFlight = `<?php echo htmlspecialchars($price) ?>`;
+    var stpkey = `<?php echo htmlspecialchars($stripeKey) ?>`;
+    makeFlightPayment(priceFlight, stpkey);
+
+    function makeFlightPayment(flightPrice, stpPk) {
+        var stripe = Stripe(stpPk);
+        var dynamicPrice = flightPrice;
+
+        var elements = stripe.elements();
+
+        var cardNumber = elements.create("cardNumber");
+        cardNumber.mount("#cardNumber");
+
+        var cardExpiry = elements.create("cardExpiry");
+        cardExpiry.mount("#cardExpiry");
+
+        var cvc = elements.create("cardCvc");
+        cvc.mount("#cvc");
+
+        $("#paymentForm").on("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Collect form data
+            var formData = {
+                firstName: $("#firstName").val(),
+                lastName: $("#lastName").val(),
+                address: $("#address").val(),
+                city: $("#city").val(),
+                state: $("#state").val(),
+                zip: $("#zip").val(),
+                country: $("#country").val(),
+                amount: dynamicPrice, // Include the dynamic price in the form data
+            };
+
+            // Create a payment token using Stripe.js
+            stripe.createToken(cardNumber).then(function(result) {
+                if (result.error) {
+                    // Handle error
+                    console.error(result.error);
+                } else {
+                    // Token created successfully, send token to server
+                    var token = result.token.id;
+                    sendTokenToServer(token, dynamicPrice);
+
+                    // console.log(token, 'token');
+                }
+            });
+        });
+    }
+
+    // Function to send payment token to server
+    function sendTokenToServer(token, amount) {
+        const payApi = "/wp-json/stripe-payment/v1/charge";
+        const pluginHost =
+            window.location.host === "localhost" ?
+            window.location.origin + "/wpplugindev" :
+            window.location.origin;
+
+        $(".flight-loader-wrapper").show();
+        $.ajax({
+            url: pluginHost + payApi,
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({
+                stripeToken: token,
+                amount: amount,
+            }),
+            success: function(response) {
+                // Handle success response
+                $(".flight-loader-wrapper").hide();
+                alert(response.message);
+                console.log("Payment successful");
+                deleteCookie('price');
+                deleteCookie('key');
+                window.location.href = window.location.origin;
+            },
+            error: function(xhr, status, error) {
+                // Handle error response
+                console.error("Payment failed:", error);
+                alert("Payment failed");
+            },
+        });
+    }
+</script>

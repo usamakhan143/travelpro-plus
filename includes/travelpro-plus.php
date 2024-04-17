@@ -11,6 +11,7 @@ add_action('wp_enqueue_scripts', 'enqueue_travelproplus_styles', 100);
 add_action('wp_enqueue_scripts', 'travelproCheckout_styles', 100);
 add_action('wp_footer', 'travelproPlusbeforeBodyClosingScripts', 9999);
 add_action('init', 'travelproPlusStripePaymentHandling');
+add_action('wp_footer', 'travelproCheckout_footerScripts', 9999);
 
 
 // Checkout Page
@@ -79,6 +80,15 @@ function travelproCheckout_styles()
             wp_enqueue_style('travelpro-plus-bootstrapFive');
             wp_enqueue_style('travelpro-plus-checkoutFormCss');
         }
+    }
+}
+
+function travelproCheckout_footerScripts()
+{
+    if (is_page() && (has_shortcode(get_the_content(), 'travelpro_plus_checkout'))) {
+    ?>
+        <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/utilities.js'; ?>"></script>;
+    <?php
     }
 }
 
@@ -280,3 +290,15 @@ function travelproPlusStripePaymentHandling()
 {
     include TRAVELPRO_PLUS_PLUGIN_PATH . 'includes/payments/stripe-payment.php';
 }
+
+
+// Send PHP variables to JS file
+function sendDataToSearchFlightsJs()
+{
+    wp_enqueue_script('search-flight-js', plugins_url('assets/js/flights/search-flights.js', __FILE__), array('jquery'), null, true);
+    $script_params = array(
+        'checkoutFileUrl' => TRAVELPRO_PLUS_PLUGIN_URL . 'includes/templates/bookings/checkout.php'
+    );
+    wp_localize_script('search-flight-js', 'SearchFlightParams', $script_params);
+}
+add_action('wp_enqueue_scripts', 'sendDataToSearchFlightsJs');

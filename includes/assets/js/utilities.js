@@ -124,3 +124,23 @@ $("#numberOfAdultsInHotel").on("input", function () {
     $(this).val(1);
   }
 });
+
+function setCookie(name, value, days) {
+  // Delete the existing cookie
+  deleteCookie(name);
+
+  var expires = "";
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Calculate expiration date
+    expires = "; expires=" + date.toUTCString();
+  }
+  // Set the cookie
+  document.cookie =
+    name + "=" + encodeURIComponent(value) + expires + "; path=/";
+}
+
+function deleteCookie(name) {
+  // Set the cookie with an empty value and an expiration date in the past
+  document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+}
