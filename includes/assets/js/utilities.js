@@ -59,7 +59,10 @@ function getStarRating(averageRating) {
 // console.log(formattedTime);
 
 $("#numberOfChildren").click(function () {
-  $("#childrenModal").modal("show");
+  $("#childrenModal").css({
+    display: "block",
+  });
+  $("#childrenModal").addClass("fadeIn");
 });
 
 $("#numberOfChildrenModal").on("input", function () {
@@ -97,10 +100,28 @@ $("#numberOfChildrenModal").on("input", function () {
   }
 });
 
-$("#childrenModal").on("hidden.bs.modal", function () {
+// $("#childrenModal").on("hidden.bs.modal", function () {
+//   $("#numberOfChildrenModal").val("");
+//   $("#childAgeFieldsModal").empty();
+// });
+
+// Function to close the modal
+function closeModal() {
+  $("#childrenModal").removeClass("fadeIn");
+  $("#childrenModal").addClass("fadeOut");
   $("#numberOfChildrenModal").val("");
   $("#childAgeFieldsModal").empty();
-});
+  // setTimeout(function () {
+  //   $("#childrenModal").css({
+  //     display: "none",
+  //   });
+  //   $("#childrenModal").removeClass("fadeOut");
+  // }, 500); // Same duration as animation
+  $("#childrenModal").css({
+    display: "none",
+  });
+  $("#childrenModal").removeClass("fadeOut");
+}
 
 $("#addChildrenBtn").click(function () {
   var childAges = [];
@@ -110,7 +131,8 @@ $("#addChildrenBtn").click(function () {
       childAges.push($(this).val());
     });
   $("#numberOfChildren").val(childAges.join(","));
-  $("#childrenModal").modal("hide");
+  // $("#childrenModal").modal("hide");
+  closeModal();
 });
 
 $("#numberOfAdultsInHotel").on("input", function () {

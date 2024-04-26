@@ -48,15 +48,15 @@
     </div>
 </div>
 
-<div class="modal fade" id="childrenModal" tabindex="-1" aria-labelledby="childrenModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="childrenModalLabel">
-                    Enter Children Information
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
+
+<div id="childrenModal" class="modal-travelpro">
+    <!-- Modal content -->
+    <div class="travelpro-modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h5 style="text-align: center;" id="childrenModalLabel">
+            Enter Children Information
+        </h5>
+        <div style="text-align: center">
             <div class="modal-body">
                 <div class="mb-3">
                     <label for="numberOfChildrenModal" class="form-label">Number of Children (Max 4):</label>
