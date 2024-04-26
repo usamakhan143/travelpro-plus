@@ -10,6 +10,7 @@ add_action('wp_head', 'runJqueryTravelproPlus');
 add_action('wp_enqueue_scripts', 'enqueue_travelproplus_styles', 100);
 add_action('wp_enqueue_scripts', 'travelproCheckout_styles', 100);
 add_action('wp_enqueue_scripts', 'travelproHotelSearch_styles', 100);
+add_action('wp_enqueue_scripts', 'travelproHotelDetail_styles', 100);
 add_action('wp_footer', 'travelproPlusbeforeBodyClosingScripts', 9999);
 add_action('init', 'travelproPlusStripePaymentHandling');
 add_action('wp_footer', 'travelproCheckout_footerScripts', 9999);
@@ -106,6 +107,19 @@ function travelproCheckout_footerScripts()
 }
 
 
+function travelproHotelDetail_styles()
+{
+    // Check if the current page or post contains your plugin's shortcode
+    if (is_page() || is_single()) {
+        if ((has_shortcode(get_the_content(), 'hotel_detail'))) {
+            $hotelDetail = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/hotel-detail.css';
+            wp_register_style('travelpro-plus-hotelDetail', $hotelDetail, array(), '1.0.0');
+            wp_enqueue_style('travelpro-plus-hotelDetail');
+        }
+    }
+}
+
+
 function enqueue_travelproplus_styles()
 {
     // Check if the current page or post contains your plugin's shortcode
@@ -122,7 +136,6 @@ function enqueue_travelproplus_styles()
             $flightResultsStyleTwo = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/flight-results-style-2.css';
             $bootstrap5 = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css";
             $fontAwesomeNewVersion = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css";
-            $hotelDetail = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/hotel-detail.css';
             $materialIcons = "https://fonts.googleapis.com/icon?family=Material+Icons";
             $lightbox2Css = TRAVELPRO_PLUS_PLUGIN_URL . 'node_modules/lightbox2/dist/css/lightbox.min.css';
 
@@ -135,7 +148,6 @@ function enqueue_travelproplus_styles()
             wp_register_style('travelpro-plus-bootstrapFive', $bootstrap5, array(), '1.0.0');
             // wp_register_style('travelpro-plus-flightresults', $flightResults, array(), '1.0.0');
             wp_register_style('travelpro-plus-flightresultsStyleTwo', $flightResultsStyleTwo, array(), '1.0.0');
-            wp_register_style('travelpro-plus-hotelDetail', $hotelDetail, array(), '1.0.0');
             wp_register_style('travelpro-plus-materialIcons', $materialIcons, array(), '1.0.0');
             wp_register_style('travelpro-plus-lightbox2', $lightbox2Css, array(), '1.0.0');
 
@@ -149,7 +161,6 @@ function enqueue_travelproplus_styles()
             wp_enqueue_style('travelpro-plus-bootstrapFive');
             // wp_enqueue_style('travelpro-plus-flightresults');
             wp_enqueue_style('travelpro-plus-flightresultsStyleTwo');
-            wp_enqueue_style('travelpro-plus-hotelDetail');
             wp_enqueue_style('travelpro-plus-materialIcons');
             wp_enqueue_style('travelpro-plus-lightbox2');
         }

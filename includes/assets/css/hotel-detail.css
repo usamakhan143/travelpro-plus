@@ -171,3 +171,7 @@ h5 {
 .entry-content h6 {
   margin-bottom: 10px;
 }
+
+.entry-content p {
+  margin-bottom: 0px !important;
+}

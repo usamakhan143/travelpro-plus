@@ -188,7 +188,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <form>
-                            <div class="row mb-3">
+                            <!-- <div class="row mb-3">
                                 <div class="col">
                                     <label for="fullName" class="form-label">Full Name</label>
                                     <input type="text" class="form-control" id="fullName" placeholder="Enter your full name">
@@ -197,12 +197,12 @@
                                     <label for="email" class="form-label">Email address</label>
                                     <input type="email" class="form-control" id="email" placeholder="Enter your email">
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="row mb-3">
-                                <div class="col">
+                                <!-- <div class="col">
                                     <label for="phone" class="form-label">Phone Number</label>
                                     <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
-                                </div>
+                                </div> -->
                                 <div class="col">
                                     <label for="checkInDate" class="form-label">Check-in Date</label>
                                     <input type="date" class="form-control" id="checkInDate">
@@ -217,10 +217,6 @@
                                     <label for="numGuests" class="form-label">Number of Guests</label>
                                     <input type="number" class="form-control" id="numGuests" min="1" value="1">
                                 </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="specialRequests" class="form-label">Special Requests</label>
-                                <textarea class="form-control" id="specialRequests" rows="3" placeholder="Enter any special requests"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Book Now</button>
                         </form>
