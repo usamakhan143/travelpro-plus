@@ -9,6 +9,7 @@ add_shortcode('travelpro_plus_checkout', 'showCheckout');
 add_action('wp_head', 'runJqueryTravelproPlus');
 add_action('wp_enqueue_scripts', 'enqueue_travelproplus_styles', 100);
 add_action('wp_enqueue_scripts', 'travelproCheckout_styles', 100);
+add_action('wp_enqueue_scripts', 'travelproHotelSearch_styles', 100);
 add_action('wp_footer', 'travelproPlusbeforeBodyClosingScripts', 9999);
 add_action('init', 'travelproPlusStripePaymentHandling');
 add_action('wp_footer', 'travelproCheckout_footerScripts', 9999);
@@ -79,6 +80,18 @@ function travelproCheckout_styles()
 
             wp_enqueue_style('travelpro-plus-bootstrapFive');
             wp_enqueue_style('travelpro-plus-checkoutFormCss');
+        }
+    }
+}
+
+function travelproHotelSearch_styles()
+{
+    // Check if the current page or post contains your plugin's shortcode
+    if (is_page() || is_single()) {
+        if ((has_shortcode(get_the_content(), 'hotel_search_form'))) {
+            $customModalCss = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/custom-modal.css';
+            wp_register_style('travelpro-plus-customModalCss', $customModalCss, array(), '1.0.0');
+            wp_enqueue_style('travelpro-plus-customModalCss');
         }
     }
 }
