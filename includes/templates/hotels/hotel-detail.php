@@ -1,40 +1,13 @@
+<div class="hotel-loader-wrapper">
+    <div class="loader"></div>
+</div>
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-5">
-            <img src="https://i.natgeofe.com/n/9a5f801c-0882-4ac2-ad7a-2d2d582591a1/sleepCapellaUbudBalibyGeorgRoske.jpg" class="img-fluid rounded" alt="Hotel Image" id="hotal-main-image">
+            <img src="" class="img-fluid rounded" alt="Hotel Image" id="hotal-main-image">
             <div class="row row-cols-4" id="images-thumbnail">
                 <div class="col mt-2 p-1">
                     <a href="https://picsum.photos/id/237/200/300" data-lightbox="image-1"><img src="https://picsum.photos/id/237/200/300" class="img-fluid rounded" /></a>
-                </div>
-                <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/seed/picsum/200/300" class="img-fluid rounded" />
-                </div>
-                <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300?grayscale" class="img-fluid rounded" />
-                </div>
-                <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" />
-                </div>
-                <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" />
-                </div>
-                <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" />
-                </div>
-                <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" />
-                </div>
-                <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" />
-                </div>
-                <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" />
-                </div>
-                <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" />
-                </div>
-                <div class="col mt-2 p-1">
-                    <img src="https://picsum.photos/200/300" class="img-fluid rounded" />
                 </div>
             </div>
         </div>
@@ -229,9 +202,46 @@
 </div>
 
 <script>
-    let hotelJson = `<?php echo TRAVELPRO_PLUS_PLUGIN_URL ?>` + 'includes/assets/js/hotels/hotel-detail.json';
     $(document).ready(function() {
-        $.getJSON(hotelJson, function(data) {
+        // Get the value of the 'hotel-id' parameter from the URL
+        const hotelDetailApiUrl = 'https://hotels-com-provider.p.rapidapi.com/v2/hotels/details';
+        const urlParams = new URLSearchParams(window.location.search);
+        const hotelId = urlParams.get('hotel-id');
+        // Check if the 'id' parameter exists and is not empty
+        if (hotelId) {
+            $(".hotel-loader-wrapper").show();
+            $.ajax({
+                url: hotelDetailApiUrl,
+                method: "GET",
+                headers: {
+                    "X-RapidAPI-Key": hotelApiKey,
+                    "X-RapidAPI-Host": hotelApiHost,
+                },
+                data: {
+                    domain: 'US',
+                    hotel_id: hotelId,
+                    locale: "en_US",
+                },
+                success: function(data) {
+                    // console.log("data", data);
+                    hotelDetailProcess(data);
+                    $(".hotel-loader-wrapper").hide();
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error:", error);
+                    $(".hotel-loader-wrapper").hide();
+                    alert(
+                        "Please try again! There is something went wrong while fetching hotel details."
+                    );
+                },
+            });
+
+        } else {
+            console.error('Hotel ID not found');
+        }
+        let hotelJson = `<?php echo TRAVELPRO_PLUS_PLUGIN_URL ?>` + 'includes/assets/js/hotels/hotel-detail.json';
+
+        function hotelDetailProcess(data) {
             // Hotel Name
             const hotelName = data.summary.name;
 
@@ -273,7 +283,7 @@
 
 
             // => Accessibility
-            const accessibilityHeading = data.summary.amenities.amenities[1].contents[6].header.text;
+            // const accessibilityHeading = data.summary.amenities.amenities[1].contents[6].header.text;
             let allAccessibilityFinalList = [];
             const amenitesAccessibilityContents = data.summary.amenities.amenities[1].contents;
             let getTrimAccessibilities = extractAccessibility(amenitesAccessibilityContents, "Accessibility", "");
@@ -324,7 +334,7 @@
             // Loop through the newArray and dynamically generate content for each item
             let glanceListwithIcon = playIconList(allAtAGlanceFinalList.slice(0, 6), "detail-body-glance", "fa-play");
             let accessibilityListwithIcon = playIconList(accessibilityStrToArray.slice(0, 6), "detail-body-accessibility", "fa-play");
-            $('.accessibility-heading-dynamic').html(accessibilityHeading);
+            // $('.accessibility-heading-dynamic').html(accessibilityHeading);
             let propertyHighlightItems = generateAmenitiesInBoxes(data.summary.amenities.topAmenities.items.slice(0, 8), "property-highlights-dynamic");
             $('#property-highlights').html(propertyHighlightsHeading);
             $('#food-and-drink-heading').html(foodAndDrinksHeading);
@@ -333,7 +343,7 @@
             $('.hotel-description-text').html(hotelDescriptionText);
             let showImagesToThumbnails = getImagesForHotels(imagesArray, "images-thumbnail", 12);
             $('#hotal-main-image').attr("src", mainHotelImage);
-        });
+        };
 
         function extractAtAGlanceInfo(contents, condition, includes) {
             // Initialize variables to store extracted information

@@ -287,11 +287,6 @@ html,
   transform: translateY(-5px);
 } */
 
-.hotel-card-img-top {
-  height: 230px; /* Ensure the image fills the height of the card */
-  object-fit: cover; /* Maintain aspect ratio while covering the area */
-}
-
 .card-body {
   padding: 1rem;
   height: 40%; /* Adjusted height */

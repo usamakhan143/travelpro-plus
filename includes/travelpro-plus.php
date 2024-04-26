@@ -91,8 +91,13 @@ function travelproHotelSearch_styles()
     if (is_page() || is_single()) {
         if ((has_shortcode(get_the_content(), 'hotel_search_form'))) {
             $customModalCss = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/custom-modal.css';
+            $hotelSearchResults = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/hotel-results.css';
+            // Custom Modal
             wp_register_style('travelpro-plus-customModalCss', $customModalCss, array(), '1.0.0');
             wp_enqueue_style('travelpro-plus-customModalCss');
+            // Search Results
+            wp_register_style('travelpro-plus-hotelSearchResults', $hotelSearchResults, array(), '1.0.0');
+            wp_enqueue_style('travelpro-plus-hotelSearchResults');
         }
     }
 }
