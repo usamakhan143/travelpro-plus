@@ -1,5 +1,5 @@
 .hotel-card-img-top {
-  height: 230px;
+  height: 230px !important;
   object-fit: cover;
 }
 
