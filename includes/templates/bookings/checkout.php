@@ -1,18 +1,24 @@
 <?php
 
 // Retrieve the values of the cookies
+$isCod = get_travelpro_options('travelproplus_cod');
 $price = isset($_COOKIE['price']) ? $_COOKIE['price'] : null;
+$isFlight = isset($_COOKIE['isFlight']) ? $_COOKIE['isFlight'] : null;
 $stripeKey = isset($_COOKIE['key']) ? $_COOKIE['key'] : null;
 
 // Check if the values are missing, empty, or null
-if ($price === null || trim($price) === '' || $stripeKey === null || trim($stripeKey) === '') {
-    // Either redirect the user to another page
-    header('Location:' . get_home_url());
-    exit; // Terminate the script after redirecting
-
-    // Or display a message to the user (for example, using echo)
-    // echo 'Missing or invalid cookie values. Please go back and try again.';
-    // exit; // Terminate the script
+if ($isCod) {
+    if ($price === null || trim($price) === '') {
+        // Either redirect the user to another page
+        header('Location:' . get_home_url());
+        exit;
+    }
+} else {
+    if ($price === null || trim($price) === '' || $stripeKey === null || trim($stripeKey) === '') {
+        // Either redirect the user to another page
+        header('Location:' . get_home_url());
+        exit;
+    }
 }
 
 ?>
@@ -103,59 +109,42 @@ if ($price === null || trim($price) === '' || $stripeKey === null || trim($strip
                     <!-- Total Price -->
                     <div class="details-container">
                         <h6>Total Price:</h6>
-                        <p><strong>Flight:</strong> $<?php echo htmlspecialchars($price) ?></p>
+                        <p><strong><?php echo ($isFlight === 'true') ? 'Flight:' : 'Hotel:'; ?></strong> $<?php echo htmlspecialchars($price) ?></p>
                         <!-- <p><strong>Hotel:</strong> $450.00</p> -->
                         <p><strong>Grand Total:</strong> $<?php echo htmlspecialchars($price) ?></p>
+
                     </div>
+                    <?php if ($isCod) { ?>
+                        <button type="submit" class="btn btn-checkout w-100 mt-3">Send Inquiry</button>
+                    <?php } ?>
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        <h5>Payment Information</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <label for="cardNumber" class="form-label">Card Number:</label>
-                            <div id="cardNumber" class="form-control"></div>
+                <?php if ($isCod) { ?>
+                <?php } else { ?>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5>Payment Information</h5>
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="cardExpiry" class="form-label">Expiration Date:</label>
-                                <div id="cardExpiry" class="form-control"></div>
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="cardNumber" class="form-label">Card Number:</label>
+                                <div id="cardNumber" class="form-control"></div>
                             </div>
-                            <div class="col-md-6">
-                                <label for="cvc" class="form-label">CVC:</label>
-                                <div id="cvc" class="form-control"></div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <button type="submit" class="btn btn-checkout w-100 mt-3">Pay Now</button>
-                        </div>
-
-
-
-
-                        <!-- <div class="mb-3">
-                            <label for="cardNumber" class="form-label">Card Number:</label>
-                            <input type="text" id="cardNumber" name="cardNumber" class="form-control" required placeholder="1234 5678 9012 3456" />
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="cardExpiry" class="form-label">Expiry Date:</label>
-                                <input type="text" id="cardExpiry" name="cardExpiry" class="form-control" required placeholder="MM/YY" />
-                            </div>
-                            <div class="col-md-6">
-                                <label for="cvc" class="form-label">CVC:</label>
-                                <input type="text" id="cvc" name="cvc" class="form-control" required placeholder="123" />
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="cardExpiry" class="form-label">Expiration Date:</label>
+                                    <div id="cardExpiry" class="form-control"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cvc" class="form-label">CVC:</label>
+                                    <div id="cvc" class="form-control"></div>
+                                </div>
                             </div>
                             <div class="col-md-12">
-                                 Checkout Button
-                                <button type="submit" form="checkoutForm" class="btn btn-checkout w-100 mt-3">
-                                    Pay now
-                                </button>
+                                <button type="submit" class="btn btn-checkout w-100 mt-3">Pay Now</button>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
-                </div>
+                <?php } ?>
             </div>
         </div>
     </form>

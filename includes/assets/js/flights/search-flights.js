@@ -286,6 +286,7 @@ function processDataStyleTwo(data, isOneWay, stpPk) {
       var checkoutFile = SearchFlightParams.checkoutFileUrl;
 
       setCookie("price", price, 1);
+      setCookie("isFlight", true, 1);
       setCookie("key", key, 1);
 
       const checkoutPageSlug = "/make-payment";

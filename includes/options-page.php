@@ -37,7 +37,7 @@ function create_options_page_travelproplus()
             //         Field::make('text', 'id_travelpro_plus_strg', 'CSS ID')
             //             ->set_attribute('placeholder', 'Enter the CSS ID of the field where you want to show the auto-completes for cites and airports.')
             //     ))
-
+            Field::make('checkbox', 'travelproplus_cod', __('Enable Inquiry / Disable Payment')),
             Field::make('text', 'travelproplus_stripepk', __('Public Key'))
                 ->set_attribute('placeholder', 'Enter Stripe Public')
                 ->set_help_text('The booking notification will send to this email.'),

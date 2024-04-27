@@ -83,6 +83,9 @@ function processData(data) {
 
     hotelCard.addEventListener("click", function () {
       let hotelId = property.id;
+      const hotelPrice = property.price.lead.amount;
+      setCookie("price", hotelPrice, 1);
+      setCookie("isFlight", false, 1);
       const mainDomain = $(location).attr("origin");
       const detailPageSlug = "/hotel-detail";
       let hotelDetailPageUrl = "";

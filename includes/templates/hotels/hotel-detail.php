@@ -160,7 +160,7 @@
             <div class="row">
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
-                        <form>
+                        <form name="hotel-book-form">
                             <!-- <div class="row mb-3">
                                 <div class="col">
                                     <label for="fullName" class="form-label">Full Name</label>
@@ -180,12 +180,13 @@
                                     <label for="checkInDate" class="form-label">Check-in Date</label>
                                     <input type="date" class="form-control" id="checkInDate">
                                 </div>
-                            </div>
-                            <div class="row mb-3">
                                 <div class="col">
                                     <label for="checkOutDate" class="form-label">Check-out Date</label>
                                     <input type="date" class="form-control" id="checkOutDate">
                                 </div>
+                            </div>
+                            <div class="row mb-3">
+
                                 <div class="col">
                                     <label for="numGuests" class="form-label">Number of Guests</label>
                                     <input type="number" class="form-control" id="numGuests" min="1" value="1">
@@ -344,6 +345,30 @@
             let showImagesToThumbnails = getImagesForHotels(imagesArray, "images-thumbnail", 12);
             $('#hotal-main-image').attr("src", mainHotelImage);
         };
+
+
+        // Booking Form
+        $('form[name="hotel-book-form"]').submit(function(event) {
+            event.preventDefault();
+
+            // var price = itinerary.price.raw;
+            // var key = stpPk;
+            var checkoutFile = SearchFlightParams.checkoutFileUrl;
+
+            // setCookie("price", price, 1);
+            // setCookie("key", key, 1);
+
+            const checkoutPageSlug = "/make-payment";
+            const mainDomain = window.location.origin;
+            let makePaymentPageUrl = "";
+            if (mainDomain === "http://localhost") {
+                makePaymentPageUrl = mainDomain + "/wpplugindev" + checkoutPageSlug;
+            } else {
+                makePaymentPageUrl = mainDomain + checkoutPageSlug;
+            }
+
+            window.open(makePaymentPageUrl, "_blank");
+        });
 
         function extractAtAGlanceInfo(contents, condition, includes) {
             // Initialize variables to store extracted information
