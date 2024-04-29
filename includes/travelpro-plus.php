@@ -274,14 +274,15 @@ function travelproPlusbeforeBodyClosingScripts()
 
 
                     var originEntityId = $('input[name="origin"]').data('id');
+                    var originSkyId = $('input[name="origin"]').data('skyId');
                     var destinationEntityId = $('input[name="destination"]').data('id');
+                    var destinationSkyId = $('input[name="destination"]').data('skyId');
                     var adult = parseInt($(".quantity1 input").val());
                     var child = parseInt($(".quantity2 input").val());
                     var infants = parseInt($(".quantity3 input").val());
                     var departureDate = $('input[name="depart"]').val();
                     var returnDate = $('input[name="return"]').val();
                     var cabinClass = $('select[name="cabin"]').val();
-
 
                     if (originEntityId === undefined && destinationEntityId === undefined) {
                         alert('Please enter a valid origin, destination and wait for the results to appear. Then, select your origin, destination from the list.');

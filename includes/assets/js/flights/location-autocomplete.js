@@ -1,7 +1,7 @@
 const apiWithEndpoint =
-  "https://sky-scanner3.p.rapidapi.com/flights/auto-complete?";
+  "https://sky-scrapper.p.rapidapi.com/api/v1/flights/searchAirport?";
 const apiKey = "aa97ac4b72mshe4ad620e30f1ba2p19ff5ajsn93214a8b8fb3";
-const apiHost = "sky-scanner3.p.rapidapi.com";
+const apiHost = "sky-scrapper.p.rapidapi.com";
 var debounceTimer; // Variable to hold the debounce timer
 var currentSessionId;
 
@@ -31,14 +31,15 @@ function makeFlightAutocompleteAPIRequest(request, response, fieldId) {
         // Handle the API response and display results in the autocomplete
         var autocompleteData = data.data.map(function (item) {
           var dataItem = item.presentation.suggestionTitle;
-          if (dataItem.includes(" (Any)")) {
-            dataItem = dataItem.replace(" (Any)", "");
-          }
+          // if (dataItem.includes(" (Any)")) {
+          //   dataItem = dataItem.replace(" (Any)", "");
+          // }
 
           return {
             label: dataItem, // Display city and country
             value: dataItem, // Value to be placed in the input field
-            id: item.presentation.id, // Include entityId in autocomplete data
+            id: item.navigation.entityId, // Include entityId in autocomplete data
+            skyId: item.navigation.relevantFlightParams.skyId, // Include SkyId in autocomplete data
           };
         });
         // Display autocomplete suggestions
@@ -78,6 +79,8 @@ $(
     $(this).val(ui.item.label);
     // Set the corresponding entityId to the data-entity-id attribute
     $(this).data("id", ui.item.id);
+    // Set the corresponding skyId to the data-sky-id attribute
+    $(this).data("skyId", ui.item.skyId);
     return false;
   },
 });
