@@ -2,6 +2,15 @@
 
 // Retrieve the values of the cookies
 $isCod = get_travelpro_options('travelproplus_cod');
+// Hotel Data
+$hotelName = isset($_COOKIE['hotelName']) ? $_COOKIE['hotelName'] : null;
+$checkInHotel = isset($_COOKIE['checkInHotel']) ? $_COOKIE['checkInHotel'] : null;
+$checkOutHotel = isset($_COOKIE['checkOutHotel']) ? $_COOKIE['checkOutHotel'] : null;
+// Flight Data
+$checkInFlight = isset($_COOKIE['checkInFlight']) ? $_COOKIE['checkInFlight'] : null;
+$checkOutFlight = isset($_COOKIE['checkOutFlight']) ? $_COOKIE['checkOutFlight'] : null;
+$flightDetail = isset($_COOKIE['flightDetail']) ? $_COOKIE['flightDetail'] : null;
+
 $price = isset($_COOKIE['price']) ? $_COOKIE['price'] : null;
 $isFlight = isset($_COOKIE['isFlight']) ? $_COOKIE['isFlight'] : null;
 $stripeKey = isset($_COOKIE['key']) ? $_COOKIE['key'] : null;
@@ -87,24 +96,31 @@ if ($isCod) {
                     <h3 class="booking-summary-heading">Booking Summary</h3>
 
                     <!-- Flight Details -->
-                    <!-- <div class="details-container">
-                        <h6>Flight Details:</h6>
-                        <p><strong>Flight:</strong> XYZ123</p>
-                        <p><strong>Date:</strong> April 25, 2024</p>
-                        <p><strong>Time:</strong> 3:00 PM</p>
+                    <?php if ($isFlight === 'true') { ?>
+                        <div class="details-container">
+                            <h6>Flight Details:</h6>
+                            <p><strong>Flight:</strong> <?php echo $flightDetail ?></p>
+                            <p><strong>Check-in Date:</strong> <?php echo $checkInFlight ?></p>
+                            <?php if ($checkOutFlight !== null) { ?>
+                                <p><strong>Check-out Date:</strong> <?php echo $checkOutFlight ?></p>
+                            <?php } ?>
+                            <!-- <p><strong>Time:</strong> 3:00 PM</p>
                         <p><strong>Departure:</strong> JFK Airport, New York</p>
-                        <p><strong>Arrival:</strong> LAX Airport, Los Angeles</p>
-                    </div> -->
+                        <p><strong>Arrival:</strong> LAX Airport, Los Angeles</p> -->
+                        </div>
+                    <?php } ?>
 
                     <!-- Hotel Details -->
-                    <!-- <div class="details-container">
-                        <h6>Hotel Details:</h6>
-                        <p><strong>Hotel:</strong> Grand Hotel</p>
-                        <p><strong>Check-in Date:</strong> April 25, 2024</p>
-                        <p><strong>Check-out Date:</strong> April 27, 2024</p>
-                        <p><strong>Room Type:</strong> Deluxe Suite</p>
-                        <p><strong>Location:</strong> 123 Main St, Los Angeles</p>
-                    </div> -->
+                    <?php if ($isFlight === 'false') { ?>
+                        <div class="details-container">
+                            <!-- <h6>Hotel Details:</h6> -->
+                            <p><strong>Hotel:</strong> <?php echo $hotelName ?></p>
+                            <p><strong>Check-in Date:</strong> <?php echo $checkInHotel ?></p>
+                            <p><strong>Check-out Date:</strong> <?php echo $checkOutHotel ?></p>
+                            <!-- <p><strong>Room Type:</strong> Deluxe Suite</p> -->
+                            <!-- <p><strong>Location:</strong> 123 Main St, Los Angeles</p> -->
+                        </div>
+                    <?php } ?>
 
                     <!-- Total Price -->
                     <div class="details-container">

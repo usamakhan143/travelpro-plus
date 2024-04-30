@@ -65,6 +65,21 @@ function runJqueryTravelproPlus()
     <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'node_modules/jquery-ui/dist/jquery-ui.min.js'; ?>"></script>
 
     <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        // Date picker disable before dates.
+
+        var currentDate = new Date();
+        $("#departure-date").datepicker({
+            minDate: 0, // Disable past dates
+            onSelect: function(selectedDate) {
+                // Set the minDate of the second datepicker to the selected date
+                $("#return-date").datepicker("option", "minDate", selectedDate);
+            },
+        });
+        $("#return-date").datepicker({
+            minDate: 0, // Disable past dates
+        });
+    </script>
     <?php
 }
 

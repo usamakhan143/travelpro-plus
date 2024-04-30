@@ -48,6 +48,8 @@ function searchFlights(
         $("#flight-load-more-button").show();
         console.log("Incomplete Flight search results:", data);
         processDataStyleTwo(data, isOneWay, stpPk);
+        setCookie("checkInFlight", departureDate, 1);
+        setCookie("checkOutFlight", returnDate, 1);
       }
       $(".flight-loader-wrapper").hide();
     },
@@ -112,6 +114,8 @@ function searchOneWayFlights(
         processDataStyleTwo(data, isOneWay, stpPk);
       }
       $(".flight-loader-wrapper").hide();
+      deleteCookie("checkOutFlight");
+      setCookie("checkInFlight", departureDate, 1);
     },
     error: function (xhr, status, error) {
       console.error("Error:", error);
@@ -252,7 +256,7 @@ function processDataStyleTwo(data, isOneWay, stpPk) {
     // Price Span
     var price = document.createElement("span");
     price.classList.add("travelpro-leginfo-pricing");
-    price.textContent = itinerary.price.formatted;
+    price.textContent = "$" + increasePrice(itinerary.price.raw);
 
     var lastRowForPricingAndOperator = document.createElement("div");
     lastRowForPricingAndOperator.classList.add("row");
@@ -281,10 +285,26 @@ function processDataStyleTwo(data, isOneWay, stpPk) {
     // });
 
     bookNowButton.addEventListener("click", function () {
-      var price = itinerary.price.raw;
+      var price = increasePrice(itinerary.price.raw);
       var key = stpPk;
-      var checkoutFile = SearchFlightParams.checkoutFileUrl;
+      let originFlightNumber = 0;
+      let destFlightNumber = 0;
+      let flightDetails = "";
+      if (isOneWay === false) {
+        originFlightNumber = itinerary.legs[0].segments[0].flightNumber;
+        destFlightNumber = itinerary.legs[1].segments[0].flightNumber;
+        flightDetails =
+          "Outbound Flight #: " +
+          originFlightNumber +
+          ", Return Flight #: " +
+          destFlightNumber;
+      } else {
+        originFlightNumber = itinerary.legs[0].segments[0].flightNumber;
+        flightDetails = "Oneway Flight #: " + originFlightNumber;
+      }
+      // var checkoutFile = SearchFlightParams.checkoutFileUrl;
 
+      setCookie("flightDetail", flightDetails, 1);
       setCookie("price", price, 1);
       setCookie("isFlight", true, 1);
       setCookie("key", key, 1);

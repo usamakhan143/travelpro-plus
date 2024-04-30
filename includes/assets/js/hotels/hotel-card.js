@@ -11,7 +11,7 @@ function createHotelCard(property) {
     property.availability.minRoomsLeft !== null
       ? property.availability.minRoomsLeft
       : "NA";
-  let hotelprice = property.price.lead.formatted;
+  let hotelprice = property.price.lead.amount;
   // Hotel Card
   const hotelCardCol = document.createElement("div");
   hotelCardCol.classList.add("col");
@@ -45,7 +45,7 @@ function createHotelCard(property) {
 
   const hotelPrice = document.createElement("p");
   hotelPrice.classList.add("hotel-price");
-  hotelPrice.innerHTML = hotelprice;
+  hotelPrice.innerHTML = "$" + increasePrice(hotelprice);
 
   hotelCardCol.appendChild(cardContainer);
   cardContainer.appendChild(hotelImage);

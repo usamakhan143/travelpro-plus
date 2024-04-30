@@ -167,16 +167,47 @@ function deleteCookie(name) {
   document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 }
 
-// Date picker disable before dates.
+// 30% Markup
+function increasePrice(price) {
+  const amount = price * 1.3;
+  return amount.toString().split(".")[0];
+}
 
-// var currentDate = new Date();
-// $("#departure-date").datepicker({
-//   minDate: 0, // Disable past dates
-//   onSelect: function (selectedDate) {
-//     // Set the minDate of the second datepicker to the selected date
-//     $("#return-date").datepicker("option", "minDate", selectedDate);
-//   },
-// });
-// $("#return-date").datepicker({
-//   minDate: 0, // Disable past dates
-// });
+// Function to get the value of a specific cookie by name
+function getCookieValue(cookieName) {
+  // Split the cookie string into an array of individual cookies
+  var cookies = document.cookie.split(";");
+
+  // Loop through each cookie to find the one with the specified name
+  for (var i = 0; i < cookies.length; i++) {
+    var cookie = cookies[i].trim(); // Trim any leading/trailing whitespace
+
+    // Check if this cookie has the specified name
+    if (cookie.indexOf(cookieName + "=") === 0) {
+      // Return the value of the cookie (substring after the '=' sign)
+      return cookie.substring(cookieName.length + 1);
+    }
+  }
+
+  // If the cookie with the specified name is not found, return null
+  return null;
+}
+
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, "0");
+var mm = String(today.getMonth() + 1).padStart(2, "0"); // January is 0!
+var yyyy = today.getFullYear();
+
+today = yyyy + "-" + mm + "-" + dd;
+
+// Set minimum date for start_date field
+document.getElementById("start-date").setAttribute("min", today);
+
+// Set minimum date for end_date field
+document.getElementById("end-date").setAttribute("min", today);
+
+// Add event listener to start_date input field
+document.getElementById("start-date").addEventListener("change", function () {
+  var startDate = this.value;
+  document.getElementById("end-date").setAttribute("min", startDate);
+});

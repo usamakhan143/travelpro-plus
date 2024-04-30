@@ -43,6 +43,8 @@ function searchHotels(regionId, checkInDate, checkOutDate) {
       //     processDataStyleTwo(data, isOneWay);
       //   }
       $(".hotel-loader-wrapper").hide();
+      setCookie("checkInHotel", checkInDate, 1);
+      setCookie("checkOutHotel", checkOutDate, 1);
     },
     error: function (xhr, status, error) {
       console.error("Error:", error);
@@ -83,9 +85,10 @@ function processData(data) {
 
     hotelCard.addEventListener("click", function () {
       let hotelId = property.id;
-      const hotelPrice = property.price.lead.amount;
+      const hotelPrice = increasePrice(property.price.lead.amount);
       setCookie("price", hotelPrice, 1);
       setCookie("isFlight", false, 1);
+      setCookie("hotelName", property.name, 1);
       const mainDomain = $(location).attr("origin");
       const detailPageSlug = "/hotel-detail";
       let hotelDetailPageUrl = "";

@@ -19,11 +19,11 @@
                         </div>
                         <div class="col-md-4">
                             <label class="bootstrap-form-label">Check-in</label>
-                            <input class="form-control input--style-1" type="date" name="hotel-check-in" required>
+                            <input class="form-control input--style-1" type="date" name="hotel-check-in" required id="start-date">
                         </div>
                         <div class="col-md-4">
                             <label class="bootstrap-form-label">Check-out</label>
-                            <input class="form-control input--style-1" type="date" name="hotel-check-out" required>
+                            <input class="form-control input--style-1" type="date" name="hotel-check-out" required id="end-date">
                         </div>
                     </div>
                     <div class="mb-3 row">

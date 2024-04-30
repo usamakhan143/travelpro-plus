@@ -13,8 +13,8 @@
         </div>
         <div class="col-md-7">
             <h1 class="display-5 fw-bold hotel-name" id="hotel-name">Park Inn by Radisson Istanbul Atasehir</h1>
-            <p class="lead rating-review-details" id="rating-review-details">9.0/10 Wonderful (630 reviews)</p>
-            <p class="hotel-star-rating"><i class="fas fa-star" style="color: #bf974c;"></i><i class="fas fa-star" style="color: #bf974c;"></i><i class="fas fa-star" style="color: #bf974c;"></i><i class="fas fa-star" style="color: #bf974c;"></i><i class="fas fa-star" style="color: #bf974c;"></i></p>
+            <p class="lead rating-review-details" id="rating-review-details"></p>
+            <p class="hotel-star-rating"></p>
             <div class="glance-container">
                 <div class="detail-section">
                     <h5 class="glance-heading glance-heading-dynamic">At a Glance</h5>
@@ -176,22 +176,22 @@
                                     <label for="phone" class="form-label">Phone Number</label>
                                     <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
                                 </div> -->
-                                <div class="col">
+                                <!-- <div class="col">
                                     <label for="checkInDate" class="form-label">Check-in Date</label>
-                                    <input type="date" class="form-control" id="checkInDate">
+                                    <input type="text" class="form-control" id="checkInDate" readonly>
                                 </div>
                                 <div class="col">
                                     <label for="checkOutDate" class="form-label">Check-out Date</label>
-                                    <input type="date" class="form-control" id="checkOutDate">
-                                </div>
+                                    <input type="text" class="form-control" id="checkOutDate" readonly>
+                                </div> -->
                             </div>
-                            <div class="row mb-3">
+                            <!-- <div class="row mb-3">
 
                                 <div class="col">
                                     <label for="numGuests" class="form-label">Number of Guests</label>
                                     <input type="number" class="form-control" id="numGuests" min="1" value="1">
                                 </div>
-                            </div>
+                            </div> -->
                             <button type="submit" class="btn btn-primary">Book Now</button>
                         </form>
                     </div>
@@ -329,8 +329,8 @@
 
             // Rendering the data on the UI Elements
             $('.hotel-name').html(hotelName);
-            $('.rating-review-details').html(hotelReviewText + " " + numberOfReviewsString);
-            $('.hotel-star-rating').html(starRating);
+            // $('.rating-review-details').html(hotelReviewText + " " + numberOfReviewsString);
+            // $('.hotel-star-rating').html(starRating);
             $('.glance-heading-dynamic').html(atAGlanceHeading);
             // Loop through the newArray and dynamically generate content for each item
             let glanceListwithIcon = playIconList(allAtAGlanceFinalList.slice(0, 6), "detail-body-glance", "fa-play");
@@ -464,5 +464,6 @@
                 $('#' + containerId).append(imgHtml);
             });
         }
+
     });
 </script>

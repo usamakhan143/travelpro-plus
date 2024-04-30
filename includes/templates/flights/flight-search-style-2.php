@@ -50,11 +50,11 @@
                     <div class="mb-3 row">
                         <div class="col-md-6 depart-date">
                             <label class="bootstrap-form-label">Depart</label>
-                            <input class="form-control input--style-1" type="date" name="depart" required>
+                            <input class="form-control input--style-1" type="date" name="depart" required id="start-date">
                         </div>
                         <div class="col-md-3 return-date">
                             <label class="bootstrap-form-label">Return</label>
-                            <input class="form-control input--style-1" type="date" name="return">
+                            <input class="form-control input--style-1" type="date" name="return" id="end-date">
                         </div>
                         <div class="col-md-5">
                             <label class="bootstrap-form-label">Passengers</label>
