@@ -100,9 +100,9 @@ if ($isCod) {
                         <div class="details-container">
                             <h6>Flight Details:</h6>
                             <p><strong>Flight:</strong> <?php echo $flightDetail ?></p>
-                            <p><strong>Check-in Date:</strong> <?php echo $checkInFlight ?></p>
+                            <p><strong>Departure Date:</strong> <?php echo $checkInFlight ?></p>
                             <?php if ($checkOutFlight !== null) { ?>
-                                <p><strong>Check-out Date:</strong> <?php echo $checkOutFlight ?></p>
+                                <p><strong>Arrival Date:</strong> <?php echo $checkOutFlight ?></p>
                             <?php } ?>
                             <!-- <p><strong>Time:</strong> 3:00 PM</p>
                         <p><strong>Departure:</strong> JFK Airport, New York</p>

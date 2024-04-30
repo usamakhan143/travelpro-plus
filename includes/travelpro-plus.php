@@ -14,6 +14,7 @@ add_action('wp_enqueue_scripts', 'travelproHotelDetail_styles', 100);
 add_action('wp_footer', 'travelproPlusbeforeBodyClosingScripts', 9999);
 add_action('init', 'travelproPlusStripePaymentHandling');
 add_action('wp_footer', 'travelproCheckout_footerScripts', 9999);
+add_action('init', 'sendEmailNotificationTravelproPlus');
 
 
 // Checkout Page
@@ -346,3 +347,9 @@ function sendDataToSearchFlightsJs()
     wp_localize_script('search-flight-js', 'SearchFlightParams', $script_params);
 }
 add_action('wp_enqueue_scripts', 'sendDataToSearchFlightsJs');
+
+// Send email after user filled the checkout form
+function sendEmailNotificationTravelproPlus()
+{
+    include TRAVELPRO_PLUS_PLUGIN_PATH . 'includes/email/send-booking-confirmation.php';
+}
