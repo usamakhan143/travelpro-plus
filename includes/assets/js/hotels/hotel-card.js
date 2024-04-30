@@ -17,7 +17,7 @@ function createHotelCard(property) {
   hotelCardCol.classList.add("col");
 
   const cardContainer = document.createElement("div");
-  cardContainer.classList.add("card", "h-100");
+  cardContainer.classList.add("card", "h-100", "hotel-card");
 
   const hotelImage = document.createElement("img");
   hotelImage.classList.add("hotel-card-img-top");
