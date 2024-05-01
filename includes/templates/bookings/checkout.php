@@ -83,7 +83,7 @@ if ($isCod) {
                             </div>
                             <div class="col-md-4">
                                 <label for="zip" class="form-label">Zip:</label>
-                                <input type="zip" id="zip" name="zip" class="form-control" required />
+                                <input type="text" id="zip" name="zip" class="form-control" required />
                             </div>
                         </div>
                         <div class="mb-3">
@@ -174,6 +174,7 @@ if ($isCod) {
 
 <script>
     $(document).ready(function() {
+        $(".flight-loader-wrapper").hide();
         var totalPrice = `<?php echo htmlspecialchars($price) ?>`;
         var stpkey = `<?php echo htmlspecialchars($stripeKey) ?>`;
         let isCod = `<?php echo $isCod ?>`;
