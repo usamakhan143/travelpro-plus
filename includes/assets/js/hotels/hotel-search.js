@@ -1,5 +1,11 @@
 // Function to make a flight search API request
-function searchHotels(regionId, checkInDate, checkOutDate) {
+function searchHotels(
+  regionId,
+  checkInDate,
+  checkOutDate,
+  childernInfo,
+  hotelAdults
+) {
   var hotelSearchApiUrl =
     "https://hotels-com-provider.p.rapidapi.com/v2/hotels/search";
   $(".hotel-loader-wrapper").show();
@@ -16,7 +22,8 @@ function searchHotels(regionId, checkInDate, checkOutDate) {
       region_id: regionId,
       locale: "en_US",
       sort_order: "REVIEW",
-      adults_number: "1",
+      adults_number: hotelAdults,
+      // children_ages: childernInfo,
       domain: "US",
       lodging_type: "HOTEL,APART_HOTEL",
       star_rating_ids: "3,4,5",
@@ -26,6 +33,8 @@ function searchHotels(regionId, checkInDate, checkOutDate) {
     },
     success: function (data) {
       console.log("data", data);
+      let children =
+        "Adults: " + hotelAdults + " | Children Ages: " + childernInfo;
       processData(data);
       //   if (
       //     data.data.context.status === "incomplete" &&
@@ -45,6 +54,7 @@ function searchHotels(regionId, checkInDate, checkOutDate) {
       $(".hotel-loader-wrapper").hide();
       setCookie("checkInHotel", checkInDate, 1);
       setCookie("checkOutHotel", checkOutDate, 1);
+      setCookie("peoples", children, 1);
     },
     error: function (xhr, status, error) {
       console.error("Error:", error);

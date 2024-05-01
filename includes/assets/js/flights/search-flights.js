@@ -31,9 +31,12 @@ function searchFlights(
       cabinClass: cabinClass,
     },
     success: function (data) {
+      const passengers =
+        "Adults: " + adult + ", Children: " + child + ", Infants: " + infants;
       // Store the current session ID
       currentSessionId = data.data.context.sessionId;
       console.log("data", data);
+      console.log("passengers", passengers);
       if (
         data.data.context.status === "incomplete" &&
         data.data.context.totalResults === 0
@@ -48,9 +51,10 @@ function searchFlights(
         $("#flight-load-more-button").show();
         console.log("Incomplete Flight search results:", data);
         processDataStyleTwo(data, isOneWay, stpPk);
-        setCookie("checkInFlight", departureDate, 1);
-        setCookie("checkOutFlight", returnDate, 1);
       }
+      setCookie("checkInFlight", departureDate, 1);
+      setCookie("checkOutFlight", returnDate, 1);
+      setCookie("peoples", passengers, 1);
       $(".flight-loader-wrapper").hide();
     },
     error: function (xhr, status, error) {
@@ -95,6 +99,8 @@ function searchOneWayFlights(
       cabinClass: cabinClass,
     },
     success: function (data) {
+      const passengers =
+        "Adults: " + adult + ", Children: " + child + ", Infants: " + infants;
       // Store the current session ID
       currentSessionId = data.data.context.sessionId;
       console.log("One way", data);
@@ -116,6 +122,7 @@ function searchOneWayFlights(
       $(".flight-loader-wrapper").hide();
       deleteCookie("checkOutFlight");
       setCookie("checkInFlight", departureDate, 1);
+      setCookie("peoples", passengers, 1);
     },
     error: function (xhr, status, error) {
       console.error("Error:", error);
@@ -287,23 +294,67 @@ function processDataStyleTwo(data, isOneWay, stpPk) {
     bookNowButton.addEventListener("click", function () {
       var price = increasePrice(itinerary.price.raw);
       var key = stpPk;
+
+      // Flight Numbers
       let originFlightNumber = 0;
       let destFlightNumber = 0;
       let flightDetails = "";
+
+      // Flight From/To info sharing to checkout
+      // Outbound
+      let originOutboundFlightDetail = "";
+      let destinationOutboundFlightDetail = "";
+      let fromToOutboundFlight = "";
+      // Return
+      let originReturnFlightDetail = "";
+      let destinationReturnFlightDetail = "";
+      let fromToReturnFlight = "";
+
       if (isOneWay === false) {
         originFlightNumber = itinerary.legs[0].segments[0].flightNumber;
         destFlightNumber = itinerary.legs[1].segments[0].flightNumber;
+        // Flight From/To info sharing to checkout
+        // Outbound Flight Data
+        originOutboundFlightDetail = itinerary.legs[0].origin.displayCode;
+        destinationOutboundFlightDetail =
+          itinerary.legs[0].destination.displayCode;
+        fromToOutboundFlight =
+          originOutboundFlightDetail + " to " + destinationOutboundFlightDetail;
+        // Return Flight Data
+        originReturnFlightDetail = itinerary.legs[1].origin.displayCode;
+        destinationReturnFlightDetail =
+          itinerary.legs[1].destination.displayCode;
+        fromToReturnFlight =
+          originReturnFlightDetail + " to " + destinationReturnFlightDetail;
         flightDetails =
           "Outbound Flight #: " +
           originFlightNumber +
-          ", Return Flight #: " +
-          destFlightNumber;
+          " (" +
+          fromToOutboundFlight +
+          ") " +
+          "| Return Flight #: " +
+          destFlightNumber +
+          " (" +
+          fromToReturnFlight +
+          ")";
       } else {
         originFlightNumber = itinerary.legs[0].segments[0].flightNumber;
-        flightDetails = "Oneway Flight #: " + originFlightNumber;
+
+        // Outbound Flight Data
+        originOutboundFlightDetail = itinerary.legs[0].origin.displayCode;
+        destinationOutboundFlightDetail =
+          itinerary.legs[0].destination.displayCode;
+        fromToOutboundFlight =
+          originOutboundFlightDetail + " to " + destinationOutboundFlightDetail;
+
+        flightDetails =
+          "Oneway Flight #: " +
+          originFlightNumber +
+          " (" +
+          fromToOutboundFlight +
+          ") ";
       }
       // var checkoutFile = SearchFlightParams.checkoutFileUrl;
-
       setCookie("flightDetail", flightDetails, 1);
       setCookie("price", price, 1);
       setCookie("isFlight", true, 1);

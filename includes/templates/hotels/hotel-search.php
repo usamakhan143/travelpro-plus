@@ -28,8 +28,8 @@
                     </div>
                     <div class="mb-3 row">
                         <div class="col-md-5">
-                            <label class="bootstrap-form-label">Childrens</label>
-                            <input class="form-control input--style-1" type="text" id="numberOfChildren" name="numberOfChildren" placeholder="Enter Child" readonly>
+                            <label class="bootstrap-form-label">Children</label>
+                            <input class="form-control input--style-1" type="text" id="numberOfChildren" name="numberOfChildren" placeholder="Enter No. of Children" readonly>
                         </div>
                         <div class="col-md-5">
                             <label class="bootstrap-form-label">Adults</label>

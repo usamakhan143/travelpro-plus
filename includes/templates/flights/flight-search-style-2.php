@@ -60,7 +60,7 @@
                             <label class="bootstrap-form-label">Passengers</label>
                             <div class="input-group">
                                 <div class="input-group-icon" id="js-select-special">
-                                    <input class="input--style-1 input--text-small" type="text" name="passengers" value="1 Adult, 0 Child, 0 Infant" disabled="disabled" id="info" />
+                                    <input class="form-control input--style-1 input--text-small" type="text" name="passengers" value="1 Adult, 0 Child, 0 Infant" disabled="disabled" id="info" />
                                     <i class="zmdi zmdi-plus input-icon"></i>
                                 </div>
                                 <div class="dropdown-select">

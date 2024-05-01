@@ -26,7 +26,9 @@ function send_custom_email($request)
     }
 
     // Prepare email content based on inquiry type
-    $to = isset($params['email']) ? sanitize_email($params['email']) : '';
+    // $to = isset($params['email']) ? sanitize_email($params['email']) : '';
+    $dynamic_email = get_travelpro_options('travelproplus_email');
+    $to = isset($dynamic_email) ? sanitize_email($dynamic_email) : '';
     $subject = 'Booking Confirmation';
 
     ob_start(); // Start output buffering to capture HTML content

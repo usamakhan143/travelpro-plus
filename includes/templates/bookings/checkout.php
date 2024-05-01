@@ -9,6 +9,7 @@ $checkOutHotel = isset($_COOKIE['checkOutHotel']) ? $_COOKIE['checkOutHotel'] : 
 // Flight Data
 $checkInFlight = isset($_COOKIE['checkInFlight']) ? $_COOKIE['checkInFlight'] : null;
 $checkOutFlight = isset($_COOKIE['checkOutFlight']) ? $_COOKIE['checkOutFlight'] : null;
+$passengers = isset($_COOKIE['peoples']) ? $_COOKIE['peoples'] : null;
 $flightDetail = isset($_COOKIE['flightDetail']) ? $_COOKIE['flightDetail'] : null;
 
 $price = isset($_COOKIE['price']) ? $_COOKIE['price'] : null;
@@ -31,6 +32,10 @@ if ($isCod) {
 }
 
 ?>
+<!-- Loader HTML -->
+<div class="flight-loader-wrapper">
+    <div class="loader"></div>
+</div>
 <div class="container">
     <!-- Header -->
     <div class="header">
@@ -100,6 +105,7 @@ if ($isCod) {
                         <div class="details-container">
                             <h6>Flight Details:</h6>
                             <p><strong>Flight:</strong> <?php echo $flightDetail ?></p>
+                            <p><strong>Passengers:</strong> <?php echo $passengers ?></p>
                             <p><strong>Departure Date:</strong> <?php echo $checkInFlight ?></p>
                             <?php if ($checkOutFlight !== null) { ?>
                                 <p><strong>Arrival Date:</strong> <?php echo $checkOutFlight ?></p>
@@ -117,6 +123,7 @@ if ($isCod) {
                             <p><strong>Hotel:</strong> <?php echo $hotelName ?></p>
                             <p><strong>Check-in Date:</strong> <?php echo $checkInHotel ?></p>
                             <p><strong>Check-out Date:</strong> <?php echo $checkOutHotel ?></p>
+                            <p><strong>Guests:</strong> <?php echo $passengers ?></p>
                             <!-- <p><strong>Room Type:</strong> Deluxe Suite</p> -->
                             <!-- <p><strong>Location:</strong> 123 Main St, Los Angeles</p> -->
                         </div>
@@ -134,8 +141,7 @@ if ($isCod) {
                         <button type="submit" class="btn btn-checkout w-100 mt-3">Send Inquiry</button>
                     <?php } ?>
                 </div>
-                <?php if ($isCod) { ?>
-                <?php } else { ?>
+                <?php if ($isCod === 0) { ?>
                     <div class="card">
                         <div class="card-header">
                             <h5>Payment Information</h5>
@@ -167,87 +173,162 @@ if ($isCod) {
 </div>
 
 <script>
-    var priceFlight = `<?php echo htmlspecialchars($price) ?>`;
-    var stpkey = `<?php echo htmlspecialchars($stripeKey) ?>`;
-    makeFlightPayment(priceFlight, stpkey);
+    $(document).ready(function() {
+        var totalPrice = `<?php echo htmlspecialchars($price) ?>`;
+        var stpkey = `<?php echo htmlspecialchars($stripeKey) ?>`;
+        let isCod = `<?php echo $isCod ?>`;
+        let isFlight = `<?php echo $isFlight ?>`;
+        makeFlightPayment(totalPrice, stpkey);
 
-    function makeFlightPayment(flightPrice, stpPk) {
-        var stripe = Stripe(stpPk);
-        var dynamicPrice = flightPrice;
+        function makeFlightPayment(amount, stpPk) {
+            var dynamicPrice = amount;
 
-        var elements = stripe.elements();
-
-        var cardNumber = elements.create("cardNumber");
-        cardNumber.mount("#cardNumber");
-
-        var cardExpiry = elements.create("cardExpiry");
-        cardExpiry.mount("#cardExpiry");
-
-        var cvc = elements.create("cardCvc");
-        cvc.mount("#cvc");
-
-        $("#paymentForm").on("submit", function(event) {
-            event.preventDefault(); // Prevent the form from submitting
-
-            // Collect form data
-            var formData = {
-                firstName: $("#firstName").val(),
-                lastName: $("#lastName").val(),
-                address: $("#address").val(),
-                city: $("#city").val(),
-                state: $("#state").val(),
-                zip: $("#zip").val(),
-                country: $("#country").val(),
-                amount: dynamicPrice, // Include the dynamic price in the form data
+            // Booking Summary
+            const flightInquiry = {
+                inquiry_type: 'flight',
+                flight_details: `<?php echo $flightDetail ?>`,
+                departure_date: `<?php echo $checkInFlight ?>`,
+                arrival_date: `<?php echo $checkOutFlight ?>`,
+                passengers: `<?php echo $passengers ?>`,
+                flight_price: dynamicPrice
+            };
+            const hotelInquiry = {
+                inquiry_type: 'hotel',
+                hotel_name: `<?php echo $hotelName ?>`,
+                check_in_date: `<?php echo $checkInHotel ?>`,
+                passengers: `<?php echo $passengers ?>`,
+                check_out_date: `<?php echo $checkOutHotel ?>`,
+                hotel_price: dynamicPrice
             };
 
-            // Create a payment token using Stripe.js
-            stripe.createToken(cardNumber).then(function(result) {
-                if (result.error) {
-                    // Handle error
-                    console.error(result.error);
-                } else {
-                    // Token created successfully, send token to server
-                    var token = result.token.id;
-                    sendTokenToServer(token, dynamicPrice);
+            if (isCod === 0) {
+                var stripe = Stripe(stpPk);
 
-                    // console.log(token, 'token');
+                var elements = stripe.elements();
+
+                var cardNumber = elements.create("cardNumber");
+                cardNumber.mount("#cardNumber");
+
+                var cardExpiry = elements.create("cardExpiry");
+                cardExpiry.mount("#cardExpiry");
+
+                var cvc = elements.create("cardCvc");
+                cvc.mount("#cvc");
+            }
+            $("#paymentForm").on("submit", function(event) {
+                event.preventDefault(); // Prevent the form from submitting
+
+                // Collect form data
+                var formData = {
+                    first_name: $("#firstName").val(),
+                    last_name: $("#lastName").val(),
+                    email: $('#email').val(),
+                    phone: $('#phone').val(),
+                    address: $("#address").val(),
+                    city: $("#city").val(),
+                    state: $("#state").val(),
+                    zip: $("#zip").val(),
+                    country: $("#country").val()
+                };
+
+                // Check is this a Hotel or Flight Inquiry then merge them inside the formdata object
+                if (isFlight === 'true') {
+                    Object.assign(formData, flightInquiry);
+                } else {
+                    Object.assign(formData, hotelInquiry);
+                }
+
+                if (isCod === 0) {
+                    // Create a payment token using Stripe.js
+                    stripe.createToken(cardNumber).then(function(result) {
+                        if (result.error) {
+                            // Handle error
+                            console.error(result.error);
+                        } else {
+                            // Token created successfully, send token to server
+                            var token = result.token.id;
+                            sendTokenToServer(token, dynamicPrice);
+
+                            // console.log(token, 'token');
+                        }
+                    });
+                } else {
+
+                    // Console
+                    console.log(formData, 'formdata');
+                    sendInquiryEmail(formData);
+
+                    $(".flight-loader-wrapper").hide();
                 }
             });
-        });
-    }
+        }
 
-    // Function to send payment token to server
-    function sendTokenToServer(token, amount) {
-        const payApi = "/wp-json/stripe-payment/v1/charge";
-        const pluginHost =
-            window.location.host === "localhost" ?
-            window.location.origin + "/wpplugindev" :
-            window.location.origin;
+        // Function to send payment token to server
+        function sendTokenToServer(token, amount) {
+            const payApi = "/wp-json/stripe-payment/v1/charge";
+            const pluginHost =
+                window.location.host === "localhost" ?
+                window.location.origin + "/wpplugindev" :
+                window.location.origin;
 
-        $(".flight-loader-wrapper").show();
-        $.ajax({
-            url: pluginHost + payApi,
-            method: "POST",
-            contentType: "application/json",
-            data: JSON.stringify({
-                stripeToken: token,
-                amount: amount,
-            }),
-            success: function(response) {
-                // Handle success response
-                $(".flight-loader-wrapper").hide();
-                alert(response.message);
-                console.log("Payment successful");
-                deleteCookie('price');
-                deleteCookie('key');
-                window.location.href = window.location.origin;
-            },
-            error: function(xhr, status, error) {
-                // Handle error response
-                console.error("Payment failed:", error);
-                alert("Payment failed");
-            },
-        });
-    }
+            $(".flight-loader-wrapper").show();
+            $.ajax({
+                url: pluginHost + payApi,
+                method: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({
+                    stripeToken: token,
+                    amount: amount,
+                }),
+                success: function(response) {
+                    // Handle success response
+                    $(".flight-loader-wrapper").hide();
+                    alert(response.message);
+                    console.log("Payment successful");
+                    deleteCookie('price');
+                    deleteCookie('key');
+                    window.location.href = window.location.origin;
+                },
+                error: function(xhr, status, error) {
+                    // Handle error response
+                    console.error("Payment failed:", error);
+                    alert("Payment failed");
+                },
+            });
+        }
+
+        function sendInquiryEmail(data) {
+            $(".flight-loader-wrapper").show();
+            let formdata = data;
+            const emailApi = "/wp-json/booking/v1/send-confirmation";
+            const pluginHost =
+                window.location.host === "localhost" ?
+                window.location.origin + "/wpplugindev" :
+                window.location.origin;
+            $.ajax({
+                url: pluginHost + emailApi,
+                method: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(formdata),
+                success: function(data) {
+                    console.log(data);
+
+                    var formFields = document.querySelectorAll('input, textarea, select');
+                    formFields.forEach(function(field) {
+                        field.value = ''; // Set value to an empty string
+                    });
+                    alert("Thank you for you inquiry. We will get back to you soon.");
+                    window.location.href = window.location.origin;
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error:", error);
+                    $(".flight-loader-wrapper").hide();
+                    alert(
+                        "Please try again! There is something went wrong while submitting your inquiry."
+                    );
+                    // Handle the error gracefully
+                },
+            });
+        }
+    });
 </script>
