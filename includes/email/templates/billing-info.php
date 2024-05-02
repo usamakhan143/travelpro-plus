@@ -9,6 +9,9 @@ $city = isset($params['city']) ? $params['city'] : '';
 $state = isset($params['state']) ? $params['state'] : '';
 $zip = isset($params['zip']) ? $params['zip'] : '';
 $country = isset($params['country']) ? $params['country'] : '';
+$passport = isset($params['passport']) ? $params['passport'] : '';
+$dob = isset($params['dob']) ? $params['dob'] : '';
+$nationality = isset($params['nationality']) ? $params['nationality'] : '';
 ?>
 
 <p><strong>Billing Information:</strong></p>
@@ -21,3 +24,6 @@ $country = isset($params['country']) ? $params['country'] : '';
 <p>State: <?php echo $state; ?></p>
 <p>Zip: <?php echo $zip; ?></p>
 <p>Country: <?php echo $country; ?></p>
+<p>Passport No: <?php echo $passport; ?></p>
+<p>Date of Birth: <?php echo $dob; ?></p>
+<p>Nationality: <?php echo $nationality; ?></p>

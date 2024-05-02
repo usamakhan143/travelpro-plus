@@ -18,7 +18,7 @@ function send_custom_email($request)
     $params = $request->get_params();
 
     // Validate input parameters
-    $required_fields = array('inquiry_type', 'first_name', 'last_name', 'email', 'phone', 'address', 'city', 'state', 'zip', 'country');
+    $required_fields = array('inquiry_type', 'first_name', 'last_name', 'email', 'phone', 'address', 'city', 'state', 'zip', 'country', 'passport', 'dob', 'nationality');
     foreach ($required_fields as $field) {
         if (empty($params[$field])) {
             return new WP_Error('missing_parameters', 'All fields are required.', array('status' => 400));

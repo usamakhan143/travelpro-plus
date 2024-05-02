@@ -91,7 +91,7 @@ function travelproCheckout_styles()
     if (is_page() || is_single()) {
         if ((has_shortcode(get_the_content(), 'travelpro_plus_checkout'))) {
             $checkoutFormCss = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/checkout.css';
-            $bootstrap5 = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css";
+            $bootstrap5 = TRAVELPRO_PLUS_PLUGIN_URL . 'node_modules/bootstrap/dist/css/bootstrap.min.css';
             wp_register_style('travelpro-plus-bootstrapFive', $bootstrap5, array(), '1.0.0');
             wp_register_style('travelpro-plus-checkoutFormCss', $checkoutFormCss, array(), '1.0.0');
 
@@ -155,7 +155,7 @@ function enqueue_travelproplus_styles()
             $flightResults = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/flight-results.css';
             $select2 = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/select2/select2.min.css';
             $flightResultsStyleTwo = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/flight-results-style-2.css';
-            $bootstrap5 = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css";
+            $bootstrap5 = TRAVELPRO_PLUS_PLUGIN_URL . 'node_modules/bootstrap/dist/css/bootstrap.min.css';
             $fontAwesomeNewVersion = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css";
             $materialIcons = "https://fonts.googleapis.com/icon?family=Material+Icons";
             $lightbox2Css = TRAVELPRO_PLUS_PLUGIN_URL . 'node_modules/lightbox2/dist/css/lightbox.min.css';

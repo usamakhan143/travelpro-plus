@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "jquery": "^3.7.1",
     "jquery-ui": "^1.13.2",
     "lightbox2": "^2.11.4"

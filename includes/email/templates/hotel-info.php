@@ -5,8 +5,7 @@
 $hotel_name = isset($params['hotel_name']) ? $params['hotel_name'] : '';
 $check_in_date = isset($params['check_in_date']) ? $params['check_in_date'] : '';
 $check_out_date = isset($params['check_out_date']) ? $params['check_out_date'] : '';
-// $adults = isset($params['adults']) ? $params['adults'] : '';
-// $children = isset($params['children']) ? $params['children'] : '';
+$guests = isset($params['passengers']) ? $params['passengers'] : '';
 $hotel_price = isset($params['hotel_price']) ? $params['hotel_price'] : '';
 ?>
 
@@ -14,4 +13,5 @@ $hotel_price = isset($params['hotel_price']) ? $params['hotel_price'] : '';
 <p>Hotel Name: <?php echo $hotel_name; ?></p>
 <p>Check In date: <?php echo $check_in_date; ?></p>
 <p>Check Out date: <?php echo $check_out_date; ?></p>
+<p>Guests: <?php echo $guests; ?></p>
 <p>Total Price: $<?php echo $hotel_price; ?></p>

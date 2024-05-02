@@ -90,6 +90,20 @@ if ($isCod) {
                             <label for="country" class="form-label">Country:</label>
                             <input type="text" id="country" name="country" class="form-control" required />
                         </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="date-of-birth" class="form-label">Date of Birth:</label>
+                                <input type="date" id="date-of-birth" name="date-of-birth" class="form-control" required />
+                            </div>
+                            <div class="col-md-4">
+                                <label for="passport-number" class="form-label"> Passport No.</label>
+                                <input type="text" id="passport-number" name="passport-number" class="form-control" required />
+                            </div>
+                            <div class="col-md-4">
+                                <label for="nationality" class="form-label">Nationality:</label>
+                                <input type="text" id="nationality" name="nationality" class="form-control" required />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -229,7 +243,10 @@ if ($isCod) {
                     city: $("#city").val(),
                     state: $("#state").val(),
                     zip: $("#zip").val(),
-                    country: $("#country").val()
+                    country: $("#country").val(),
+                    passport: $("#passport-number").val(),
+                    dob: $("#date-of-birth").val(),
+                    nationality: $("#nationality").val()
                 };
 
                 // Check is this a Hotel or Flight Inquiry then merge them inside the formdata object
