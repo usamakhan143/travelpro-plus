@@ -1,7 +1,7 @@
 const regionApiWithEndpoint =
-  "https://hotels-com-provider.p.rapidapi.com/v2/regions?";
-const hotelApiKey = "287af7df0fmshe1c40367b310b6ap1d4bdcjsne5ebfd994b06";
-const hotelApiHost = "hotels-com-provider.p.rapidapi.com";
+  "https://booking-com.p.rapidapi.com/v1/hotels/locations?";
+const hotelApiKey = "c9bcc0fae2msh319fae4f97b55fep19ad9djsn9e1c0abf8b60";
+const hotelApiHost = "booking-com.p.rapidapi.com";
 var hotelDebounceTimer; // Variable to hold the debounce timer
 
 // Function to make an API request for autocomplete suggestions
@@ -13,7 +13,7 @@ function makeHotelRegionAutocompleteAPIRequest(request, response, fieldId) {
     : null;
 
   if (hotelDesKeyword.length >= 3) {
-    var regionApiUrl = regionApiWithEndpoint + "query=" + hotelDesKeyword;
+    var regionApiUrl = regionApiWithEndpoint + "name=" + hotelDesKeyword;
 
     $.ajax({
       url: regionApiUrl,
@@ -23,23 +23,35 @@ function makeHotelRegionAutocompleteAPIRequest(request, response, fieldId) {
         "x-rapidapi-host": hotelApiHost,
       },
       data: {
-        domain: "US",
-        locale: "en_US",
+        locale: "en-us",
       },
       success: function (data) {
-        // Handle the API response and display results in the autocomplete
-        var autocompleteData = data.data.map(function (item) {
-          var dataItem = item.regionNames.displayName;
-          if (dataItem.includes(" (Any)")) {
-            dataItem = dataItem.replace(" (Any)", "");
-          }
+        // Create a Set to track unique destination names
+        var uniqueDestinations = new Set();
 
-          return {
-            label: dataItem, // Display city and country
-            value: dataItem, // Value to be placed in the input field
-            id: item.essId.sourceId, // Include entityId in autocomplete data
-          };
-        });
+        // Filter and map the data to remove duplicates and invalid entries
+        var autocompleteData = data
+          .filter(function (item) {
+            // Check if item has valid 'name' and 'dest_id'
+            return item.name && item.dest_id;
+          })
+          .filter(function (item) {
+            // Check if the 'name' has already been processed (to avoid duplicates)
+            if (!uniqueDestinations.has(item.name)) {
+              uniqueDestinations.add(item.name); // Add to the set if unique
+              return true; // Include the item in the result
+            }
+            return false; // Exclude duplicates
+          })
+          .map(function (item) {
+            // Return the required data structure
+            return {
+              label: item.name, // Display city and country
+              value: item.name, // Value to be placed in the input field
+              id: item.dest_id, // Include entityId in autocomplete data
+            };
+          });
+
         // Display autocomplete suggestions
         response(autocompleteData);
 
