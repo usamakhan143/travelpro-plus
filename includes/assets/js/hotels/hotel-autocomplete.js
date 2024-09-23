@@ -1,6 +1,6 @@
 const regionApiWithEndpoint =
   "https://hotels-com-provider.p.rapidapi.com/v2/regions?";
-const hotelApiKey = "aa97ac4b72mshe4ad620e30f1ba2p19ff5ajsn93214a8b8fb3";
+const hotelApiKey = "287af7df0fmshe1c40367b310b6ap1d4bdcjsne5ebfd994b06";
 const hotelApiHost = "hotels-com-provider.p.rapidapi.com";
 var hotelDebounceTimer; // Variable to hold the debounce timer
 
@@ -19,8 +19,8 @@ function makeHotelRegionAutocompleteAPIRequest(request, response, fieldId) {
       url: regionApiUrl,
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": hotelApiKey,
-        "X-RapidAPI-Host": hotelApiHost,
+        "x-rapidapi-key": hotelApiKey,
+        "x-rapidapi-host": hotelApiHost,
       },
       data: {
         domain: "US",

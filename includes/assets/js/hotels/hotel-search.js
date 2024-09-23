@@ -23,6 +23,7 @@ function searchHotels(
       locale: "en_US",
       sort_order: "REVIEW",
       adults_number: hotelAdults,
+      guest_rating_min: 8,
       // children_ages: childernInfo,
       domain: "US",
       lodging_type: "HOTEL,APART_HOTEL",
