@@ -1,13 +1,13 @@
 // Function to make a flight search API request
 function searchHotels(
-  regionId,
+  destId,
   checkInDate,
   checkOutDate,
   childernInfo,
-  hotelAdults
+  hotelAdults,
+  numOfChild
 ) {
-  var hotelSearchApiUrl =
-    "https://hotels-com-provider.p.rapidapi.com/v2/hotels/search";
+  var hotelSearchApiUrl = "https://booking-com.p.rapidapi.com/v1/hotels/search";
   $(".hotel-loader-wrapper").show();
   $.ajax({
     url: hotelSearchApiUrl,
@@ -17,20 +17,21 @@ function searchHotels(
       "X-RapidAPI-Host": hotelApiHost,
     },
     data: {
-      checkin_date: checkInDate,
-      checkout_date: checkOutDate,
-      region_id: regionId,
-      locale: "en_US",
-      sort_order: "REVIEW",
+      children_ages: childernInfo,
+      page_number: 0,
       adults_number: hotelAdults,
-      guest_rating_min: 8,
-      // children_ages: childernInfo,
-      domain: "US",
-      lodging_type: "HOTEL,APART_HOTEL",
-      star_rating_ids: "3,4,5",
-      meal_plan: "ALL_INCLUSIVE,FULL_BOARD,HALF_BOARD,FREE_BREAKFAST",
-      payment_type: "PAY_LATER,FREE_CANCELLATION",
-      available_filter: "SHOW_AVAILABLE_ONLY",
+      children_number: numOfChild,
+      room_number: 1,
+      include_adjacency: true,
+      units: "metric",
+      categories_filter_ids: "class::2,class::4,free_cancellation::1",
+      checkout_date: checkOutDate,
+      dest_id: destId,
+      filter_by_currency: "USD",
+      dest_type: "city",
+      checkin_date: checkInDate,
+      order_by: "popularity",
+      locale: "en-us",
     },
     success: function (data) {
       console.log("data", data);
@@ -73,7 +74,7 @@ function processData(data) {
   var searchResultsDiv = document.getElementById("search-results");
   searchResultsDiv.innerHTML = "";
 
-  var hotels = data.properties;
+  var hotels = data.result;
 
   if (hotels.length === 0 || hotels === undefined) {
     searchResultsDiv.innerHTML = "<p>No hotels found.</p>";
@@ -95,8 +96,8 @@ function processData(data) {
     searchResultsDiv.appendChild(HotelContainer);
 
     hotelCard.addEventListener("click", function () {
-      let hotelId = property.id;
-      const hotelPrice = increasePrice(property.price.lead.amount);
+      let hotelId = property.hotel_id;
+      const hotelPrice = increasePrice(property.price_breakdown.gross_price);
       setCookie("price", hotelPrice, 1);
       setCookie("isFlight", false, 1);
       setCookie("hotelName", property.name, 1);

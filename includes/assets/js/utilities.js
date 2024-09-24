@@ -211,3 +211,10 @@ document.getElementById("start-date").addEventListener("change", function () {
   var startDate = this.value;
   document.getElementById("end-date").setAttribute("min", startDate);
 });
+
+function truncateHotelName(name, limit) {
+  if (name.length > limit) {
+    return name.substring(0, limit) + "...";
+  }
+  return name;
+}
