@@ -159,6 +159,7 @@ function enqueue_travelproplus_styles()
             $fontAwesomeNewVersion = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css";
             $materialIcons = "https://fonts.googleapis.com/icon?family=Material+Icons";
             $lightbox2Css = TRAVELPRO_PLUS_PLUGIN_URL . 'node_modules/lightbox2/dist/css/lightbox.min.css';
+            $flatpickCss = "https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css";
 
             wp_register_style('travelpro-plus-materialDesignIconic', $materialDesignIconic, array(), '1.0.0');
             wp_register_style('travelpro-plus-fontawesome', $fontAwesome, array(), '1.0.0');
@@ -171,6 +172,7 @@ function enqueue_travelproplus_styles()
             wp_register_style('travelpro-plus-flightresultsStyleTwo', $flightResultsStyleTwo, array(), '1.0.0');
             wp_register_style('travelpro-plus-materialIcons', $materialIcons, array(), '1.0.0');
             wp_register_style('travelpro-plus-lightbox2', $lightbox2Css, array(), '1.0.0');
+            wp_register_style('travelpro-plus-flatpickr', $flatpickCss, array(), '1.0.0');
 
             // Enqueue your plugin's styles
             wp_enqueue_style('travelpro-plus-materialDesignIconic');
@@ -184,6 +186,7 @@ function enqueue_travelproplus_styles()
             wp_enqueue_style('travelpro-plus-flightresultsStyleTwo');
             wp_enqueue_style('travelpro-plus-materialIcons');
             wp_enqueue_style('travelpro-plus-lightbox2');
+            wp_enqueue_style('travelpro-plus-flatpickr');
         }
     }
 }
@@ -194,6 +197,7 @@ function travelproPlusbeforeBodyClosingScripts()
     if (is_page() && (has_shortcode(get_the_content(), 'flights_search_form') && has_shortcode(get_the_content(), 'flights_search_results')) || has_shortcode(get_the_content(), 'hotel_search_form') || has_shortcode(get_the_content(), 'hotel_detail')) {
     ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/flights/location-autocomplete.js'; ?>"> </script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/hotels/hotel-autocomplete.js'; ?>"> </script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/utilities.js'; ?>"></script>
@@ -208,6 +212,7 @@ function travelproPlusbeforeBodyClosingScripts()
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/datepicker/moment.min.js'; ?>"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/datepicker/daterangepicker.js'; ?>"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/global.js'; ?>"></script>
+        <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/date-pickers/flatpick-range.js'; ?>"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'node_modules/lightbox2/dist/js/lightbox-plus-jquery.js'; ?>"></script>
 
         <script>
