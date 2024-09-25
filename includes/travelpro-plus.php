@@ -254,7 +254,17 @@ function travelproPlusbeforeBodyClosingScripts()
                     const hotelCheckOut = $('input[name="hotel-check-out"]').val();
                     const childernInfo = $('input[name="numberOfChildren"]').val();
                     const hotelAdults = $('input[name="numberOfAdultsInHotel"]').val();
-                    const numOfChild = childernInfo.split(',').length;
+
+                    // If the field is empty, set numberOfChildren to 0
+                    if (!childernInfo) {
+                        var numOfChild = '';
+                    } else {
+                        // Split the string by commas and filter out any empty strings
+                        var childrenArray = childernInfo.split(',').filter(age => age.trim() !== '');
+
+                        // Calculate the number of children based on valid entries
+                        var numOfChild = childrenArray.length;
+                    }
 
                     // Scroll to the search result section
                     $('html, body').animate({

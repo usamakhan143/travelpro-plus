@@ -16,7 +16,7 @@ function searchHotels(
       "X-RapidAPI-Key": hotelApiKey,
       "X-RapidAPI-Host": hotelApiHost,
     },
-    data: {
+    data: cleanParams({
       children_ages: childernInfo,
       page_number: 0,
       adults_number: hotelAdults,
@@ -32,11 +32,16 @@ function searchHotels(
       checkin_date: checkInDate,
       order_by: "popularity",
       locale: "en-us",
-    },
+    }),
     success: function (data) {
       console.log("data", data);
       let children =
-        "Adults: " + hotelAdults + " | Children Ages: " + childernInfo;
+        "Adult: " +
+        hotelAdults +
+        " | Children Age: " +
+        childernInfo +
+        " | Child: " +
+        numOfChild;
       processData(data);
       //   if (
       //     data.data.context.status === "incomplete" &&
@@ -100,7 +105,7 @@ function processData(data) {
       const hotelPrice = increasePrice(property.price_breakdown.gross_price);
       setCookie("price", hotelPrice, 1);
       setCookie("isFlight", false, 1);
-      setCookie("hotelName", property.name, 1);
+      setCookie("hotelName", property.hotel_name, 1);
       const mainDomain = $(location).attr("origin");
       const detailPageSlug = "/hotel-detail";
       let hotelDetailPageUrl = "";
@@ -115,4 +120,19 @@ function processData(data) {
       window.open(hotelDetailPageUrl, "_blank");
     });
   });
+}
+
+// Function to clean the parameters
+function cleanParams(params) {
+  let cleanedParams = {};
+  for (let key in params) {
+    if (
+      params[key] !== null &&
+      params[key] !== "" &&
+      params[key] !== undefined
+    ) {
+      cleanedParams[key] = params[key];
+    }
+  }
+  return cleanedParams;
 }

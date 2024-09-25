@@ -32,8 +32,8 @@ function makeHotelRegionAutocompleteAPIRequest(request, response, fieldId) {
         // Filter and map the data to remove duplicates and invalid entries
         var autocompleteData = data
           .filter(function (item) {
-            // Check if item has valid 'name' and 'dest_id'
-            return item.name && item.dest_id;
+            // Check if item has valid 'name', 'dest_id', and is of type 'city'
+            return item.name && item.dest_id && item.dest_type === "city";
           })
           .filter(function (item) {
             // Check if the 'name' has already been processed (to avoid duplicates)

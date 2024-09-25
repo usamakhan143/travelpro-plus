@@ -205,7 +205,7 @@
 <script>
     $(document).ready(function() {
         // Get the value of the 'hotel-id' parameter from the URL
-        const hotelDetailApiUrl = 'https://hotels-com-provider.p.rapidapi.com/v2/hotels/details';
+        const hotelDetailApiUrl = 'https://booking-com.p.rapidapi.com/v1/hotels/data';
         const urlParams = new URLSearchParams(window.location.search);
         const hotelId = urlParams.get('hotel-id');
         // Check if the 'id' parameter exists and is not empty
@@ -219,9 +219,8 @@
                     "X-RapidAPI-Host": hotelApiHost,
                 },
                 data: {
-                    domain: 'US',
                     hotel_id: hotelId,
-                    locale: "en_US",
+                    locale: "en-us"
                 },
                 success: function(data) {
                     // console.log("data", data);
@@ -240,110 +239,135 @@
         } else {
             console.error('Hotel ID not found');
         }
+
+
+        $.ajax({
+            url: 'https://booking-com.p.rapidapi.com/v1/hotels/photos',
+            method: 'GET',
+            data: {
+                hotel_id: hotelId,
+                locale: "en-us"
+            },
+            headers: {
+                'x-rapidapi-host': 'booking-com.p.rapidapi.com',
+                'x-rapidapi-key': 'c9bcc0fae2msh319fae4f97b55fep19ad9djsn9e1c0abf8b60' // Replace with your actual API key
+            },
+            success: function(data) {
+
+                const mainHotelImage = data[0].url_max;
+                const imagesArray = data.map(item => item.url_max);
+                $('#hotal-main-image').attr("src", mainHotelImage);
+                getImagesForHotels(imagesArray, "images-thumbnail", 12); // Pass the array to your custom function
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching the data:', error);
+            }
+        });
+
+
         let hotelJson = `<?php echo TRAVELPRO_PLUS_PLUGIN_URL ?>` + 'includes/assets/js/hotels/hotel-detail.json';
 
         function hotelDetailProcess(data) {
             // Hotel Name
-            const hotelName = data.summary.name;
+            const hotelName = data.name;
 
             // Reviews Content
-            const hotelReviewText = data.reviewInfo.summary.overallScoreWithDescriptionA11y.value;
+            // const hotelReviewText = data.reviewInfo.summary.overallScoreWithDescriptionA11y.value;
             // Extract the number of reviews
-            const numberOfReviews = data.reviewInfo.summary.propertyReviewCountDetails.shortDescription;
+            const numberOfReviews = data.review_nr;
             // Create a new string
-            const numberOfReviewsString = '(' + numberOfReviews.match(/\d{1,3}(?:,\d{3})*/) + ' reviews)';
+            // const numberOfReviewsString = '(' + numberOfReviews.match(/\d{1,3}(?:,\d{3})*/) + ' reviews)';
             // Storing Star rating value
-            const hotelRatingNumber = data.summary.overview.propertyRating.rating;
+            const hotelRatingNumber = data.class;
             // Extracting the stars based on the average rating using a prebuilt function in utilities.js
             const starRating = getStarRating(hotelRatingNumber);
 
 
             // => Amenities
-            const amenitesGlanceContents = data.summary.amenities.amenities[0].contents;
-            const atAGlanceHeading = data.summary.amenities.amenities[0].title;
+            // const amenitesGlanceContents = data.summary.amenities.amenities[0].contents;
+            // const atAGlanceHeading = data.summary.amenities.amenities[0].title;
 
             // Iterate over the contents
-            let hotelSize = extractAtAGlanceInfo(amenitesGlanceContents, "Hotel size", "rooms");
-            let floors = extractAtAGlanceInfo(amenitesGlanceContents, "Hotel size", "floors");
+            // let hotelSize = extractAtAGlanceInfo(amenitesGlanceContents, "Hotel size", "rooms");
+            // let floors = extractAtAGlanceInfo(amenitesGlanceContents, "Hotel size", "floors");
             // All the values for the at a glance list
-            let atAGlanceHotelSizeresult = "Hotel size: " + hotelSize + " " + floors;
-            let checkInCheckout = extractAtAGlanceInfo(amenitesGlanceContents, "Arriving/Leaving", "Check-in");
-            let minAgeForCheckIn = extractAtAGlanceInfo(amenitesGlanceContents, "Arriving/Leaving", "check-in age");
-            let specialCheckInInstructions = extractAtAGlanceInfo(amenitesGlanceContents, "Special check-in instructions", "");
-            let allAtAGlanceList = [atAGlanceHotelSizeresult, checkInCheckout, minAgeForCheckIn, specialCheckInInstructions];
-            let allAtAGlanceFinalList = [];
+            // let atAGlanceHotelSizeresult = "Hotel size: " + hotelSize + " " + floors;
+            // let checkInCheckout = extractAtAGlanceInfo(amenitesGlanceContents, "Arriving/Leaving", "Check-in");
+            // let minAgeForCheckIn = extractAtAGlanceInfo(amenitesGlanceContents, "Arriving/Leaving", "check-in age");
+            // let specialCheckInInstructions = extractAtAGlanceInfo(amenitesGlanceContents, "Special check-in instructions", "");
+            // let allAtAGlanceList = [atAGlanceHotelSizeresult, checkInCheckout, minAgeForCheckIn, specialCheckInInstructions];
+            // let allAtAGlanceFinalList = [];
 
-            allAtAGlanceList.forEach(function(variable) {
-                // Check if the variable is not null and not empty
-                if (variable !== null && variable.trim() !== "") {
-                    // Push the variable into the array
-                    allAtAGlanceFinalList.push(variable);
-                }
-            });
-
-
-
-            // => Accessibility
-            // const accessibilityHeading = data.summary.amenities.amenities[1].contents[6].header.text;
-            let allAccessibilityFinalList = [];
-            const amenitesAccessibilityContents = data.summary.amenities.amenities[1].contents;
-            let getTrimAccessibilities = extractAccessibility(amenitesAccessibilityContents, "Accessibility", "");
-            // Convert whole string to array.
-            let accessibilityStrToArray = getTrimAccessibilities.split(', ');
-            // Remove comma from the last index in the array.
-            accessibilityStrToArray[accessibilityStrToArray.length - 1] = accessibilityStrToArray[accessibilityStrToArray.length - 1].replace(',', '');
+            // allAtAGlanceList.forEach(function(variable) {
+            //     // Check if the variable is not null and not empty
+            //     if (variable !== null && variable.trim() !== "") {
+            //         // Push the variable into the array
+            //         allAtAGlanceFinalList.push(variable);
+            //     }
+            // });
 
 
-            // => Property Highlights
-            const propertyHighlightsHeading = data.summary.amenities.topAmenities.header.text;
 
-            // => Food and Drinks Section
-            const foodAndDrinksHeading = data.summary.amenities.amenities[1].contents[0].header.text;
-            const foodAndDrinkData = data.summary.amenities.amenities[1].contents[0].items;
-            let foodAndDrinksDataArray = [];
-            foodAndDrinkData.forEach(element => {
-                foodAndDrinksDataArray.push(element.text);
-            });
-
-            // => children And Bed section
-            const childrenAndBedData = data.summary.amenities.amenities[0].contents[5].items;
-            let childrenAndBedDataArray = [];
-            childrenAndBedData.forEach(element => {
-                childrenAndBedDataArray.push(element.text);
-            });
+            // // => Accessibility
+            // // const accessibilityHeading = data.summary.amenities.amenities[1].contents[6].header.text;
+            // let allAccessibilityFinalList = [];
+            // const amenitesAccessibilityContents = data.summary.amenities.amenities[1].contents;
+            // let getTrimAccessibilities = extractAccessibility(amenitesAccessibilityContents, "Accessibility", "");
+            // // Convert whole string to array.
+            // let accessibilityStrToArray = getTrimAccessibilities.split(', ');
+            // // Remove comma from the last index in the array.
+            // accessibilityStrToArray[accessibilityStrToArray.length - 1] = accessibilityStrToArray[accessibilityStrToArray.length - 1].replace(',', '');
 
 
-            // => Check-in Starttime and Check-out Section
-            // => Property description
-            const descriptionHeading = data.propertyContentSectionGroups.aboutThisProperty.sections[0].header.text;
-            const hotelDescriptionText = data.propertyContentSectionGroups.aboutThisProperty.sections[0].bodySubSections[0].elements[0].items[0].content.text;
+            // // => Property Highlights
+            // const propertyHighlightsHeading = data.summary.amenities.topAmenities.header.text;
+
+            // // => Food and Drinks Section
+            // const foodAndDrinksHeading = data.summary.amenities.amenities[1].contents[0].header.text;
+            // const foodAndDrinkData = data.summary.amenities.amenities[1].contents[0].items;
+            // let foodAndDrinksDataArray = [];
+            // foodAndDrinkData.forEach(element => {
+            //     foodAndDrinksDataArray.push(element.text);
+            // });
+
+            // // => children And Bed section
+            // const childrenAndBedData = data.summary.amenities.amenities[0].contents[5].items;
+            // let childrenAndBedDataArray = [];
+            // childrenAndBedData.forEach(element => {
+            //     childrenAndBedDataArray.push(element.text);
+            // });
+
+
+            // // => Check-in Starttime and Check-out Section
+            // // => Property description
+            // const descriptionHeading = data.propertyContentSectionGroups.aboutThisProperty.sections[0].header.text;
+            const hotelDescriptionText = data.description_translations[0].description;
 
 
             // => Hotel Images Section
-            const mainHotelImage = data.propertyGallery.images[0].image.url;
-            const imagesObj = data.propertyGallery.images;
-            let imagesArray = [];
-            imagesObj.forEach(function(img) {
-                imagesArray.push(img.image.url);
-            });
+            // const mainHotelImage = data.main_photo_url;
+            // const imagesObj = data.propertyGallery.images;
+            // let imagesArray = [];
+            // imagesObj.forEach(function(img) {
+            //     imagesArray.push(img.image.url);
+            // });
 
             // Rendering the data on the UI Elements
             $('.hotel-name').html(hotelName);
             // $('.rating-review-details').html(hotelReviewText + " " + numberOfReviewsString);
             // $('.hotel-star-rating').html(starRating);
-            $('.glance-heading-dynamic').html(atAGlanceHeading);
+            // $('.glance-heading-dynamic').html(atAGlanceHeading);
             // Loop through the newArray and dynamically generate content for each item
-            let glanceListwithIcon = playIconList(allAtAGlanceFinalList.slice(0, 6), "detail-body-glance", "fa-play");
-            let accessibilityListwithIcon = playIconList(accessibilityStrToArray.slice(0, 6), "detail-body-accessibility", "fa-play");
+            // let glanceListwithIcon = playIconList(allAtAGlanceFinalList.slice(0, 6), "detail-body-glance", "fa-play");
+            // let accessibilityListwithIcon = playIconList(accessibilityStrToArray.slice(0, 6), "detail-body-accessibility", "fa-play");
             // $('.accessibility-heading-dynamic').html(accessibilityHeading);
-            let propertyHighlightItems = generateAmenitiesInBoxes(data.summary.amenities.topAmenities.items.slice(0, 8), "property-highlights-dynamic");
-            $('#property-highlights').html(propertyHighlightsHeading);
-            $('#food-and-drink-heading').html(foodAndDrinksHeading);
-            let foodAndDrinksData = playIconList(foodAndDrinksDataArray, "food-and-drinks-data-list", "fa-check", "green");
-            let childrenAndBedsData = playIconList(childrenAndBedDataArray, "children-and-beds-data-list", "fa-check", "green");
+            // let propertyHighlightItems = generateAmenitiesInBoxes(data.summary.amenities.topAmenities.items.slice(0, 8), "property-highlights-dynamic");
+            // $('#property-highlights').html(propertyHighlightsHeading);
+            // $('#food-and-drink-heading').html(foodAndDrinksHeading);
+            // let foodAndDrinksData = playIconList(foodAndDrinksDataArray, "food-and-drinks-data-list", "fa-check", "green");
+            // let childrenAndBedsData = playIconList(childrenAndBedDataArray, "children-and-beds-data-list", "fa-check", "green");
             $('.hotel-description-text').html(hotelDescriptionText);
-            let showImagesToThumbnails = getImagesForHotels(imagesArray, "images-thumbnail", 12);
-            $('#hotal-main-image').attr("src", mainHotelImage);
+            // let showImagesToThumbnails = getImagesForHotels(imagesArray, "images-thumbnail", 12);
         };
 
 
