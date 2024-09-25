@@ -160,6 +160,7 @@ function enqueue_travelproplus_styles()
             $materialIcons = "https://fonts.googleapis.com/icon?family=Material+Icons";
             $lightbox2Css = TRAVELPRO_PLUS_PLUGIN_URL . 'node_modules/lightbox2/dist/css/lightbox.min.css';
             $flatpickCss = "https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css";
+            $peopleSelector = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/people-selector.css';
 
             wp_register_style('travelpro-plus-materialDesignIconic', $materialDesignIconic, array(), '1.0.0');
             wp_register_style('travelpro-plus-fontawesome', $fontAwesome, array(), '1.0.0');
@@ -173,6 +174,7 @@ function enqueue_travelproplus_styles()
             wp_register_style('travelpro-plus-materialIcons', $materialIcons, array(), '1.0.0');
             wp_register_style('travelpro-plus-lightbox2', $lightbox2Css, array(), '1.0.0');
             wp_register_style('travelpro-plus-flatpickr', $flatpickCss, array(), '1.0.0');
+            wp_register_style('travelpro-plus-peopleSelector', $peopleSelector, array(), '1.0.0');
 
             // Enqueue your plugin's styles
             wp_enqueue_style('travelpro-plus-materialDesignIconic');
@@ -187,6 +189,7 @@ function enqueue_travelproplus_styles()
             wp_enqueue_style('travelpro-plus-materialIcons');
             wp_enqueue_style('travelpro-plus-lightbox2');
             wp_enqueue_style('travelpro-plus-flatpickr');
+            wp_enqueue_style('travelpro-plus-peopleSelector');
         }
     }
 }
@@ -213,6 +216,7 @@ function travelproPlusbeforeBodyClosingScripts()
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/datepicker/daterangepicker.js'; ?>"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/global.js'; ?>"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/date-pickers/flatpick-range.js'; ?>"></script>
+        <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/people-selector.js'; ?>"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'node_modules/lightbox2/dist/js/lightbox-plus-jquery.js'; ?>"></script>
 
         <script>
@@ -257,24 +261,16 @@ function travelproPlusbeforeBodyClosingScripts()
                     const hotelDestinationName = $('input[name="hotel-destination"]').val();
                     const hotelCheckIn = $('input[name="hotel-check-in"]').val();
                     const hotelCheckOut = $('input[name="hotel-check-out"]').val();
-                    const childernInfo = $('input[name="numberOfChildren"]').val();
-                    const hotelAdults = $('input[name="numberOfAdultsInHotel"]').val();
-
-                    // If the field is empty, set numberOfChildren to 0
-                    if (!childernInfo) {
-                        var numOfChild = '';
-                    } else {
-                        // Split the string by commas and filter out any empty strings
-                        var childrenArray = childernInfo.split(',').filter(age => age.trim() !== '');
-
-                        // Calculate the number of children based on valid entries
-                        var numOfChild = childrenArray.length;
+                    const numOfChild = document.getElementById("children").value;
+                    let childAges = [];
+                    const childAgeSelectors =
+                        childAgesContainer.getElementsByClassName("child-age-select");
+                    for (let i = 0; i < childAgeSelectors.length; i++) {
+                        childAges.push(childAgeSelectors[i].value);
                     }
 
-                    // Scroll to the search result section
-                    $('html, body').animate({
-                        scrollTop: $("#search-results").offset().top
-                    }, 1000); // Adjust the duration as needed
+                    const childernInfo = childAges.join(",");
+                    const hotelAdults = $('#numberOfAdultsInHotel').val();
 
                     if (hotelDestinationId === undefined) {
                         alert('Please enter a valid region, destination and wait for the results to appear. Then, select your region, destination from the list.');
@@ -286,6 +282,11 @@ function travelproPlusbeforeBodyClosingScripts()
 
                         searchHotels(hotelDestinationId, hotelCheckIn, hotelCheckOut, childernInfo, hotelAdults, numOfChild)
                         console.log([hotelDestinationId, hotelDestinationName, hotelCheckIn, hotelCheckOut, childernInfo, hotelAdults, numOfChild], 'On Submit');
+
+                        // Scroll to the search result section
+                        $('html, body').animate({
+                            scrollTop: $("#search-results").offset().top
+                        }, 1000); // Adjust the duration as needed
 
                     } else {
                         alert("Please add a [hotels_search_results] on this page to show the search results otherwise you can't be able to view the hotels data");

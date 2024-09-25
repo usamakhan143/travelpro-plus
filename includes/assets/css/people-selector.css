@@ -1,0 +1,134 @@
+.people-selector-field {
+  position: relative;
+}
+
+.people-selector-field input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 9999999999 !important;
+}
+
+.dropdown-content label {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.dropdown-content select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.child-age-select {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#confirmSelection {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+#confirmSelection:hover {
+  background-color: #45a049;
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background-color: #0069d9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .people-selector-field {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .dropdown-content {
+    width: 100%;
+    padding: 15px;
+  }
+
+  #confirmSelection,
+  .submit-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .dropdown-content select {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .dropdown-content label {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dropdown-content {
+    padding: 10px;
+  }
+
+  .people-selector-field input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .dropdown-content select {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .dropdown-content label {
+    font-size: 12px;
+  }
+
+  #confirmSelection,
+  .submit-btn {
+    padding: 10px;
+    font-size: 12px;
+  }
+}

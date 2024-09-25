@@ -769,6 +769,9 @@ button {
     float: none;
     margin-top: 10px;
   }
+  .field-padding {
+    padding-left: 0px !important;
+  }
 }
 
 .quantity > input {
@@ -1062,6 +1065,10 @@ input[type="number"]::-webkit-outer-spin-button {
   .list-person__item .name {
     font-size: 16px !important;
   }
+
+  .field-padding {
+    padding-left: 0px !important;
+  }
 }
 
 /* custom Css */
@@ -1100,7 +1107,7 @@ input[type="number"]::-webkit-outer-spin-button {
   border-radius: 10px;
   text-transform: uppercase;
   color: #fff !important;
-  font-size: 16px !important;
+  font-size: 14px !important;
   font-weight: 700 !important;
   -webkit-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
@@ -1131,7 +1138,7 @@ input[type="number"]::-webkit-outer-spin-button {
     rgba(33, 171, 225, 1) 100%
   );
   opacity: 0.9;
-  padding: 22px 50px;
+  padding: 22px 35px;
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
 }
@@ -1142,4 +1149,13 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .return-date {
   display: none;
+}
+
+.hotel-search-card {
+  padding: 0px !important;
+}
+
+.field-padding {
+  padding-left: 8px !important;
+  padding-right: 0px !important;
 }
