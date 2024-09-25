@@ -4,10 +4,10 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-5">
-            <img src="" class="img-fluid rounded" alt="Hotel Image" id="hotal-main-image">
+            <img src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/images/1487.gif' ?>" class="img-fluid rounded" alt="Hotel Image" id="hotal-main-image">
             <div class="row row-cols-4" id="images-thumbnail">
                 <div class="col mt-2 p-1">
-                    <a href="https://picsum.photos/id/237/200/300" data-lightbox="image-1"><img src="https://picsum.photos/id/237/200/300" class="img-fluid rounded" /></a>
+                    <a href="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/images/1488.gif' ?>" data-lightbox="image-1"><img src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/images/1488.gif' ?>" class="img-fluid rounded" /></a>
                 </div>
             </div>
         </div>
