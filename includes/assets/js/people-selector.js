@@ -46,11 +46,12 @@ document.addEventListener("DOMContentLoaded", function () {
   confirmSelection.addEventListener("click", function () {
     // Prevent the default button behavior
     event.preventDefault();
-    const rooms = document.getElementById("rooms").value;
+    // const rooms = document.getElementById("rooms").value;
     const adults = document.getElementById("numberOfAdultsInHotel").value;
     const children = document.getElementById("children").value;
 
-    let summary = `${rooms} Room(s), ${adults} Adult(s), ${children} Child(ren)`;
+    // let summary = `${rooms} Room(s), ${adults} Adult(s), ${children} Child(ren)`;
+    let summary = `${adults} Adult(s), ${children} Child(ren)`;
 
     // Add children ages to the summary
     const childAgeSelectors =

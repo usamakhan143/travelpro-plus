@@ -34,18 +34,18 @@
                             <input class="form-control input--style-1" type="text" name="hotel-check-out" required id="flat-end-date" placeholder="Check-Out Date" readonly>
                         </div>
                         <div class="col-md-3 field-padding people-selector-field">
-                            <label class="bootstrap-form-label">Rooms, Adult & Children</label>
-                            <input class="form-control input--style-1" type="text" id="peopleInput" name="peoples" placeholder="Select Rooms, Adults, Child" readonly>
+                            <label class="bootstrap-form-label">Adult & Children</label>
+                            <input class="form-control input--style-1" type="text" id="peopleInput" name="peoples" placeholder="Select Adults, Child" readonly>
                             <div id="peopleDropdown" class="dropdown-content">
                                 <!-- Rooms Selector -->
-                                <label for="rooms">Rooms:</label>
+                                <!-- <label for="rooms">Rooms:</label>
                                 <select id="rooms">
                                     <option value="1">1 Room</option>
                                     <option value="2">2 Rooms</option>
                                     <option value="3">3 Rooms</option>
                                     <option value="4">4 Rooms</option>
                                     <option value="5">5 Rooms</option>
-                                </select>
+                                </select> -->
 
                                 <!-- Adults Selector -->
                                 <label for="numberOfAdultsInHotel">Adults:</label>

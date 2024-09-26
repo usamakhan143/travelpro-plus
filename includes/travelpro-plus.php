@@ -261,7 +261,12 @@ function travelproPlusbeforeBodyClosingScripts()
                     const hotelDestinationName = $('input[name="hotel-destination"]').val();
                     const hotelCheckIn = $('input[name="hotel-check-in"]').val();
                     const hotelCheckOut = $('input[name="hotel-check-out"]').val();
-                    const numOfChild = document.getElementById("children").value;
+                    let numOfChild = document.getElementById("children").value;
+
+                    if (numOfChild < 1) {
+                        numOfChild = "";
+                    }
+
                     let childAges = [];
                     const childAgeSelectors =
                         childAgesContainer.getElementsByClassName("child-age-select");
