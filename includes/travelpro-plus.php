@@ -255,8 +255,6 @@ function travelproPlusbeforeBodyClosingScripts()
                 $('form[name="hotel-search-form"]').submit(function(event) {
                     event.preventDefault();
 
-                    $('.travelpro-plus-hotel-results-heading').show();
-
                     const hotelDestinationId = $('input[name="hotel-destination"]').data('id');
                     const hotelDestinationName = $('input[name="hotel-destination"]').val();
                     const hotelCheckIn = $('input[name="hotel-check-in"]').val();
@@ -281,11 +279,15 @@ function travelproPlusbeforeBodyClosingScripts()
                         alert('Please enter a valid region, destination and wait for the results to appear. Then, select your region, destination from the list.');
                         return;
                     }
-
+                    if (!hotelCheckIn || !hotelCheckOut) {
+                        alert("Please select both check-in and check-Out dates.");
+                        return null;
+                    }
                     // Perform Hotels search
                     if ($("#search-results").length) {
 
                         searchHotels(hotelDestinationId, hotelCheckIn, hotelCheckOut, childernInfo, hotelAdults, numOfChild)
+                        $('.travelpro-plus-hotel-results-heading').show();
                         console.log([hotelDestinationId, hotelDestinationName, hotelCheckIn, hotelCheckOut, childernInfo, hotelAdults, numOfChild], 'On Submit');
 
                         // Scroll to the search result section

@@ -30,21 +30,21 @@
                             <div class="travelpro-search-flight-input-group-2">
                                 <label class="bootstrap-form-label">Check-in</label>
                                 <i class="fa-regular fa-calendar-days"></i>
-                                <input class="form-control input--style-1" type="text" name="hotel-check-in" required id="flat-start-date" placeholder="Check-in Date" readonly>
+                                <input class="form-control input--style-1" type="text" name="hotel-check-in" required id="flat-start-date" placeholder="Check-in Date" readonly required="required">
                             </div>
                         </div>
                         <div class="col-md-2 field-padding">
                             <div class="travelpro-search-flight-input-group-2">
                                 <label class="bootstrap-form-label">Check-out</label>
                                 <i class="fa-regular fa-calendar-days"></i>
-                                <input class="form-control input--style-1" type="text" name="hotel-check-out" required id="flat-end-date" placeholder="Check-Out Date" readonly>
+                                <input class="form-control input--style-1" type="text" name="hotel-check-out" required id="flat-end-date" placeholder="Check-Out Date" readonly required="required">
                             </div>
                         </div>
                         <div class="col-md-3 field-padding people-selector-field">
                             <div class="travelpro-search-flight-input-group-2">
                                 <label class="bootstrap-form-label">Adult & Children</label>
                                 <i class="fa-solid fa-users"></i>
-                                <input class="form-control input--style-1" type="text" id="peopleInput" name="peoples" placeholder="Select Adults, Child" readonly>
+                                <input class="form-control input--style-1" type="text" id="peopleInput" name="peoples" placeholder="Select Adults, Child" required="required" readonly value="1 Adult(s), 0 Child(ren)">
                                 <div id="peopleDropdown" class="dropdown-content">
                                     <!-- Rooms Selector -->
                                     <!-- <label for="rooms">Rooms:</label>
@@ -94,7 +94,7 @@
                         <div class="col-md-2 field-padding">
                             <label class="bootstrap-form-label">&nbsp;</label>
                             <div class="d-grid">
-                                <button class="btn btn-submit-for-bootstrap" type="submit">Search</button>
+                                <button class="btn btn-submit-for-bootstrap" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
                             </div>
                         </div>
                     </div>
