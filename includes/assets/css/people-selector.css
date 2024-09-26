@@ -4,8 +4,7 @@
 
 .people-selector-field input {
   width: 100%;
-  padding: 12px;
-  font-size: 16px;
+  padding-left: 45px !important;
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #fff;
@@ -35,7 +34,7 @@
 .dropdown-content select {
   width: 100%;
   padding: 10px;
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -79,11 +78,29 @@
   background-color: #0069d9;
 }
 
+#numberOfAdultsInHotel,
+#children {
+  padding-left: 38px;
+}
+
+.combo-field-container {
+  position: relative;
+}
+
+.combo-field-container i {
+  position: absolute;
+  left: 15px;
+  top: 55%;
+  font-size: 16px;
+  transform: translateY(0%);
+  color: #000;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .people-selector-field {
     max-width: 100%;
-    padding: 10px;
+    /* padding: 10px; */
   }
 
   .dropdown-content {
@@ -114,7 +131,7 @@
 
   .people-selector-field input {
     font-size: 14px;
-    padding: 10px;
+    /* padding: 10px; */
   }
 
   .dropdown-content select {

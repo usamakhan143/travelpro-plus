@@ -1,6 +1,8 @@
 .hotel-card-img-top {
   height: 230px !important;
   object-fit: cover;
+  border-radius: 15px;
+  margin: 20px 20px 0px 20px;
 }
 
 .entry-content p {
@@ -9,4 +11,10 @@
 
 .hotel-card {
   cursor: pointer;
+  border-radius: 15px;
+}
+
+.hotel-price {
+  font-weight: bold;
+  font-size: 22px;
 }
