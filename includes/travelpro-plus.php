@@ -6,6 +6,8 @@ add_shortcode('hotel_search_form', 'show_hotel_search_form');
 add_shortcode('hotels_search_results', 'showHotelSearchResults');
 add_shortcode('hotel_detail', 'showHotelDetail');
 add_shortcode('travelpro_plus_checkout', 'showCheckout');
+add_shortcode('hotels_search_redirect_form', 'showHotelSearchRedirect');
+
 add_action('wp_head', 'runJqueryTravelproPlus');
 add_action('wp_enqueue_scripts', 'enqueue_travelproplus_styles', 100);
 add_action('wp_enqueue_scripts', 'travelproCheckout_styles', 100);
@@ -16,6 +18,11 @@ add_action('init', 'travelproPlusStripePaymentHandling');
 add_action('wp_footer', 'travelproCheckout_footerScripts', 9999);
 add_action('init', 'sendEmailNotificationTravelproPlus');
 
+// Hotel Search Redirect Form
+function showHotelSearchRedirect()
+{
+    include TRAVELPRO_PLUS_PLUGIN_PATH . '/includes/templates/hotels/hotel-search-redirect.php';
+}
 
 // Checkout Page
 function showCheckout()
@@ -145,7 +152,7 @@ function enqueue_travelproplus_styles()
 {
     // Check if the current page or post contains your plugin's shortcode
     if (is_page() || is_single()) {
-        if ((has_shortcode(get_the_content(), 'flights_search_form') && has_shortcode(get_the_content(), 'flights_search_results')) || has_shortcode(get_the_content(), 'hotel_search_form') || has_shortcode(get_the_content(), 'hotel_detail')) {
+        if ((has_shortcode(get_the_content(), 'flights_search_form') && has_shortcode(get_the_content(), 'flights_search_results')) || has_shortcode(get_the_content(), 'hotel_search_form') || has_shortcode(get_the_content(), 'hotels_search_redirect_form') || has_shortcode(get_the_content(), 'hotel_detail')) {
 
             // Register your plugin's styles
             $fontAwesome = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/vendor/font-awesome-4.7/css/font-awesome.min.css';
@@ -197,7 +204,7 @@ function enqueue_travelproplus_styles()
 
 function travelproPlusbeforeBodyClosingScripts()
 {
-    if (is_page() && (has_shortcode(get_the_content(), 'flights_search_form') && has_shortcode(get_the_content(), 'flights_search_results')) || has_shortcode(get_the_content(), 'hotel_search_form') || has_shortcode(get_the_content(), 'hotel_detail')) {
+    if (is_page() && (has_shortcode(get_the_content(), 'flights_search_form') && has_shortcode(get_the_content(), 'flights_search_results')) || has_shortcode(get_the_content(), 'hotel_search_form') || has_shortcode(get_the_content(), 'hotels_search_redirect_form') || has_shortcode(get_the_content(), 'hotel_detail')) {
     ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
@@ -283,6 +290,12 @@ function travelproPlusbeforeBodyClosingScripts()
                         alert("Please select both check-in and check-Out dates.");
                         return null;
                     }
+
+                    // Scroll to the search result section
+                    // $('html, body').animate({
+                    //     scrollTop: $("#search-results").offset().top
+                    // }, 1000); // Adjust the duration as needed
+
                     // Perform Hotels search
                     if ($("#search-results").length) {
 
@@ -290,16 +303,113 @@ function travelproPlusbeforeBodyClosingScripts()
                         $('.travelpro-plus-hotel-results-heading').show();
                         console.log([hotelDestinationId, hotelDestinationName, hotelCheckIn, hotelCheckOut, childernInfo, hotelAdults, numOfChild], 'On Submit');
 
-                        // Scroll to the search result section
-                        $('html, body').animate({
-                            scrollTop: $("#search-results").offset().top
-                        }, 1000); // Adjust the duration as needed
-
                     } else {
                         alert("Please add a [hotels_search_results] on this page to show the search results otherwise you can't be able to view the hotels data");
                         return null;
                     }
                 });
+
+                // Bind the change event to all form fields
+                $('form[name="hotel-redirect-search-form"]').find('input').on('input', function() {
+                    clearURLParams(); // Clear URL parameters whenever a field changes
+                    console.log('cleared');
+                });
+                // Event handler for the hotel redirect search form submission
+                $('form[name="hotel-redirect-search-form"]').submit(function(event) {
+                    event.preventDefault();
+
+                    const form = event.target;
+                    const formData = new FormData(form);
+
+                    // Create the query string from form fields
+                    const params = new URLSearchParams();
+
+                    const destId = $('input[name="hotel-destination"]').data('id');
+                    const hotelDestinationName = $('input[name="hotel-destination"]').val();
+                    const hotelCheckIn = $('input[name="hotel-check-in"]').val();
+                    const hotelCheckOut = $('input[name="hotel-check-out"]').val();
+                    let numOfChild = document.getElementById("children").value;
+
+                    if (numOfChild < 1) {
+                        numOfChild = "";
+                    }
+
+                    let childAges = [];
+                    const childAgeSelectors =
+                        childAgesContainer.getElementsByClassName("child-age-select");
+                    for (let i = 0; i < childAgeSelectors.length; i++) {
+                        childAges.push(childAgeSelectors[i].value);
+                    }
+
+                    const childernInfo = childAges.join(",");
+                    const hotelAdults = $('#numberOfAdultsInHotel').val();
+
+                    if (destId === undefined) {
+                        alert('Please enter a valid region, destination and wait for the results to appear. Then, select your region, destination from the list.');
+                        return;
+                    }
+                    if (!hotelCheckIn || !hotelCheckOut) {
+                        alert("Please select both check-in and check-Out dates.");
+                        return null;
+                    }
+
+                    params.append('dest-id', destId);
+                    params.append('destination', hotelDestinationName);
+                    params.append('check-in', hotelCheckIn);
+                    params.append('check-out', hotelCheckOut);
+                    params.append('adult', hotelAdults);
+                    params.append('child', numOfChild);
+                    params.append('children-ages', childAges);
+
+                    // Redirect to another page with form fields as query parameters
+                    window.location.href = 'search-hotels?' + params.toString();
+
+                });
+
+                // Check on Hotel Search page If params are available in the URL
+                const urlParams = new URLSearchParams(window.location.search);
+                // Check if 'hotel-destination' and 'hotel-destination-id' parameters are available
+                if (urlParams.has('dest-id') && urlParams.has('destination') && urlParams.has('check-in') && urlParams.has('check-out') && urlParams.has('adult') && urlParams.has('child') && urlParams.has('children-ages')) {
+                    // Retrieve the parameters
+                    const destId = urlParams.get('dest-id');
+                    const hotelDestinationName = urlParams.get('destination');
+                    const hotelCheckIn = urlParams.get('check-in');
+                    const hotelCheckOut = urlParams.get('check-out');
+                    let numOfChild = urlParams.get('child');
+                    const childernInfo = urlParams.get('children-ages');
+                    const hotelAdults = urlParams.get('adult');
+
+                    if (numOfChild < 1) {
+                        numOfChild = "";
+                    }
+
+                    // Set the form values
+                    let mainPeopleFeild = `${hotelAdults} Adult(s), ${numOfChild} Child(ren)`;
+
+                    $('#travelpro-plus-hotel-destination').val(hotelDestinationName);
+                    $('#flat-start-date').val(hotelCheckIn);
+                    $('#flat-end-date').val(hotelCheckOut);
+                    $('#numberOfAdultsInHotel').val(hotelAdults);
+                    $('#children').val(numOfChild);
+                    $('#peopleInput').val(mainPeopleFeild);
+
+                    // Perform Hotels search
+                    if ($("#search-results").length) {
+
+                        searchHotels(destId, hotelCheckIn, hotelCheckOut, childernInfo, hotelAdults, numOfChild)
+                        $('.travelpro-plus-hotel-results-heading').show();
+                        console.log([destId, hotelDestinationName, hotelCheckIn, hotelCheckOut, childernInfo, hotelAdults, numOfChild], 'On Submit');
+
+                    } else {
+                        alert("Please add a [hotels_search_results] on this page to show the search results otherwise you can't be able to view the hotels data");
+                        return null;
+                    }
+
+                } else {
+                    console.error("Required parameters are missing.");
+                    // Optionally, you can handle this by showing an error message or redirecting the user
+                }
+
 
                 // Event handler for the flight search form submission
                 $('form[name="search-form"]').submit(function(event) {

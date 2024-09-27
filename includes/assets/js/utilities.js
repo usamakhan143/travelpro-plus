@@ -218,3 +218,13 @@ function truncateHotelName(name, limit) {
   }
   return name;
 }
+
+// Function to clear all query parameters from the URL
+function clearURLParams() {
+  const baseUrl =
+    window.location.protocol +
+    "//" +
+    window.location.host +
+    window.location.pathname;
+  window.history.replaceState(null, null, baseUrl); // Replace URL without query params
+}

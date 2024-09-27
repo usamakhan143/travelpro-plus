@@ -1,6 +1,6 @@
 const regionApiWithEndpoint =
   "https://booking-com.p.rapidapi.com/v1/hotels/locations?";
-const hotelApiKey = "c9bcc0fae2msh319fae4f97b55fep19ad9djsn9e1c0abf8b60";
+const hotelApiKey = "287af7df0fmshe1c40367b310b6ap1d4bdcjsne5ebfd994b06";
 const hotelApiHost = "booking-com.p.rapidapi.com";
 var hotelDebounceTimer; // Variable to hold the debounce timer
 
