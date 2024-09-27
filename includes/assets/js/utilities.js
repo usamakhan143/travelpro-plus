@@ -184,8 +184,8 @@ function getCookieValue(cookieName) {
 
     // Check if this cookie has the specified name
     if (cookie.indexOf(cookieName + "=") === 0) {
-      // Return the value of the cookie (substring after the '=' sign)
-      return cookie.substring(cookieName.length + 1);
+      // Return the decoded value of the cookie (substring after the '=' sign)
+      return decodeURIComponent(cookie.substring(cookieName.length + 1));
     }
   }
 

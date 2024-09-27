@@ -192,7 +192,28 @@
                                     <input type="number" class="form-control" id="numGuests" min="1" value="1">
                                 </div>
                             </div> -->
-                            <button type="submit" class="btn btn-primary">Book Now</button>
+                            <div class="book-now-btn-container">
+                                <div class="row">
+                                    <div class="col right-data">Start Date:</div>
+                                    <div class="col from-date left-data"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col right-data">End Date:</div>
+                                    <div class="col to-date left-data"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col peoples right-data"></div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-primary single-hotel-book-now">Book Now</button>
+                                    </div>
+                                    <div class="col price-travel-pro">
+                                        NA
+                                    </div>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -367,6 +388,9 @@
             // let foodAndDrinksData = playIconList(foodAndDrinksDataArray, "food-and-drinks-data-list", "fa-check", "green");
             // let childrenAndBedsData = playIconList(childrenAndBedDataArray, "children-and-beds-data-list", "fa-check", "green");
             $('.hotel-description-text').html(hotelDescriptionText);
+            $('.price-travel-pro').html('$' + getCookieValue('price'));
+            $('.from-date').html(getCookieValue('checkInHotel'));
+            $('.to-date').html(getCookieValue('checkOutHotel'));
             // let showImagesToThumbnails = getImagesForHotels(imagesArray, "images-thumbnail", 12);
         };
 
