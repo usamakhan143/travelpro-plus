@@ -982,7 +982,9 @@ input[type="number"]::-webkit-outer-spin-button {
 .spinner {
   position: relative;
   height: 24px;
+  top: -4px !important;
   width: 24px;
+  left: -26px !important;
   display: inline-block;
   animation: around 5.4s infinite;
 }
