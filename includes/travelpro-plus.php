@@ -310,10 +310,11 @@ function travelproPlusbeforeBodyClosingScripts()
                 });
 
                 // Bind the change event to all form fields
-                $('form[name="hotel-redirect-search-form"]').find('input').on('input', function() {
-                    clearURLParams(); // Clear URL parameters whenever a field changes
-                    console.log('cleared');
-                });
+                // $('form[name="hotel-redirect-search-form"]').find('input').on('input', function() {
+                //     clearURLParams(); // Clear URL parameters whenever a field changes
+                //     console.log('cleared');
+                // });
+
                 // Event handler for the hotel redirect search form submission
                 $('form[name="hotel-redirect-search-form"]').submit(function(event) {
                     event.preventDefault();

@@ -15,7 +15,69 @@
             <h1 class="display-5 fw-bold hotel-name" id="hotel-name">Park Inn by Radisson Istanbul Atasehir</h1>
             <p class="lead rating-review-details" id="rating-review-details"></p>
             <p class="hotel-star-rating"></p>
+
             <div class="glance-container">
+                <div class="row">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12">
+                            <form name="hotel-book-form">
+                                <!-- <div class="row mb-3">
+                                <div class="col">
+                                    <label for="fullName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="fullName" placeholder="Enter your full name">
+                                </div>
+                                <div class="col">
+                                    <label for="email" class="form-label">Email address</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                                </div>
+                            </div> -->
+                                <div class="row mb-3">
+                                    <!-- <div class="col">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+                                </div> -->
+                                    <!-- <div class="col">
+                                    <label for="checkInDate" class="form-label">Check-in Date</label>
+                                    <input type="text" class="form-control" id="checkInDate" readonly>
+                                </div>
+                                <div class="col">
+                                    <label for="checkOutDate" class="form-label">Check-out Date</label>
+                                    <input type="text" class="form-control" id="checkOutDate" readonly>
+                                </div> -->
+                                </div>
+                                <!-- <div class="row mb-3">
+
+                                <div class="col">
+                                    <label for="numGuests" class="form-label">Number of Guests</label>
+                                    <input type="number" class="form-control" id="numGuests" min="1" value="1">
+                                </div>
+                            </div> -->
+                                <div class="book-now-btn-container">
+                                    <div class="row">
+                                        <div class="col right-data">Start Date:</div>
+                                        <div class="col from-date left-data"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col right-data">End Date:</div>
+                                        <div class="col to-date left-data"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col peoples right-data"></div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="col">
+                                            <button type="submit" class="btn btn-primary single-hotel-book-now">Book Now</button>
+                                        </div>
+                                        <div class="col price-travel-pro">
+                                            NA
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 <div class="detail-section">
                     <h5 class="glance-heading glance-heading-dynamic">At a Glance</h5>
                     <div class="card detail-card">
@@ -157,67 +219,7 @@
             </div>
             <br />
 
-            <div class="row">
-                <div class="row justify-content-center">
-                    <div class="col-lg-12">
-                        <form name="hotel-book-form">
-                            <!-- <div class="row mb-3">
-                                <div class="col">
-                                    <label for="fullName" class="form-label">Full Name</label>
-                                    <input type="text" class="form-control" id="fullName" placeholder="Enter your full name">
-                                </div>
-                                <div class="col">
-                                    <label for="email" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                                </div>
-                            </div> -->
-                            <div class="row mb-3">
-                                <!-- <div class="col">
-                                    <label for="phone" class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
-                                </div> -->
-                                <!-- <div class="col">
-                                    <label for="checkInDate" class="form-label">Check-in Date</label>
-                                    <input type="text" class="form-control" id="checkInDate" readonly>
-                                </div>
-                                <div class="col">
-                                    <label for="checkOutDate" class="form-label">Check-out Date</label>
-                                    <input type="text" class="form-control" id="checkOutDate" readonly>
-                                </div> -->
-                            </div>
-                            <!-- <div class="row mb-3">
 
-                                <div class="col">
-                                    <label for="numGuests" class="form-label">Number of Guests</label>
-                                    <input type="number" class="form-control" id="numGuests" min="1" value="1">
-                                </div>
-                            </div> -->
-                            <div class="book-now-btn-container">
-                                <div class="row">
-                                    <div class="col right-data">Start Date:</div>
-                                    <div class="col from-date left-data"></div>
-                                </div>
-                                <div class="row">
-                                    <div class="col right-data">End Date:</div>
-                                    <div class="col to-date left-data"></div>
-                                </div>
-                                <div class="row">
-                                    <div class="col peoples right-data"></div>
-                                </div>
-                                <br />
-                                <div class="row">
-                                    <div class="col">
-                                        <button type="submit" class="btn btn-primary single-hotel-book-now">Book Now</button>
-                                    </div>
-                                    <div class="col price-travel-pro">
-                                        NA
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </div>
@@ -271,7 +273,7 @@
             },
             headers: {
                 'x-rapidapi-host': 'booking-com.p.rapidapi.com',
-                'x-rapidapi-key': 'c9bcc0fae2msh319fae4f97b55fep19ad9djsn9e1c0abf8b60' // Replace with your actual API key
+                'x-rapidapi-key': hotelApiKey // Replace with your actual API key
             },
             success: function(data) {
 
