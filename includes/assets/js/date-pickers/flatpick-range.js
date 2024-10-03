@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const startEndDateInput = document.getElementById("flat-start-end-date");
   const startDateInput = document.getElementById("flat-start-date");
   const endDateInput = document.getElementById("flat-end-date");
 
-  flatpickr(startDateInput, {
+  flatpickr(startEndDateInput, {
     mode: "range", // Enables date range selection
     dateFormat: "Y-m-d", // Custom date format
     minDate: "today", // Disable all dates before today

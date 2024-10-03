@@ -18,19 +18,16 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2 field-padding">
+                        <div class="col-md-4 field-padding">
+
                             <div class="travelpro-search-flight-input-group-2">
-                                <label class="bootstrap-form-label">Check-in</label>
+                                <label class="bootstrap-form-label">Check-in & Check-out</label>
                                 <i class="fa-regular fa-calendar-days"></i>
-                                <input class="form-control input--style-1" type="text" name="hotel-check-in" required id="flat-start-date" placeholder="Check-in Date" readonly required="required">
+                                <input class="form-control input--style-1" type="text" name="hotel-checkin-checkout" required id="flat-start-end-date" placeholder="Check-in Date — Check-out Date" readonly required="required">
                             </div>
-                        </div>
-                        <div class="col-md-2 field-padding">
-                            <div class="travelpro-search-flight-input-group-2">
-                                <label class="bootstrap-form-label">Check-out</label>
-                                <i class="fa-regular fa-calendar-days"></i>
-                                <input class="form-control input--style-1" type="text" name="hotel-check-out" required id="flat-end-date" placeholder="Check-Out Date" readonly required="required">
-                            </div>
+                            <input class="form-control input--style-1" type="hidden" name="hotel-check-in" required id="flat-start-date" placeholder="Check-in Date" readonly required="required">
+                            <input class="form-control input--style-1" type="hidden" name="hotel-check-out" required id="flat-end-date" placeholder="Check-Out Date" readonly required="required">
+
                         </div>
                         <div class="col-md-3 field-padding people-selector-field">
                             <div class="travelpro-search-flight-input-group-2">

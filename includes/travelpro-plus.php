@@ -386,6 +386,7 @@ function travelproPlusbeforeBodyClosingScripts()
 
                     // Set the form values
                     let mainPeopleFeild = `${hotelAdults} Adult(s), ${numOfChild} Child(ren)`;
+                    let mainDatesField = `${hotelCheckIn} to ${hotelCheckOut}`;
 
                     $('#travelpro-plus-hotel-destination').val(hotelDestinationName);
                     $('#flat-start-date').val(hotelCheckIn);
@@ -393,6 +394,7 @@ function travelproPlusbeforeBodyClosingScripts()
                     $('#numberOfAdultsInHotel').val(hotelAdults);
                     $('#children').val(numOfChild);
                     $('#peopleInput').val(mainPeopleFeild);
+                    $('#flat-start-end-date').val(mainDatesField);
 
                     // Perform Hotels search
                     if ($("#search-results").length) {
