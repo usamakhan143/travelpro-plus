@@ -122,6 +122,49 @@ function processData(data) {
   });
 }
 
+function processDataStyle2(data) {
+  var searchResultsDiv = document.getElementById("search-results");
+  searchResultsDiv.innerHTML = "";
+
+  var hotels = data.result;
+
+  if (hotels.length === 0 || hotels === undefined) {
+    searchResultsDiv.innerHTML = "<p>No hotels found.</p>";
+    return;
+  }
+
+  const HotelContainer = document.createElement("div");
+  HotelContainer.classList.add("container-fluid");
+
+  hotels.forEach(function (property) {
+    // Outbound flight card
+    let hotelCard = createHotelCardStyle2(property);
+
+    HotelContainer.appendChild(hotelCard);
+    searchResultsDiv.appendChild(HotelContainer);
+
+    hotelCard.addEventListener("click", function () {
+      let hotelId = property.hotel_id;
+      const hotelPrice = increasePrice(property.price_breakdown.gross_price);
+      setCookie("price", hotelPrice, 1);
+      setCookie("isFlight", false, 1);
+      setCookie("hotelName", property.hotel_name, 1);
+      const mainDomain = $(location).attr("origin");
+      const detailPageSlug = "/hotel-detail";
+      let hotelDetailPageUrl = "";
+      if (mainDomain === "http://localhost") {
+        hotelDetailPageUrl =
+          mainDomain + "/wpplugindev" + detailPageSlug + "?hotel-id=" + hotelId;
+      } else {
+        hotelDetailPageUrl =
+          mainDomain + detailPageSlug + "?hotel-id=" + hotelId;
+      }
+
+      window.open(hotelDetailPageUrl, "_blank");
+    });
+  });
+}
+
 // Function to clean the parameters
 function cleanParams(params) {
   let cleanedParams = {};
