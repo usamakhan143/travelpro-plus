@@ -42,7 +42,7 @@ function searchHotels(
         childernInfo +
         " | Child: " +
         numOfChild;
-      processData(data);
+      processDataStyle2(data);
       //   if (
       //     data.data.context.status === "incomplete" &&
       //     data.data.context.totalResults === 0
@@ -139,7 +139,6 @@ function processDataStyle2(data) {
   hotels.forEach(function (property) {
     // Outbound flight card
     let hotelCard = createHotelCardStyle2(property);
-
     HotelContainer.appendChild(hotelCard);
     searchResultsDiv.appendChild(HotelContainer);
 

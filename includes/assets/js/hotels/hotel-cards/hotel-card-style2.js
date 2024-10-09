@@ -2,17 +2,24 @@ function createHotelCardStyle2(hotelData) {
   // Assuming JSON data is stored in a variable 'hotelData'
   const hotelCard = {
     name: hotelData.hotel_name_trans,
-    location: hotelData.distances[0].text,
+    distance: hotelData.distances[0].text,
+    location: hotelData.address,
+    city: hotelData.city,
     ribbonText: hotelData.ribbon_text,
+    isFreeCancellable: hotelData?.is_free_cancellable,
+    urgencyMessage: hotelData.urgency_message,
     roomDetails: hotelData.unit_configuration_label,
-    reviewScore: hotelData.review_score_word,
+    reviewScoreWord: hotelData.review_score_word,
+    reviewScore: hotelData.review_score,
+    NumOfReview: hotelData.review_nr,
     originalPrice:
-      hotelData.composite_price_breakdown.strikethrough_amount.amount_rounded,
+      hotelData.composite_price_breakdown.strikethrough_amount?.amount_rounded,
     discountedPrice:
-      hotelData.composite_price_breakdown.all_inclusive_amount.amount_rounded,
+      hotelData.composite_price_breakdown.all_inclusive_amount?.amount_rounded,
     taxesInfo:
       hotelData.composite_price_breakdown.charges_details.translated_copy,
     bookingUrl: hotelData.url,
+    featuredImage: hotelData.max_photo_url,
   };
 
   // Hotel Card
@@ -34,7 +41,7 @@ function createHotelCardStyle2(hotelData) {
   // Hotel Featured Image
   const hotelFeaturedImage = document.createElement("img");
   hotelFeaturedImage.classList.add("img-fluid", "rounded");
-  hotelFeaturedImage.src = "https://via.placeholder.com/250";
+  hotelFeaturedImage.src = hotelCard.featuredImage;
   hotelFeaturedImage.alt = "Hotel Image";
 
   // Appending First Col elements
@@ -47,27 +54,34 @@ function createHotelCardStyle2(hotelData) {
   // Hotel Name
   const hotelTitle = document.createElement("h5");
   hotelTitle.classList.add("hotel-title");
-  hotelTitle.textContent = "Royal Central Hotel and Resort The Palm";
+  hotelTitle.textContent = hotelCard.name
+    ? hotelCard.name
+    : "Royal Central Hotel and Resort The Palm";
 
   const locationSpan = document.createElement("span");
   locationSpan.classList.add("d-block", "mb-1", "text-muted");
-  locationSpan.innerHTML =
-    "<i class='bi bi-geo-alt'></i> Palm Jumeirah, Dubai <span class='map-link'>Show on map</span> - 14.3 km from downtown";
+  locationSpan.innerHTML = `<i class='bi bi-geo-alt'></i> ${hotelCard.location}, ${hotelCard.city} <span class='map-link'>Show on map</span> - ${hotelCard.distance}`;
 
   // Badges Container
   const badgesContainer = document.createElement("p");
   const badgeText = document.createElement("span");
   badgeText.classList.add("badge-free");
+  badgeText.textContent = hotelCard.ribbonText;
   badgesContainer.appendChild(badgeText);
 
   // Hotel Info
   const hotelInfo = document.createElement("div");
   hotelInfo.classList.add("hotel-info");
-  hotelInfo.innerHTML = `<b><p>Superior Twin Room with Hotel Private Beach Access</p></b> <p class="small-text">2 twin beds</p> <p>
-                <i class="bi bi-check-circle-fill text-success"></i> Free
-                cancellation
+  hotelInfo.innerHTML = `<b><p>Superior Twin Room with Hotel Private Beach Access</p></b> <p class="small-text">${
+    hotelCard.roomDetails
+  }</p> <p>
+  ${
+    hotelCard.isFreeCancellable === 1
+      ? "<i class='bi bi-check-circle-fill text-success'></i>  Free cancellation"
+      : ""
+  }
               </p> <p class="availability">
-                Only 1 room left at this price on our site
+                ${hotelCard.urgencyMessage}
               </p>`;
 
   hotelInfoContainer.appendChild(hotelTitle);
@@ -81,23 +95,27 @@ function createHotelCardStyle2(hotelData) {
 
   const reviewBadgeSpan = document.createElement("span");
   reviewBadgeSpan.classList.add("review-badge");
+  reviewBadgeSpan.textContent = hotelCard.reviewScore;
 
   const reviewTextP = document.createElement("p");
   reviewTextP.classList.add("small-text", "mb-1");
-  reviewTextSpan.innerHTML = `Excellent 9,360 reviews`;
+  reviewTextP.innerHTML = `${hotelCard.reviewScoreWord} ${hotelCard.NumOfReview} reviews`;
 
   const priceP = document.createElement("p");
   priceP.classList.add("price");
-  priceP.innerHTML = `PKR 862,425`;
+  priceP.innerHTML = hotelCard.originalPrice;
 
   const currentPrice = document.createElement("p");
   currentPrice.classList.add("price-current");
+  currentPrice.textContent = hotelCard.discountedPrice;
 
   const taxFeesText = document.createElement("p");
   taxFeesText.classList.add("small-text");
+  taxFeesText.textContent = hotelCard.taxesInfo;
 
   const seeAvailablityBtn = document.createElement("a");
   seeAvailablityBtn.classList.add("btn", "btn-primary");
+  seeAvailablityBtn.textContent = "See availability";
 
   hotelPricingContainer.appendChild(reviewBadgeSpan);
   hotelPricingContainer.appendChild(reviewTextP);
