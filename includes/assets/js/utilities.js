@@ -169,9 +169,37 @@ function deleteCookie(name) {
 
 // 30% Markup
 function increasePrice(price) {
-  const amount = price * 1.3;
-  return amount.toString().split(".")[0];
+  let currencySymbol = "";
+  let numericPrice = price;
+
+  // Check if the price is a string and contains a currency symbol or code
+  if (typeof price === "string") {
+    const match = price.match(/^[^\d]+/); // Match any characters at the beginning that are not digits
+    if (match) {
+      currencySymbol = match[0].trim(); // Save the currency symbol or code
+      numericPrice = parseFloat(price.replace(/^[^\d]+/, "").replace(/,/g, "")); // Extract numeric part
+    }
+  }
+
+  // Ensure numericPrice is a valid number
+  if (isNaN(numericPrice)) {
+    throw new Error("Invalid price format");
+  }
+
+  const amount = numericPrice * 1.3;
+  return currencySymbol + " " + Math.floor(amount); // Return the amount with currency symbol or code
 }
+
+// Example usage:
+// console.log(increasePrice("$100"));    // "$130"
+// console.log(increasePrice("AED100"));  // "AED130"
+// console.log(increasePrice(100));       // "130"
+// console.log(increasePrice("EUR 200")); // "EUR260"
+
+// function increasePrice(price) {
+//   const amount = price * 1.3;
+//   return amount.toString().split(".")[0];
+// }
 
 // Function to get the value of a specific cookie by name
 function getCookieValue(cookieName) {

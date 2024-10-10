@@ -146,9 +146,9 @@ if ($isCod) {
                     <!-- Total Price -->
                     <div class="details-container">
                         <h6>Total Price:</h6>
-                        <p><strong><?php echo ($isFlight === 'true') ? 'Flight:' : 'Hotel:'; ?></strong> $<?php echo htmlspecialchars($price) ?></p>
+                        <p><strong><?php echo ($isFlight === 'true') ? 'Flight:' : 'Hotel:'; ?></strong> <?php echo htmlspecialchars($price) ?></p>
                         <!-- <p><strong>Hotel:</strong> $450.00</p> -->
-                        <p><strong>Grand Total:</strong> $<?php echo htmlspecialchars($price) ?></p>
+                        <p><strong>Grand Total:</strong> <?php echo htmlspecialchars($price) ?></p>
 
                     </div>
                     <?php if ($isCod) { ?>

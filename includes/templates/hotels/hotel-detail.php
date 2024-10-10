@@ -390,7 +390,7 @@
             // let foodAndDrinksData = playIconList(foodAndDrinksDataArray, "food-and-drinks-data-list", "fa-check", "green");
             // let childrenAndBedsData = playIconList(childrenAndBedDataArray, "children-and-beds-data-list", "fa-check", "green");
             $('.hotel-description-text').html(hotelDescriptionText);
-            $('.price-travel-pro').html('$' + getCookieValue('price'));
+            $('.price-travel-pro').html(getCookieValue('price'));
             $('.from-date').html(getCookieValue('checkInHotel'));
             $('.to-date').html(getCookieValue('checkOutHotel'));
             // let showImagesToThumbnails = getImagesForHotels(imagesArray, "images-thumbnail", 12);

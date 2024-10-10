@@ -145,7 +145,7 @@ function createHotelCardStyle2(hotelData) {
 
   const seeAvailablityBtn = document.createElement("a");
   seeAvailablityBtn.classList.add("btn", "btn-primary", "see-availablity");
-  seeAvailablityBtn.textContent = "See availability";
+  seeAvailablityBtn.textContent = "Book now";
 
   // hotelPricingContainer.appendChild(reviewBadgeSpan);
   hotelPricingContainer.appendChild(reviewTextP);

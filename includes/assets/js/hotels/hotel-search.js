@@ -144,10 +144,14 @@ function processDataStyle2(data) {
 
     hotelCard.addEventListener("click", function () {
       let hotelId = property.hotel_id;
-      const hotelPrice = increasePrice(property.price_breakdown.gross_price);
+      // const hotelPrice = increasePrice(
+      //   property.composite_price_breakdown.all_inclusive_amount?.amount_rounded
+      // );
+      const hotelPrice =
+        property.composite_price_breakdown.all_inclusive_amount?.amount_rounded;
       setCookie("price", hotelPrice, 1);
       setCookie("isFlight", false, 1);
-      setCookie("hotelName", property.hotel_name, 1);
+      setCookie("hotelName", property.hotel_name_trans, 1);
       const mainDomain = $(location).attr("origin");
       const detailPageSlug = "/hotel-detail";
       let hotelDetailPageUrl = "";

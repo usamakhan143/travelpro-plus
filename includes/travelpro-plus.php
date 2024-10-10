@@ -373,6 +373,7 @@ function travelproPlusbeforeBodyClosingScripts()
                 const urlParams = new URLSearchParams(window.location.search);
                 // Check if 'hotel-destination' and 'hotel-destination-id' parameters are available
                 if (urlParams.has('dest-id') && urlParams.has('destination') && urlParams.has('check-in') && urlParams.has('check-out') && urlParams.has('adult') && urlParams.has('child') && urlParams.has('children-ages')) {
+                    deleteCookie('price');
                     // Retrieve the parameters
                     const destId = urlParams.get('dest-id');
                     const hotelDestinationName = urlParams.get('destination');
