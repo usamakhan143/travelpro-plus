@@ -68,6 +68,7 @@ function runJqueryTravelproPlus()
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
     <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'node_modules/jquery/dist/jquery.min.js'; ?>"> </script>
     <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'node_modules/jquery-ui/dist/jquery-ui.min.js'; ?>"></script>
@@ -114,7 +115,7 @@ function travelproHotelSearch_styles()
     if (is_page() || is_single()) {
         if ((has_shortcode(get_the_content(), 'hotel_search_form'))) {
             $customModalCss = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/custom-modal.css';
-            $hotelSearchResults = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/hotel-results.css';
+            $hotelSearchResults = TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/css/hotel-card-style2.css';
             // Custom Modal
             wp_register_style('travelpro-plus-customModalCss', $customModalCss, array(), '1.0.0');
             wp_enqueue_style('travelpro-plus-customModalCss');

@@ -7,7 +7,6 @@ function createHotelCardStyle2(hotelData) {
     city: hotelData.city,
     ribbonText: hotelData.ribbon_text,
     isFreeCancellable: hotelData?.is_free_cancellable,
-    urgencyMessage: hotelData.urgency_message,
     roomDetails: hotelData.unit_configuration_label,
     reviewScoreWord: hotelData.review_score_word,
     reviewScore: hotelData.review_score,
@@ -22,6 +21,31 @@ function createHotelCardStyle2(hotelData) {
     featuredImage: hotelData.max_photo_url,
   };
 
+  let urgencyMessage = hotelData?.urgency_message;
+  let updatedMessage = "";
+  if (urgencyMessage !== undefined) {
+    updatedMessage = urgencyMessage.replace("Booking.com", "pepehotels.com");
+  }
+
+  let rscword = "";
+  if (hotelCard.reviewScoreWord !== null) {
+    rscword = `${hotelCard.reviewScoreWord} |`;
+  }
+
+  let numberOfReviews = "";
+  if (hotelCard.NumOfReview !== null) {
+    numberOfReviews = hotelCard.NumOfReview + " reviews";
+  }
+
+  let reviewScoreNum = "";
+  if (hotelCard.reviewScore !== null) {
+    reviewScoreNum = `<span class='review-badge'>${hotelCard.reviewScore}</span>`;
+  }
+
+  let originalPrice = "";
+  if (hotelCard.originalPrice !== undefined) {
+    originalPrice = hotelCard.originalPrice;
+  }
   // Hotel Card
   const hotelCardBox = document.createElement("div");
   hotelCardBox.classList.add("card", "p-3", "position-relative");
@@ -40,7 +64,11 @@ function createHotelCardStyle2(hotelData) {
 
   // Hotel Featured Image
   const hotelFeaturedImage = document.createElement("img");
-  hotelFeaturedImage.classList.add("img-fluid", "rounded");
+  hotelFeaturedImage.classList.add(
+    "img-fluid",
+    "rounded",
+    "hotel-card-img-top"
+  );
   hotelFeaturedImage.src = hotelCard.featuredImage;
   hotelFeaturedImage.alt = "Hotel Image";
 
@@ -60,19 +88,20 @@ function createHotelCardStyle2(hotelData) {
 
   const locationSpan = document.createElement("span");
   locationSpan.classList.add("d-block", "mb-1", "text-muted");
-  locationSpan.innerHTML = `<i class='bi bi-geo-alt'></i> ${hotelCard.location}, ${hotelCard.city} <span class='map-link'>Show on map</span> - ${hotelCard.distance}`;
+  locationSpan.innerHTML = `<i class='bi bi-geo-alt'></i> ${hotelCard.location}, ${hotelCard.city} - ${hotelCard.distance}`;
 
   // Badges Container
   const badgesContainer = document.createElement("p");
-  const badgeText = document.createElement("span");
-  badgeText.classList.add("badge-free");
-  badgeText.textContent = hotelCard.ribbonText;
-  badgesContainer.appendChild(badgeText);
+  badgesContainer.innerHTML = `${
+    hotelCard.ribbonText !== undefined
+      ? `<span class='badge-free'>${hotelCard.ribbonText}</span>`
+      : ""
+  }`;
 
   // Hotel Info
   const hotelInfo = document.createElement("div");
   hotelInfo.classList.add("hotel-info");
-  hotelInfo.innerHTML = `<b><p>Superior Twin Room with Hotel Private Beach Access</p></b> <p class="small-text">${
+  hotelInfo.innerHTML = `<b><p>Hotel room info:</p></b> <p class="small-text"><i class='bi bi-check-circle-fill text-success'></i> ${
     hotelCard.roomDetails
   }</p> <p>
   ${
@@ -81,7 +110,7 @@ function createHotelCardStyle2(hotelData) {
       : ""
   }
               </p> <p class="availability">
-                ${hotelCard.urgencyMessage}
+                ${updatedMessage}
               </p>`;
 
   hotelInfoContainer.appendChild(hotelTitle);
@@ -92,18 +121,19 @@ function createHotelCardStyle2(hotelData) {
   // Third Column, Pricing Section
   const hotelPricingContainer = document.createElement("div");
   hotelPricingContainer.classList.add("col-md-3", "col-12", "text-md-end");
+  hotelPricingContainer.innerHTML = reviewScoreNum;
 
-  const reviewBadgeSpan = document.createElement("span");
-  reviewBadgeSpan.classList.add("review-badge");
-  reviewBadgeSpan.textContent = hotelCard.reviewScore;
+  // const reviewBadgeSpan = document.createElement("span");
+  // reviewBadgeSpan.classList.add("review-badge");
+  // reviewBadgeSpan.textContent = hotelCard.reviewScore;
 
   const reviewTextP = document.createElement("p");
   reviewTextP.classList.add("small-text", "mb-1");
-  reviewTextP.innerHTML = `${hotelCard.reviewScoreWord} ${hotelCard.NumOfReview} reviews`;
+  reviewTextP.innerHTML = `${rscword} ${numberOfReviews}`;
 
   const priceP = document.createElement("p");
   priceP.classList.add("price");
-  priceP.innerHTML = hotelCard.originalPrice;
+  priceP.innerHTML = originalPrice;
 
   const currentPrice = document.createElement("p");
   currentPrice.classList.add("price-current");
@@ -114,10 +144,10 @@ function createHotelCardStyle2(hotelData) {
   taxFeesText.textContent = hotelCard.taxesInfo;
 
   const seeAvailablityBtn = document.createElement("a");
-  seeAvailablityBtn.classList.add("btn", "btn-primary");
+  seeAvailablityBtn.classList.add("btn", "btn-primary", "see-availablity");
   seeAvailablityBtn.textContent = "See availability";
 
-  hotelPricingContainer.appendChild(reviewBadgeSpan);
+  // hotelPricingContainer.appendChild(reviewBadgeSpan);
   hotelPricingContainer.appendChild(reviewTextP);
   hotelPricingContainer.appendChild(priceP);
   hotelPricingContainer.appendChild(currentPrice);

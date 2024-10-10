@@ -1,0 +1,143 @@
+.card {
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 18px;
+}
+
+.hotel-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: inline;
+}
+
+.review-badge {
+  background-color: #003580;
+  color: white;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.limited-deal-badge {
+  background-color: #00712e;
+  color: white;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.price {
+  color: #d32f2f;
+  text-decoration: line-through;
+}
+
+.price-current {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.small-text {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.availability {
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+.badge-free {
+  background-color: #00a650;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 1.25rem;
+  color: #ff6666;
+  cursor: pointer;
+}
+
+.map-link {
+  font-size: 0.9rem;
+  color: #0071c2;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.duration {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+.discount {
+  font-size: 0.85rem;
+  color: #d32f2f;
+  text-decoration: line-through;
+  font-weight: 600;
+}
+
+.new-price {
+  color: #000;
+}
+
+.tax-fees {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.hotel-info p {
+  padding-left: 10px;
+  margin: 0px;
+  border-left: 2px solid #e0e0e0;
+  font-size: 12px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .price-current {
+    font-size: 1.25rem;
+  }
+
+  .price {
+    font-size: 0.9rem;
+  }
+
+  .col-md-6,
+  .col-md-3 {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hotel-title {
+    font-size: 1.15rem;
+  }
+
+  .hotel-info p {
+    padding-left: 0px;
+    margin: 0px;
+    border-left: 0px solid #e0e0e0;
+    font-size: 12px;
+  }
+}
+
+.hotel-card-img-top {
+  height: 230px !important;
+  width: 100% !important;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.see-availablity {
+  color: #ffffff !important;
+}
