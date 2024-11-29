@@ -211,7 +211,6 @@ function travelproPlusbeforeBodyClosingScripts()
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/flights/location-autocomplete.js'; ?>"> </script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/hotels/hotel-autocomplete.js'; ?>"> </script>
-        <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/utilities.js'; ?>"></script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/flights/search-flights.js'; ?>"> </script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/hotels/hotel-search.js'; ?>"> </script>
         <script src="<?php echo TRAVELPRO_PLUS_PLUGIN_URL . 'includes/assets/js/flights/flight-card.js'; ?>"> </script>
@@ -412,7 +411,7 @@ function travelproPlusbeforeBodyClosingScripts()
                     }
 
                 } else {
-                    console.error("Required parameters are missing.");
+                    console.warn("Required parameters are missing.");
                     // Optionally, you can handle this by showing an error message or redirecting the user
                 }
 
@@ -493,3 +492,22 @@ function sendEmailNotificationTravelproPlus()
 {
     include TRAVELPRO_PLUS_PLUGIN_PATH . 'includes/email/send-booking-confirmation.php';
 }
+
+
+function travelproplusglobal_scripts()
+{
+    // Register the JavaScript file
+    wp_register_script('my-utilities-script', plugins_url('assets/js/utilities.js', __FILE__), array('jquery'), null, true);
+
+    // Enqueue the script only if not already enqueued
+    if (!wp_script_is('my-utilities-script', 'enqueued')) {
+        wp_enqueue_script('my-utilities-script');
+    }
+
+    // Localize the script with data
+    $data_to_pass = array(
+        'globalMinDurationVal' => get_travelpro_options('travelproplus_min_duration'),
+    );
+    wp_localize_script('my-utilities-script', 'travelProPlusData', $data_to_pass);
+}
+add_action('wp_enqueue_scripts', 'travelproplusglobal_scripts');

@@ -1,3 +1,5 @@
+const globalMinDurationJs = travelProPlusData.globalMinDurationVal;
+
 function convertMinutesToHoursAndMinutes(minutes) {
   var hours = Math.floor(minutes / 60);
   var remainingMinutes = minutes % 60;
@@ -229,16 +231,16 @@ var yyyy = today.getFullYear();
 today = yyyy + "-" + mm + "-" + dd;
 
 // Set minimum date for start_date field
-document.getElementById("start-date").setAttribute("min", today);
+// document.getElementById("start-date").setAttribute("min", today);
 
 // Set minimum date for end_date field
-document.getElementById("end-date").setAttribute("min", today);
+// document.getElementById("end-date").setAttribute("min", today);
 
 // Add event listener to start_date input field
-document.getElementById("start-date").addEventListener("change", function () {
-  var startDate = this.value;
-  document.getElementById("end-date").setAttribute("min", startDate);
-});
+// document.getElementById("start-date").addEventListener("change", function () {
+//   var startDate = this.value;
+//   document.getElementById("end-date").setAttribute("min", startDate);
+// });
 
 function truncateHotelName(name, limit) {
   if (name.length > limit) {

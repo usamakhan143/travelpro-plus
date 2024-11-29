@@ -37,6 +37,12 @@ function create_options_page_travelproplus()
             //         Field::make('text', 'id_travelpro_plus_strg', 'CSS ID')
             //             ->set_attribute('placeholder', 'Enter the CSS ID of the field where you want to show the auto-completes for cites and airports.')
             //     ))
+
+            Field::make('text', 'travelproplus_min_duration', __('Min Duration'))
+                ->set_attribute('type', 'number')
+                ->set_attribute('placeholder', 'Enter Minimum Duration')
+                ->set_help_text('The minimum duration in days selected by users in the date range picker.'),
+
             Field::make('checkbox', 'travelproplus_cod', __('Enable Inquiry / Disable Payment')),
             Field::make('text', 'travelproplus_stripepk', __('Public Key'))
                 ->set_attribute('placeholder', 'Enter Stripe Public')

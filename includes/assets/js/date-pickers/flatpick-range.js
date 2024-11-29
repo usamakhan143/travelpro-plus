@@ -12,9 +12,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const startDate = selectedDates[0]; // First selected date (start date)
         const endDate = selectedDates[1]; // Second selected date (end date)
 
-        if (startDate.getTime() === endDate.getTime()) {
-          // Reset the second date if start and end date are the same
-          instance.clear(); // Clear both dates
+        // Calculate the difference in days between the dates
+        const diffInTime = endDate.getTime() - startDate.getTime();
+        const diffInDays = diffInTime / (1000 * 60 * 60 * 24);
+
+        if (diffInDays < globalMinDurationJs) {
+          // Clear the end date if the range is less than 30 days
+          instance.clear();
+          alert("Please select a date range of at least 30 days.");
         } else {
           // Set start and end date values
           startDateInput.value = instance.formatDate(startDate, "Y-m-d");
