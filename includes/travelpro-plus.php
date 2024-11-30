@@ -259,6 +259,63 @@ function travelproPlusbeforeBodyClosingScripts()
                     }
                 });
 
+
+                // Start Coding Pre Search Location
+
+                const popularDestinations = popularlocations.popularDestinations;
+
+                const dropdown = $("#travelproplus-destination-dropdown");
+                const inputField = $("#travelpro-plus-hotel-destination");
+
+                // Populate dropdown
+                popularDestinations.forEach((destination) => {
+                    dropdown.append(
+                        `<div class="travelproplus-dropdown-item"
+                            data-dest-id="${destination.dest_id}">
+                            ${destination.name}
+                        </div>`
+                    );
+                });
+
+                // Position and show dropdown on focus
+                inputField.on("focus", function() {
+                    dropdown.css({
+                        display: "block",
+                        position: "absolute",
+                        top: '90px',
+                        left: '25px',
+                        width: inputField.outerWidth(),
+                    });
+                });
+
+                // Hide dropdown when typing starts
+                inputField.on("input", function() {
+                    dropdown.hide(); // Hide the dropdown when user types
+                });
+
+                // Hide dropdown on blur
+                inputField.on("blur", function() {
+                    setTimeout(() => dropdown.hide(), 200); // Delay for click event
+                });
+
+                // Handle selection
+                $(document).on("click", ".travelproplus-dropdown-item", function() {
+                    const selectedDestination = $(this).text().trim();
+                    const destId = $(this).data("dest-id");
+
+                    // Set the sanitized value in the input field
+                    inputField.val(selectedDestination);
+
+                    // Use additional data (optional)
+                    console.log("Selected Location:", selectedDestination);
+                    console.log("Destination ID:", destId);
+
+                    dropdown.hide();
+                });
+
+                // End Coding Pre Search Location
+
+
                 // Event handler for the hotel search form submission
                 $('form[name="hotel-search-form"]').submit(function(event) {
                     event.preventDefault();
@@ -511,3 +568,27 @@ function travelproplusglobal_scripts()
     wp_localize_script('my-utilities-script', 'travelProPlusData', $data_to_pass);
 }
 add_action('wp_enqueue_scripts', 'travelproplusglobal_scripts');
+
+
+// Dropdown dynamic data for Pre search Locations
+function travelproplusPreSearchLocScripts()
+{
+    // Register the JavaScript file
+    wp_register_script('presearchLocations-script', plugins_url('assets/js/presearchlocations.js', __FILE__), array('jquery'), null, true);
+
+    // Enqueue the script only if not already enqueued
+    if (!wp_script_is('presearchLocations-script', 'enqueued')) {
+        wp_enqueue_script('presearchLocations-script');
+    }
+
+    // Dynamic locations data
+    $dynamiclocations = array(
+        array('name' => 'Melborne', 'dest_id' => -123123),
+        array('name' => 'Sydney', 'dest_id' => 123123),
+        array('name' => 'Gold Coast', 'dest_id' => 123123),
+    );
+
+    // Localize the script with data
+    wp_localize_script('presearchLocations-script', 'popularlocations', array('popularDestinations' => $dynamiclocations));
+}
+add_action('wp_enqueue_scripts', 'travelproplusPreSearchLocScripts');

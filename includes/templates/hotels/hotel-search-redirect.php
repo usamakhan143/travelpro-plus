@@ -17,6 +17,11 @@
                                     <i class="spinner"></i>
                                 </div>
                             </div>
+                            <div
+                                class="travelproplus-custom-dropdown"
+                                id="travelproplus-destination-dropdown">
+                                <!-- Dropdown options will be dynamically added here -->
+                            </div>
                         </div>
                         <div class="col-md-4 field-padding">
 
