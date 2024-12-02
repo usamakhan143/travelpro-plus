@@ -44,10 +44,31 @@ function create_options_page_travelproplus()
                 ->set_help_text('The minimum duration in days selected by users in the date range picker.'),
 
             Field::make('checkbox', 'travelproplus_cod', __('Enable Inquiry / Disable Payment')),
-            Field::make('text', 'travelproplus_stripepk', __('Public Key'))
-                ->set_attribute('placeholder', 'Enter Stripe Public')
-                ->set_help_text('The booking notification will send to this email.'),
 
+            // Presearch Fields
+            Field::make('html', 'presearch_section')
+                ->set_html('<h1><b>Presearch Keys</b></h1>'),
+            Field::make('checkbox', 'travelproplus_presearch_onoff', __('Active')),
+            Field::make('text', 'travelproplus_presearch_key_one', __('Key 1'))
+                ->set_width(50),
+            Field::make('text', 'travelproplus_presearch_val_one', __('Value 1'))
+                ->set_width(50),
+            // Key 2
+            Field::make('text', 'travelproplus_presearch_key_two', __('Key 2'))
+                ->set_width(50),
+            Field::make('text', 'travelproplus_presearch_val_two', __('Value 2'))
+                ->set_width(50),
+            // Key 3
+            Field::make('text', 'travelproplus_presearch_key_third', __('Key 3'))
+                ->set_width(50),
+            Field::make('text', 'travelproplus_presearch_val_third', __('Value 3'))
+                ->set_width(50),
+
+            // Stripe Fields
+            Field::make('html', 'stripe_keys_section')
+                ->set_html('<h2><b>Stripe API Keys</b></h2>'),
+            Field::make('text', 'travelproplus_stripepk', __('Public Key'))
+                ->set_attribute('placeholder', 'Enter Stripe Public'),
             Field::make('text', 'travelproplus_stripesk', 'Secret Key')
                 ->set_attribute('placeholder', 'Enter Stripe Secret')
                 ->set_attribute('type', 'password')
